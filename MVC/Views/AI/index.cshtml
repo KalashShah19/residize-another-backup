@@ -1,0 +1,423 @@
+@{
+  Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Residize AI </title>
+  <link rel="stylesheet" href="/css/ai.css" />
+  <link href="https://kendo.cdn.telerik.com/themes/10.0.1/default/default-main.css" rel="stylesheet" />
+  
+</head>
+
+<body>
+    <a href="/Client/Home" style="color: #005555; text-decoration: none;">
+    <span style="font-size: 24px; font-weight: bold;">←</span>
+Back
+    </a>
+  <div class="container">
+    <h1>Hey, it's great to see You!</h1>
+    <div class="section">
+      <div class="featured-box">
+        <video id="video-bg" autoplay muted class="video-bg">
+          <source src="/videos/house.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="small-cards">
+        <div class="small-card" id="price-card">
+          <img src="/images/upscaled/Ai1.jpeg" alt="Pirce Prediction" />
+          <h3>Want to know price of your new house ?</h3>
+        </div>
+
+        <div class="small-card" id="rent-card">
+          <img src="/images/upscaled/Ai2.jpeg" alt="Philosophy" />
+          <h3>Want to know the rent of our house ?</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="price" class="hidden-form">
+      <div class="demo-section">
+        <div class="prediction">
+          <div id="validation-success"></div>
+          <form id="price-form" method="post">
+            <div class="k-form-legend">Price Prediction </div>
+            <div class="maininput">
+
+              <div class="k-form-item size">
+                <label class="k-form-label" for="Bedroom">Bedroom</label>
+                <input type="number" id="Bedroom" name="Bedroom" placeholder="Enter Number of Bedrrom"
+                  class="inputsize1 k-textbox" />
+              </div>
+
+              <div class="k-form-item size">
+                <label class="k-form-label" for="Bathroom">Bathroom</label>
+                <input type="number" id="Bathroom" name="Bathroom" placeholder="Enter Number of Bathroom"
+                  class="inputsize1 k-textbox" />
+              </div>
+            </div>
+
+            <div class="maininput">
+              <div class="k-form-item size">
+                <label class="k-form-label" for="Floor">Floor</label> <br>
+                <input type="number" id="Floor" name="Floor" class="inputsize1 k-textbox"
+                  placeholder="Enter Number of Floor" />
+              </div>
+              <div class="k-form-item size">
+                <label class="k-form-label" for="Area">Area</label>
+                <input type="number" id="Area" name="Area" class="inputsize1 k-textbox"
+                  placeholder="Enter Area in Sq Ft" />
+              </div>
+            </div>
+
+            <div class="maininput">
+              <div class="k-form-item city">
+                <label class="k-form-label" for="PostalCode">City</label>
+                <select id="PostalCode" name="PostalCode" class="inputsize1 k-dropdown">
+                  <option value="">Select City</option>
+                  <option value="400001">Mumbai</option>
+                  <option value="700001">Kolkata</option>
+                  <option value="560001">Bangalore</option>
+                  <option value="110001">Delhi</option>
+                  <option value="500001">Hyderabad</option>
+                  <option value="600001">Chennai</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="k-form-buttons">
+              <button type="submit" class="k-form-submit">Submit</button>
+              <button type="reset" class="k-form-clear">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="rent" class="hidden-form">
+      <div class="demo-section">
+        <div class="prediction">
+          <div id="validation-success"></div>
+          <form id="rent-form" method="post">
+            <div class="k-form-legend">Rent Prediction </div>
+            <div class="maininput">
+              <div class="k-form-item size">
+                <label class="k-form-label" for="BHK">BHK</label>
+                <input type="number" id="BHK" name="BHK" class="inputsize1 k-textbox"
+                  placeholder="Enter Number of Rooms" />
+              </div>
+              <div class="k-form-item size">
+                <label class="k-form-label" for="LivingArea">Living Area (sq ft)</label>
+                <input type="number" id="LivingArea" name="LivingArea" class="inputsize1 k-textbox"
+                  placeholder="Enter Area in Sq Ft" />
+              </div>
+            </div>
+
+            <div class="maininput">
+              <div class="k-form-item size">
+                <label class="k-form-label" for="Bathrooms">Bathroom</label>
+                <input type="number" id="Bathrooms" name="Bathrooms" class="inputsize1 k-textbox"
+                  placeholder="Enter Number of Bathrooms" />
+              </div>
+              <div class="size k-form-item">
+                <label class="k-form-label" for="AreaType">Area Type</label>
+                <select id="AreaType" name="AreaType" class="inputsize k-dropdown">
+                  <option value="">Select Area Type</option>
+                  <option value="0">Super Carpet</option>
+                  <option value="1">Carpet</option>
+                  <option value="2">Built-up</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="maininput">
+              <div class="size k-form-item">
+                <label class="k-form-label" for="FurnishingStatus">Furnishing Status</label>
+                <select id="FurnishingStatus" name="FurnishingStatus" class="inputsize k-dropdown">
+                  <option value="">Select Furnishing Status</option>
+                  <option value="0">Fully Furnished</option>
+                  <option value="1">Semi Furnished</option>
+                  <option value="2">Unfurnished</option>
+                </select>
+              </div>
+              <div class="size k-form-item">
+                <label class="k-form-label" for="TenantPreferred">Tenant Preferred</label>
+                <select id="TenantPreferred" name="TenantPreferred" class="inputsize k-dropdown">
+                  <option value="">Select Tenant Status</option>
+                  <option value="0">Bachelors</option>
+                  <option value="1">Bachelors/Family</option>
+                  <option value="2">Family</option>
+                </select>
+              </div>
+            </div>
+            <div class="maininput">
+              <div class="size k-form-item">
+                <label class="k-form-label" for="PointOfContact">Contact</label>
+                <select id="PointOfContact" name="PointOfContact" class="inputsize k-dropdown">
+                  <option value="">Select Point of Contact</option>
+                  <option value="0">Owner</option>
+                  <option value="1">Agent</option>
+                  <option value="2">Builder</option>
+                </select>
+              </div>
+              <div class="size k-form-item">
+                <label class="k-form-label" for="City">City</label>
+                <select id="City" name="City" class="inputsize k-dropdown">
+                  <option value="">Select City</option>
+                  <option value="400001">Mumbai</option>
+                  <option value="700001">Kolkata</option>
+                  <option value="560001">Bangalore</option>
+                  <option value="110001">Delhi</option>
+                  <option value="500001">Hyderabad</option>
+                  <option value="600001">Chennai</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="k-form-buttons">
+              <button type="submit" class="k-form-submit">Submit</button>
+              <button type="reset" class="k-form-clear">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    @* <div class="chat-box">
+      <input type="text" placeholder="Message Copilot" />
+      <button id="scroll-to-form">➤</button>
+    </div> *@
+
+    <script>
+      document.getElementById("price-card").addEventListener("click", function () {
+        const priceForm = document.getElementById("price");
+        priceForm.style.display = "block";
+        priceForm.classList.remove('hidden-form');
+        priceForm.classList.add('price-form');
+
+        priceForm.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        });
+      });
+
+      document.getElementById("rent-card").addEventListener("click", function () {
+        const rentForm = document.getElementById("rent");
+        rentForm.style.display = "block";
+        rentForm.classList.remove('hidden-form');
+        rentForm.classList.add('rent-form');
+
+        rentForm.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        });
+      });
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2024.4.1112/js/kendo.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#PostalCode, #AreaType, #FurnishingStatus, #PointOfContact ,#TenantPreferred, #City").kendoDropDownList();
+        $("#BHK, #LivingArea, #Bathroom, #Bedroom, #Bathrooms, #Floor, #Area").kendoNumericTextBox();
+
+        $("#AreaType").data("kendoDropDownList").value("1");
+        $("#FurnishingStatus").data("kendoDropDownList").value("1");
+          $("#PointOfContact").data("kendoDropDownList").value("0");
+        $("#TenantPreferred").data("kendoDropDownList").value("0");
+
+        $("#rent-form").submit(function (e) {
+          e.preventDefault();
+          console.log("form submitted")
+          let isValid = true;
+          $(".error-message").remove();
+
+          const fields = {
+            BHK: "Enter a valid BHK value.",
+            LivingArea: "Enter a valid Living Area.",
+            Bathrooms: "Enter a valid Bathroom count.",
+            TenantPreferred: "Enter a preferred tenant.",
+            PointOfContact: "Enter a point of contact.",
+            AreaType: "Select an Area Type.",
+            FurnishingStatus: "Select Furnishing Status.",
+            City: "Select a City."
+          };
+
+          const area = $("#LivingArea").val();
+          console.log(area)
+          if (!area || area <= 0 || area > 10000 || area < 500) {
+            isValid = false;
+            $("#LivingArea").after("<span class='error-message' style='color: red;'>Enter a valid Area in Sq Ft.</span>");
+          }
+
+          for (let field in fields) {
+            const value = $(`#${field}`).val();
+            if (!value) {
+              isValid = false;
+              $(`#${field}`).after(`<span class='error-message' style='color: red;'>${fields[field]}</span>`);
+            }
+          }
+
+          console.log("form is ", isValid)
+          if (!isValid) return;
+
+          const data = {
+            BHK: $("#BHK").val(),
+            LivingArea: $("#LivingArea").val(),
+            AreaType: $("#AreaType").val(),
+            FurnishingStatus: $("#FurnishingStatus").val(),
+            TenantPreferred: $("#TenantPreferred").val(),
+            Bathrooms: $("#Bathrooms").val(),
+            PointOfContact: $("#PointOfContact").val(),
+            PostalCode: $("#City").val()
+          };
+
+          $.ajax({
+            url: "http://127.0.0.1:5000/predict_rent",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+              console.log(response)
+              Swal.fire({
+                title: "<strong>Residize AI's Response</strong>",
+                icon: "success",
+                html: `Predicted Rent: <b>${response.rent} /- Rs</b>`,
+                showCloseButton: true,
+                confirmButtonText: "Great!"
+              });
+            },
+            error: function () {
+              Swal.fire({
+                title: "Error",
+                icon: "error",
+                text: "Error occurred while fetching prediction."
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <script>
+        $("#price-form").submit(function (e) {
+          e.preventDefault();
+          console.log("in price form")
+
+          var validationSuccess = $("#validation-success");
+          $(".error-message").remove();
+
+          let isValid = true;
+
+          const bedroom = $("#Bedroom").val();
+          console.log("bedrooms = ", bedroom)
+          if (!bedroom || bedroom <= 0) {
+            isValid = false;
+            $("#Bedroom").after("<span class='error-message' style='color: red;'>Enter a valid number of bedrooms.</span>");
+          }
+
+          const bathroom = $("#Bathroom").val();
+          console.log("bathrooms", bathroom)
+          if (!bathroom || bathroom <= 0) {
+            isValid = false;
+            $("#Bathroom").after("<span class='error-message' style='color: red;'>Enter a valid number of bathrooms.</span>");
+          }
+
+          const floor = $("#Floor").val();
+          console.log(floor)
+          if (!floor || floor < 0) {
+            isValid = false;
+            $("#Floor").after("<span class='error-message' style='color: red;'>Enter a valid floor number.</span>");
+          }
+
+          const area = $("#Area").val();
+          console.log(area)
+          if (!area || area <= 0 || area > 10000 || area < 500) {
+            isValid = false;
+            $("#Area").after("<span class='error-message' style='color: red;'>Enter a valid Area in Sq Ft.</span>");
+          }
+
+          const postalCode = document.getElementById("PostalCode").value;
+          console.log(postalCode)
+          if (!postalCode) {
+            isValid = false;
+            $("#PostalCode").after("<span class='error-message' style='color: red;'>Select a postal code.</span>");
+          }
+
+          console.log("valid = ", isValid)
+          if (!isValid) {
+            return;
+          }
+
+          const data = {
+            "number of bedrooms": bedroom,
+            "number of bathrooms": bathroom,
+            "number of floors": floor,
+            "living area": area,
+            "Postal Code": postalCode,
+            "number of views": 0,
+            "grade of the house": 7,
+          };
+
+          $.ajax({
+            url: "http://127.0.0.1:5000/predict_price",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+              Swal.fire({
+                title: "<strong>Residize AI's Response</strong>",
+                icon: "success",
+                html: `
+                        Prediction Price: <b>${response.price} /- Rs</b><br>
+                    `,
+                showCloseButton: true,
+                confirmButtonText: `<i class="fas fa-thumbs-up"></i> Great!`,
+              });
+            },
+            error: function () {
+              Swal.fire({
+                title: "Error",
+                icon: "error",
+                text: "Error occurred while fetching prediction.",
+              });
+            },
+          });
+        });
+
+    </script>
+
+    <script>
+      const video = document.getElementById("video-bg");
+
+      function reverseVideo() {
+        if (video.currentTime > 0) {
+          video.currentTime -= 0.033;
+          requestAnimationFrame(reverseVideo);
+        } else {
+          video.play();
+        }
+      }
+
+      video.loop = false;
+
+      video.addEventListener("ended", () => {
+        video.pause();
+        reverseVideo();
+      });
+    </script>
+
+</body>
+
+</html>

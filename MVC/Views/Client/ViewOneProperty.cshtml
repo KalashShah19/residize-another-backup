@@ -1,0 +1,597 @@
+@model int
+@{
+  Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Untree.co" />
+  <link rel="shortcut icon" href="favicon.png" />
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap5" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="~/Client/fonts/icomoon/style.css" />
+  <link rel="stylesheet" href="~/Client/fonts/flaticon/font/flaticon.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+  @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+  @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet" /> *@
+
+  @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+  @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+  <link rel="stylesheet" href="~/Client/css/tiny-slider.css" />
+  <link rel="stylesheet" href="~/Client/css/aos.css" />
+  <link rel="stylesheet" href="~/Client/css/style.css" />
+
+  @* <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
+  <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <title>
+    Residize
+  </title>
+  <style>
+    .property-box {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .property-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      justify-items: start;
+
+
+    }
+
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* image Details*/
+
+    .property-details {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .property-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .property-info {
+      width: 650px;
+      height: 420px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-info .row {
+      margin-bottom: 15px;
+    }
+
+    .property-info .icon {
+      font-size: 17px;
+      margin-right: 10px;
+    }
+
+    .property-info .title {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .property-info .value {
+      font-size: small;
+      color: #333;
+    }
+
+    .property-info .value small {
+      color: #888;
+    }
+
+    /*Footer Panel*/
+
+    .features {
+      margin-top: 20px;
+    }
+
+    .details {
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    .details .row div {
+      margin-bottom: 10px;
+    }
+
+    .link {
+      color: black;
+      font-size: 12px;
+    }
+
+    h1 {
+      color: #007777;
+      font-weight: 700;
+    }
+
+    .features {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .features .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .amenities-grid {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 12px !important;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: white !important;
+      font-size: 14px;
+      max-width: 200px !important;
+      font-weight: 500;
+      color: #444;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .badge i {
+      margin-right: 8px;
+      font-size: 20px !important;
+      color: #007777;
+    }
+
+    .badge:hover {
+      background-color: #007777 !important;
+      color: #fff !important;
+    }
+
+    .badge:hover i {
+      color: #fff !important;
+    }
+
+    .projectbtn {
+      background-color: #005555 !important;
+      border-radius: 10px !important;
+    }
+
+    .sliderbtn {
+      background-color: #005555 !important;
+      border-radius: 10px !important;
+      color: white;
+      padding: 13px 25px;
+    }
+
+    @* Kalash *@
+
+    .next-btn{
+      background-color: #005555;
+      padding: 5px 20px;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+    }
+      .tns-controls{
+        @* background-color: red !important; *@
+        display: flex;
+        justify-content: space-between;
+      }
+      .tns-nav{display: none;}
+      .tns-outer [aria-controls]{
+      background-color: #005555;
+      padding: 5px 20px;
+      border: 0;
+      border-radius: 5px;
+    margin: 10px;
+      color: white;
+      }
+    [data-action="stop"] {
+      display: none !important; /* Hides the element */
+    }
+
+    @* Kalash *@
+  </style>
+</head>
+
+<body>
+
+
+  <div>
+
+    <header class="main-header">
+      <nav class="mt-navbar">
+        <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+          <a href="/Client/Home">
+            <div class="logo-wrapper ms-5 ">
+              <img src="../../App_Themes/Default/images/residize-white.png" />
+            </div>
+          </a>
+        </div>
+        <div class="nav-right">
+          <ul class="user-menu">
+            <li class="support-mail-wrapper">
+              <a href="../AI/index" class="icon">Residize AI </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+  </div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="property-title">
+        <h1 id="propertyName">Property</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="property-box">
+          <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel"
+            style="max-height: 400px; overflow: hidden;">
+            <div class="carousel-inner" id="carouselImages" style="height: 100%; display: flex; align-items: center; ">
+              <!-- Carousel images/videos will be dynamically populated -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <h5 class="mt-3">Photos (<span id="photoCount">0</span>)</h5>
+      </div>
+
+
+      <div class="property-info"
+        style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+        <h3 id="displayPropName" style="margin-bottom: 16px; font-size: 2rem; font-weight: bold; color: #333;">
+          <!-- Property Name -->
+        </h3>
+
+        <!-- Property Info Rows -->
+        <div class="container">
+          <div class="row align-items-start" style="margin-bottom: 20px;">
+            <!-- Area -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">➕</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Area</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  <span id="propertySize"></span> sq.ft.
+                </div>
+              </div>
+            </div>
+
+            <!-- Configuration -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">🏠</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Configuration</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  <strong><span id="bhk"></span> BHK</strong>
+                  <span id="bathrooms"></span> Bathrooms
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-start" style="margin-bottom: 20px;">
+            <!-- Price -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">💰</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Price</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  ₹<span id="propertyAmount"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">📍</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Address</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  <span id="address"></span>, <span id="locality"></span>, <span id="city"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-start" style="margin-bottom: 20px;">
+            <!-- Property Age -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">🎂</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Property Age</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  <span id="propertyAge"></span> years
+                </div>
+              </div>
+            </div>
+
+            <!-- Posted Date -->
+            <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
+              <span class="icon" style="font-size: 1.5rem; color: #007bff;">📅</span>
+              <div>
+                <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Posted Date</div>
+                <div class="value" style="font-size: 1.2rem; color: #333;">
+                  <span id="postedDate"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+@* Kalash *@
+
+  <div class="section">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-6">
+          <h1>
+            Similar Properties
+          </h1>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <p>
+            <a href="http://localhost:5154/Client/ViewProperty" class="projectbtn text-white py-3 px-4">View all
+              properties</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="property-slider-wrap">
+            <div class="property-slider" >
+
+            </div>
+            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+              <!-- <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1" id="prevBtn">Prev</span>
+              <span class="next" data-controls="next" aria-controls="property" tabindex="-1" id="nextBtn">Next</span> -->
+              <span class="prev" id="prevBtn">Prev</span>
+              <span class="next-btn next" id="nextBtn">Next</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function fetchSimilarProperties(id) {
+        const url = `http://127.0.0.1:5000/similar_property?id=${id}`;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log("API Response:", data);
+          let slider = tns({
+            container: '.property-slider-wrap',
+            items: 3,
+            slideBy: 'page',
+            autoplay: true,
+            controls: true,
+            nav: true,
+            gutter: 10
+          });
+          if (data.status === "success" && Array.isArray(data.recommendations)) {
+            const recommendations = data.recommendations;
+            let card = "";
+            recommendations.forEach((recommendation, i) => {
+              card += `<div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+                <div class="property-content">
+                  <div class="city mb-2"><span> ${recommendation.c_property_name} </span></div>
+                  <div class="price mb-2"><span> ₹ ${recommendation.c_property_amount} </span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50" id="address0"> ${recommendation.c_address} </span>
+                    <span class="city d-block mb-3"> ${recommendation.c_city} </span>
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption"> ${recommendation.c_bhk} BHK </span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption"> ${recommendation.c_bath} Baths </span>
+                      </span>
+                    </div>
+                    <a href="ViewOneProperty/${recommendation.c_recommendation_id}" class="Propertiesdbtn text-white">See details</a>
+                  </div>
+                </div>
+              </div>`;
+            });
+            document.querySelector('.property-slider-wrap').innerHTML = card;
+            @* slider.destroy(); // Destroy the current instance *@
+            slider = tns({
+              container: '.property-slider-wrap',
+              items: 3,
+              slideBy: 'page',
+              autoplay: true,
+              controls: true,
+              nav: true,
+              gutter: 10
+            });
+    
+          } else {
+            console.error("No Similar found or invalid response format:", data);
+          }
+        } catch (error) {
+          console.error("An error occurred while fetching Similar Properties:", error);
+        }
+      }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const url = window.location.pathname;
+
+      const segments = url.split('/');
+
+      const prop_id = segments[segments.length - 1];
+
+      fetchSimilarProperties(prop_id);
+    });
+
+  </script>
+
+  @* Kalash *@
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: 'http://localhost:5293/api/PropertyAPI/GetPropertyById?id=' + @ViewBag.PropId,
+        type: "GET",
+        dataType: "json",
+        success: function (response) {
+          const property = response.property;
+          const details = response.details;
+
+          // Populate property details
+          $("#propertyName").text(property.propertyName || "N/A");
+          $("#propertyAmount").text(property.propertyAmount ? property.propertyAmount.toLocaleString() : "N/A");
+          $("#propertySize").text(property.propertySize || "N/A");
+          $("#bathrooms").text(property.bathrooms || "N/A");
+          $("#bhk").text(property.bedrooms || "N/A");
+          $("#address").text(details.address || "N/A");
+          $("#locality").text(details.locality || "N/A");
+          $("#city").text(details.city || "N/A");
+          $("#propertyAge").text(details.propertyAge || "N/A");
+          $("#postedDate").text(details.postedDate ? new Date(details.postedDate).toLocaleDateString() : "N/A");
+
+          // Populate carousel images
+          const carouselContainer = $("#carouselImages");
+          carouselContainer.empty(); // Clear any existing content
+          let photoCount = 0;
+
+          if (property.propertyPictures && property.propertyPictures.length > 0) {
+            property.propertyPictures.forEach((picture, index) => {
+              const isActive = index === 0 ? "active" : "";
+              const isVideo = picture.endsWith(".mp4");
+
+              if (!isVideo) {
+                // Add images
+                carouselContainer.append(`
+                        <div class="carousel-item ${isActive}">
+                            <img src="${picture}" class="d-block w-100" alt="Property Image ${index + 1}" 
+                                 style="height: 400px; object-fit: contain;">
+                        </div>
+                    `);
+                photoCount++;
+              } else {
+                // Add videos
+                carouselContainer.append(`
+                        <div class="carousel-item ${isActive}">
+                            <video class="d-block w-100" style="height: 400px; object-fit: fill;" controls>
+                                <source src="${picture}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    `);
+              }
+            });
+          } else {
+            // Fallback content when no images or videos are available
+            carouselContainer.append(`
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400?text=No+Image+Available" 
+                         class="d-block w-100" alt="No Property Image" style="height: 400px; object-fit: contain;">
+                </div>
+            `);
+          }
+
+          // Update photo count
+          $("#photoCount").text(photoCount > 0 ? photoCount : "0");
+        },
+        error: function (error) {
+          console.error("Error fetching property data:", error);
+        },
+      });
+
+    });
+  </script>
+
+  <script src="~/Client/js/bootstrap.bundle.min.js"></script>
+  <script src="~/Client/js/tiny-slider.js"></script>
+  <script src="~/Client/js/aos.js"></script>
+  <script src="~/Client/js/navbar.js"></script>
+  <script src="~/Client/js/counter.js"></script>
+  <script src="~/Client/js/custom.js"></script>
+
+</body>
+
+</html>

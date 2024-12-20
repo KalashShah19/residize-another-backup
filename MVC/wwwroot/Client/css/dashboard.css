@@ -1,0 +1,144 @@
+.card1 {
+  margin: 15px 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: left;
+  background-color: #D4F19D; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+  width: 20rem;
+  height: 15rem;
+}
+.imgcard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.card2 {
+  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #D4F19D; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+
+}
+/* .card1:hover {
+  transform: scale(1.05); 
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px; 
+  cursor: pointer;
+} */
+.card1 {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* .card1 .card-body {
+  display: flex;
+  align-items: center;
+} */
+
+
+.card1 .card-body img {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  height: 60px;
+  width: auto;
+ margin-right: 20px;
+}
+/* .card1:hover .card-body img {
+  transform: rotate(10deg) scale(1.1); 
+} */
+
+.imgcard .card-body p {
+  margin: 0;
+  color: #005555;
+  font-family: unset;
+  font-weight: 600;
+  font-size: 23px;
+  transition: color 0.9s ease;
+}
+.imgcard .count {
+  margin: 0;
+  color: #005555;
+  font-family: unset;
+  font-weight: 600;
+  font-size: 23px;
+  transition: color 0.9s ease;
+}
+/* .card1:hover .count {
+  color: #da9708;
+  
+} */
+.card1 .card-body .count {
+  color: #005555;
+  font-weight: 900;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  background-color: #a8e98e65; 
+
+}
+
+
+.row > :nth-child(2) {
+  background-color: #D4C1DD; 
+ 
+}
+.row > :nth-child(3) {
+  background-color: #87C5FE; 
+ 
+}
+.row > :nth-child(4) {
+  background-color: #f0d9a9; 
+ 
+}
+.bgcolor > :nth-child(4) {
+  background-color: #96c89394; 
+ 
+}
+.bgcolor > :nth-child(3) {
+  background-color: #a1a7b39f; 
+ 
+}
+.bgcolor > :nth-child(2) {
+  background-color: #ebbf7d93;  
+}
+.bgcolor > * {
+  background-color: #57bbb19a;  
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .card1 {
+    margin: 10px 10px;
+  }
+
+  .card1 .card-body img {
+    width: 50px; 
+    height: 50px;
+  }
+}

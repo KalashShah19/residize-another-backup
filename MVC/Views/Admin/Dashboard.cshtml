@@ -1,0 +1,1073 @@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Residize Admin</title>
+
+    <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+    <!-- css -->
+    <link href="../../App_Themes/Default/css/core-pocket.css" rel="stylesheet" />
+    @* <link rel="stylesheet" href="Client/css/dashboard.css" /> *@
+
+    @* <link href="../../" rel="stylesheet" /> *@
+    <link href="../../Client/css/dashboard.css" rel="stylesheet" />
+    <link href="../../Notification/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-container .tooltip-text {
+            visibility: hidden;
+            width: 220px;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 12px;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            /* Place it above the icon */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .fa-eye,
+        .fa-eye-slash {
+            font-size: 20px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="main-header">
+        <nav class="mt-navbar">
+            <div class="nav-left" id="dvLeftMenu" data-role="aratooltipv2">
+                <div class="logo-wrapper">
+                    <img src="../../App_Themes/Default/images/residize-white.png" />
+                </div>
+                <ul class="left-menu list-unstyled list-inline">
+                    @* <li class="separator"></li>
+                    <li class="active project-item"><a class="noPointer ellipsis" title="CorePocket">CorePocket</a></li> *@
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul class="user-menu">
+<li class="notification-item item" id="License">
+                        <!-- Example single danger button -->
+
+                        <a href="javascript:void(0)">
+                            <span class="icon"><i class="icon-notification"></i></span>
+                            <span class="counts" id="unread-count1"></span>
+                        </a>
+                    </li>
+                    <li class="separator"></li>
+                    <li class="userprofile-item userprofile dropdown" id="toggleIcon">
+                        <a href="javascript:void(0)">
+                            <span><span class="navuser-ellipse" id="displayUserName"></span><br /><small>Space
+                                    Admin</small></span>
+                            <span class="dw-icon"><i class="icon-arrow-down"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- #header -->
+    <!--navigation pages-->
+    @* <nav class="mt-navbar-pages">
+        <ul class="list-inline pages-menu">
+            <li class="active"><a title="Dashboard">Dashboard</a></li>
+            <li><a href="events.html" title="Events">Events</a></li>
+            <li><a href="transaction.html" title="Transaction">Transaction</a></li>
+            <li class="dropdown" role="presentation">
+                <a role="menuitem" tabindex="0" onclick="return false;">Admin: Category<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li role="presentation" class=""><a role="menuitem" tabindex="0" href="category.html">Category</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav> *@
+    <!--#navigation pages-->
+
+    <!-- user profile -->
+    <div class="userprofile-menu dropdown-menu">
+        <div class="usermenu-wrap">
+            <div class="main-up">
+                <div class="userprofile-content-wrapper">
+                    <div class="brief">
+                        <div class="img-circle">
+                            <img src="#" id="previewImage" name="previewImage" class="img-fluid"
+                                style="display: none;  " alt="" />
+                        </div>
+
+                    </div>
+                    <div class="a-box">
+                        <a id="settings"><i class="icon-setting"></i><span
+                                class="text-dark text-semibold">Settings</span></a>
+                        <a class="bl-0" id="btnLogout">
+                            <i class="icon-logout text-danger"></i>
+                            <span class="text-dark text-semibold">Logout</span>
+                        </a>
+                    </div>
+                    <div class="bottom-block">
+                        <div class="userprofile-info d-flex align-items-center">
+                            <span class="userprofile-info-icon"><i class="icon-user"></i></span>
+                            <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                                <span class="text-muted d-block ellipsis mb-5">Full Name</span>
+                                <span class="text-dark d-block ellipsis fs-15" id="txtfirstName"></span>
+                            </div>
+                        </div>
+                        <div class="userprofile-info d-flex align-items-center">
+                            <span class="userprofile-info-icon"><i class="icon-user"></i></span>
+                            <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                                <span class="text-muted d-block ellipsis mb-5">Last Name</span>
+                                <span class="text-dark d-block ellipsis fs-15" id="txtlastName"></span>
+                            </div>
+                        </div>
+                        <div class="userprofile-info d-flex align-items-center">
+                            <span class="userprofile-info-icon"><i class="icon-email"></i></span>
+                            <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                                <span class="text-muted d-block ellipsis mb-5">Email</span>
+                                <span class="text-dark d-block ellipsis fs-15" id="txtEmail"></span>
+                            </div>
+                        </div>
+                        <div class="userprofile-info d-flex align-items-center">
+                            <span class="userprofile-info-icon"><i class="fas fa-phone"></i></span>
+                            <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                                <span class="text-muted d-block ellipsis mb-5">Phone Number</span>
+                                <span class="text-dark d-block ellipsis fs-15" id="txtPhoneNumber"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <div class="head">
+                    <a class="back"><i class="icon-arrow-left"></i></a>
+                    <h3>Settings</h3>
+                </div>
+                <!-- tab strip -->
+                <div id="tabstrip" class="h100">
+                    <ul>
+                        <li class="k-state-active">
+                            Edit Profile
+                        </li>
+                        <li>
+                            Change Password
+                        </li>
+                    </ul>
+                    <div>
+                        <div class="setting-footer">
+                            <a class="btn btn-trans close" id="btnclose">Close</a>
+                            <a class="btn btn-trans ml-0">Reset</a>
+                            <a class="btn btn-primary" id="btnUpdateProfile">Update</a>
+                        </div>
+                        <form class="edit-profile" enctype="multipart/form-data">
+                            <div class="brief">
+                                <div class="img-circle">
+                                    <img id="profileImagePreview" src="#" style="display: none;" />
+                                    <span id="profileImageInitial" style="display: inline-block;">R</span>
+                                </div>
+                                <input type="hidden" id="oldImagePath" />
+                                <span class="input-pic">
+
+                                    <input type="file" id="fileProfileImage" name="fileProfileImage"
+                                        title="Change Photo">
+                                    <i class="icon-photo"></i>Change Photo
+                                </span>
+                                <a class="resetPhoto" id="resetPhoto"><i class="icon-delete"></i>Reset Photo</a>
+                            </div>
+                            <div class="edit-profile-details">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input class="form-control" id="userName" name="userName" readonly type="text" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="half">
+                                        <label>First Name</label>
+                                        <input class="form-control" type="text" id="firstName" name="firstName"
+                                            placeholder="Enter your first name" required
+                                            data-rule-alphabets-only="true" />
+                                    </div>
+                                    <div class="half">
+                                        <label>Last Name</label>
+                                        <input class="form-control" type="text" id="lastName" name="lastName"
+                                            placeholder="Enter your last name" required
+                                            data-rule-alphabets-only="true" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" readonly id="email" name="email" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input class="form-control" required data-rule-numbers-only type="text"
+                                        id="phoneNumber" name="phoneNumber" minlength="10" maxlength="10" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <div>
+                            <form class="edit-profile-password">
+                                <div class="edit-profile-details">
+                                    <div class="form-group">
+                                        <label>Current Password</label>
+                                        <div class="password-container">
+                                            <input class="form-control" type="password" id="currentPassword" required
+                                                name="currentPassword" placeholder="Current Password" />
+                                            <span class="toggle-password" onclick="togglePassword('currentPassword')">
+                                                <i class="fa fa-eye-slash"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>New Password
+                                            <span class="tooltip-container">
+                                                <i class="icon-info-unfill text-muted"></i>
+                                                <span class="tooltip-text">Password should be at least 8 characters long
+                                                    and include uppercase, lowercase, and special characters.</span>
+                                            </span>
+                                        </label>
+                                        <div class="password-container">
+                                            <input class="form-control" type="password" name="newPassword"
+                                                id="newPassword" required placeholder="New Password" />
+                                            <span class="toggle-password" onclick="togglePassword('newPassword')">
+                                                <i class="fa fa-eye-slash"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <div class="password-container">
+                                            <input class="form-control" type="password" name="confirmPassword" required
+                                                id="confirmPassword" placeholder="Re-type New Password" />
+                                            <span class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                                <i class="fa fa-eye-slash"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="setting-footer">
+                            <a class="btn btn-trans close" id="btnclosePass">Close</a>
+                            <a class="btn btn-trans ml-0">Reset</a>
+                            <a class="btn btn-primary" id="btnChangePassword">Save</a>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+    </div>
+    <!-- end user profile -->
+    <!-- NOTI-->
+
+    <div id="LicenseWindow" style="display: none;">
+        <div class="notification-panel"
+            style="background: white; border-radius: 15px; width: 100%; padding: 0; margin: 0;">
+            <div class="nav bg-dark">
+                <h2>Notifications <span class="countbg" id="unread-count">0</span></h2>
+                <button id="maar">Mark all as read</button>
+            </div>
+
+            <div id="notifications">
+                <!-- Notifications will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    @* <div class="main-content">
+        <iframe id="iframe" style="height:100%; width:100%;" tabindex="0" src="dashboard-iframe.html"></iframe>
+    </div> *@
+    <div class="container card">
+
+        <div class="row mb-5">
+
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/User.png" />
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Total User <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5" id="tusers" name="tusers"></span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/buyer.png" />
+
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Total Buyers <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> 15,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/seller.png" />
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Total Sellers <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> 15,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/Tenants.png" />
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">No of Tenants : <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> 15,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bgcolor mb-5">
+
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/owner.png" />
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">No of Owners : <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> 15,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/Properties.png" />
+
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">No of Properties : <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5" id="tproperties" name="tproperties"></span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/Revenue.png" />
+
+
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">No of Revenue : <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> 15,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class=" card1 col-1 col-sm-3 col-lg-6">
+                <div class="text-center imgcard ">
+                    <div>
+                        <img src="../../icon/view.png" />
+
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Most view Property: <br> </p>
+                    </div>
+                    <div class="count">
+                        <span class="mt-5"> SAVANI-VILA</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    <!-- ##end main content -->
+    <!-- footer -->
+    @* <footer class="main-footer">
+        <div class="footer-wrap">
+            <div class="login-wrap">Login Time: <span>02-18-2019 15:12:43</span></div>
+            <div class="version-wrap"><span>Casepoint v1.0.0.0</span></div>
+        </div>
+    </footer> *@
+    <!-- footer -->
+    <script type="text/x-kendo-template" id="thumnail_template">
+        <div class="thumbnail-item">
+            <div class="thumbnail-item-wrapper">
+                <span class="date">02-Feb-21</span>
+                <div class="thumb-img">                   
+                    <img src='../../App_Themes/Default/images/core-pocket/event.jpg' />
+                </div>
+                <div class="thumb-details">
+                   <p class="font-medium text-dark thumb-name">CP Annual</>
+                   <ul class="thum-list">
+                       <li class="text-muted item-list">
+                           <span class="icon"><i class="icon-map"></i></span>
+                            <span class="text">Akshay Nagar 1st block 1st crosss Banglore-560016</span>                           
+                       </li>
+                       <li class="text-muted item-list">
+                        <span class="icon"><i class="icon-clock"></i></span>
+                        <span class="text">05:25 PM</span>
+                       </li>
+                   </ul>
+                    <div class="btn-group bt-1 pt-10 text-center">
+                       <a href="javascript:void(0)" class="btn btn-trans text-primary">More Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- scripts -->
+    <script src="../../notification/script.js"></script>
+    <script src="../../Scripts/Kendo/jquery.min.js"></script>
+    <script src="../../Scripts/Kendo/kendo.all.min.js"></script>
+    <script src="../../Scripts/CLARENT/Other/Custom/Custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+    <script>
+        const apihost = "http://localhost:5293";
+    </script>
+    <script>
+        const socket = new WebSocket('ws://127.0.0.1:8181');
+
+        socket.onopen = () => {
+            console.log('WebSocket connection established');
+        };
+        let unreadCount = 0;
+        let unreadCount1 = 0;
+        let maincount = 0;
+
+        socket.onmessage = event => {
+            const data = JSON.parse(event.data); // Parse the incoming WebSocket message
+            console.log('New registration:', data);
+
+            // Update unread count
+            const unreadCountElement = document.getElementById('unread-count');
+            const unreadCountElement1 = document.getElementById('unread-count1');
+            const markAllButton = document.getElementById('maar');
+            unreadCount = parseInt(unreadCountElement.textContent) || 0;
+            unreadCount1 = parseInt(unreadCountElement1.textContent) || 0;
+
+
+            // If `unseenCount` is provided, update count without creating notifications
+            if (data.unseenCount !== undefined) {
+                unreadCount = data.unseenCount;
+                unreadCount1 = data.unseenCount;
+                maincount = data.unseenCount;
+                unreadCountElement.textContent = maincount;
+                unreadCountElement1.textContent = maincount;
+
+                console.log(unreadCount + "first")
+                // Show or hide the "Mark All as Read" button
+                markAllButton.style.display = unreadCount > 0 ? 'block' : 'none';
+                return;
+            }
+
+            // Create a new notification div
+            const notificationElement = document.createElement('div');
+            notificationElement.className = `notification ${data.Seen ? 'read' : 'unread'}`;
+            notificationElement.style.cursor = 'pointer';
+
+            // Check if the notification is already in the list to avoid duplicates
+            const notificationId = data.Id;
+            if (document.getElementById(`notification-${notificationId}`)) {
+                // If the notification with this ID already exists, do nothing
+                return;
+            }
+            notificationElement.id = `notification-${notificationId}`; // Set a unique ID for each notification
+
+            // Create the user image
+            const userImage = document.createElement('img');
+            userImage.src = `http://localhost:5293/${data.ImagePath}`; // Use the dynamic image path
+            userImage.alt = `${data.FirstName} ${data.LastName}`;
+            notificationElement.appendChild(userImage);
+
+            // Create the text container
+            const notificationText = document.createElement('div');
+            notificationText.className = 'not';
+
+            // Add the title
+            const userTitle = document.createElement('p');
+            userTitle.className = 'utitle read1';
+            userTitle.innerHTML = `<span>${data.FirstName} ${data.LastName}</span> just joined as a <span class="st dark">${data.UserRole}</span> ${!data.Seen ? '<span class="reddot" id="red-dot"></span>' : ''}`;
+            notificationText.appendChild(userTitle);
+
+            // Add the timestamp
+            const timestamp = document.createElement('p');
+
+            // Create a new Date object from the ISO string
+            const date = new Date(data.Timestamp);
+
+            // Format the date and time
+            const formattedTimestamp = date.toLocaleString('en-US', {
+                weekday: 'short', // Mon, Tue, etc.
+                year: 'numeric',
+                month: 'short',  // Nov, Dec, etc.
+                day: 'numeric',
+                hour: '2-digit', // 2-digit hour
+                minute: '2-digit', // 2-digit minute
+                second: '2-digit', // 2-digit second
+                hour12: true // 12-hour format
+            });
+
+            timestamp.textContent = formattedTimestamp;
+            notificationText.appendChild(timestamp);
+
+
+            notificationElement.appendChild(notificationText);
+
+            // Append to the notifications container
+            const notificationsContainer = document.getElementById('notifications');
+            if (data.Seen) {
+                // Append read notifications at the bottom
+                notificationsContainer.appendChild(notificationElement);
+            } else {
+                // Prepend unread notifications at the top
+                notificationsContainer.insertBefore(notificationElement, notificationsContainer.firstChild);
+                unreadCount++;
+                unreadCount1++;
+            }
+
+            // Update unread count display
+            unreadCountElement.textContent = maincount;
+            unreadCountElement1.textContent = maincount;
+
+            // Show or hide the "Mark All as Read" button
+            markAllButton.style.display = unreadCount > 0 ? 'block' : 'none';
+        };
+        socket.onclose = () => console.log('WebSocket connection closed');
+        socket.onerror = error => console.error('WebSocket error:', error);
+
+
+
+
+
+        function togglePassword(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const container = passwordField.parentNode;
+            const icon = container.querySelector('.toggle-password i');
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+
+        $(document).ready(function () {
+            $.ajax({
+                    url: 'http://localhost:5293/api/AdminAPI/TotalProperties',
+                    type: 'GET',
+                    success: function (response) {
+                        $('#tproperties').text(response);
+                    }      
+                });
+                $.ajax({
+                    url: 'http://localhost:5293/api/AdminAPI/TotalUsers',
+                    type: 'GET',
+                    success: function (response) {
+                        $('#tusers').text(response);
+                    }      
+                });
+            $("#btnLogout").click(function () {
+                $.ajax({
+                    url: '/Account/Logout',
+                    type: 'POST',
+                    success: function (response) {
+                        window.location.href = '/Client/User';
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Logout failed: " + error);
+                    }
+                });
+            });
+            $("#LicenseWindow").kendoWindow({
+                width: 650,
+                height: 500,
+                title: "Notifications ",
+                visible: false,
+                draggable: false,
+                resizable: false,
+                actions: ["Close"],
+                modal: true
+            });
+
+            // Open the window and center it
+            $(document).on('click', '#License', function () {
+                var licenseWindow = $("#LicenseWindow").data("kendoWindow");
+                if (licenseWindow) {
+                    licenseWindow.center();
+                    licenseWindow.open();
+                } else {
+                    console.error("LicenseWindow instance is not initialized.");
+                }
+            });
+
+            // Re-center on window resize for responsiveness
+            $(window).on('resize', function () {
+                var licenseWindow = $("#LicenseWindow").data("kendoWindow");
+                if (licenseWindow) {
+                    licenseWindow.center();
+                }
+            });
+
+            let selectedImage = null;
+            userSessionId = @ViewBag.Id;
+            const defaultImagePath = 'http://localhost:5293/default.png';
+            $.ajax({
+                url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+                type: 'GET',
+                data: { id: userSessionId },
+                dataType: 'json',
+                success: function (response) {
+                    console.log(`${apihost}/${response.imagePath}`);
+                    console.log(response.imagePath);
+                    console.log(response);
+                    $("#txtUsername").text(response.emailAddress);
+                    $("#txtfirstName").text(response.firstName);
+                    $("#txtlastName").text(response.lastName);
+                    $("#txtEmail").text(response.emailAddress);
+                    $("#txtPhoneNumber").text(response.contactNumber);
+                    $("#displayUserName").text(response.emailAddress);
+                    @* const constructedUrl = response.imagePath && response.imagePath.trim() !== ""
+                        ? `${apihost}/${response.imagePath.replace(/\\/g, '/')}`
+                        : defaultImagePath; *@
+
+                    if (selectedImage) {
+                        formData.append("ImagePath", selectedImage.name); // Pass the image name as `ImagePath`
+                        formData.append("ImageFile", selectedImage);
+                        console.log("Image appended to FormData:", selectedImage.name);
+                    } else {
+                        const oldImagePath = $("#oldImagePath").val();
+                        formData.append("ImagePath", oldImagePath);
+                        console.log("No image selected. Old path appended to FormData:", oldImagePath);
+                    }
+
+                },
+                error: function (xhr, status, error) {
+                }
+            });
+
+            $("#fileProfileImage").change(function (e) {
+                const files = e.target.files;
+                if (files && files.length > 0) {
+                    selectedImage = files[0];
+                    console.log("Selected file:", selectedImage);
+
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        $("#profileImageInitial").hide();
+                        $("#profileImagePreview").attr("src", event.target.result).show();
+                    };
+                    reader.readAsDataURL(selectedImage);
+                } else {
+                    console.log("No file selected");
+                    selectedImage = null;
+                }
+            });
+
+            $("#fileProfileImage").kendoUpload({
+                showFileList: false,
+                multiple: false,
+                localization: { select: 'Select File' },
+                select: function (e) {
+                    var file = e.files[0];
+
+                    reader.onload = function (e) {
+                        $("#profileImageInitial").hide();
+                        $("#profileImagePreview").attr("src", e.target.result).show();
+                        console.log("New image loaded");
+                    };
+                },
+                success: function (e) {
+                    console.log("File uploaded successfully:", e.files[0].name);
+                },
+
+                error: function (e) {
+                    console.log("Error occurred during file upload:", e);
+                    alert("Error uploading file: " + e.files[0].name);
+                }
+            });
+
+            $(".icon-delete").click(function () {
+                $("#fileProfileImage").val("");
+                $("#profileImagePreview").hide();
+                $("#profileImageInitial").show();
+            });
+
+            $(".resetPhoto").click(function () {
+                //$("#fileProfileImage").val("");
+                $("#profileImagePreview").hide();
+                // $("#profileImageInitial").show();
+                $("#profileImagePreview").attr("src", `${apihost}/userdata/Default.jpeg`).show();
+            });
+
+            //btnclose
+            $("#btnclose").click(function () {
+                var validator = $(".edit-profile").data("kendoValidator");
+                if (validator) {
+                    validator.hideMessages();
+                }
+                var validatorpassword = $(".edit-profile-password").data("kendoValidator");
+                if (validatorpassword) {
+                    validatorpassword.hideMessages();
+                }
+            });
+            $("#btnclosePass").click(function () {
+                $(".edit-profile-password")[0].reset();
+                var validatorpassword = $(".edit-profile-password").data("kendoValidator");
+                if (validatorpassword) {
+                    validatorpassword.hideMessages();
+                }
+            });
+
+            $("#settings").click(function () {
+                $.ajax({
+                    url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+                    type: 'GET',
+                    data: { id: userSessionId },
+                    dataType: 'json',
+                    success: function (response) {
+                        $("#firstName").val(response.firstName);
+                        $("#lastName").val(response.lastName);
+                        $("#email").val(response.emailAddress);
+                        $("#phoneNumber").val(response.contactNumber);
+                        $("#previewImage").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+                        $("#userName").val(response.emailAddress);
+                        var validator = $(".edit-profile").data("kendoValidator");
+                        if (validator) {
+                            validator.hideMessages();
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                    }
+                });
+
+            });
+
+            $("#toggleIcon").click(function () {
+
+                $.ajax({
+                    url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+                    type: 'GET',
+                    data: { id: userSessionId },
+                    dataType: 'json',
+                    success: function (response) {
+                        $("#firstName").val(response.firstName);
+                        $("#lastName").val(response.lastName);
+                        $("#email").val(response.emailAddress);
+                        $("#phoneNumber").val(response.contactNumber);
+                        $("#userName").val(response.emailAddress);
+                        const formattedPath = `${apihost}/${response.imagePath.replace(/\\/g, '/')}`;
+                        $("#previewImage").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+                        $("#profileImagePreview").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+                        $("#oldImagePath").val(response.imagePath);
+                        $("#txtUsername").text(response.emailAddress);
+                        $("#txtfirstName").text(response.firstName);
+                        $("#txtlastName").text(response.lastName);
+                        $("#txtEmail").text(response.emailAddress);
+                        $("#txtPhoneNumber").text(response.contactNumber);
+                        $("#displayUserName").text(response.emailAddress);
+                        var validator = $(".edit-profile").data("kendoValidator");
+                        if (validator) {
+                            validator.hideMessages();
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                    }
+                });
+            });
+
+            $("#btnUpdateProfile").click(function () {
+                var isFormValid = validator.validate();
+                if (isFormValid) {
+                    const formData = new FormData();
+                    formData.append("Id", userSessionId);
+                    formData.append("FirstName", $("#firstName").val());
+                    formData.append("LastName", $("#lastName").val());
+                    formData.append("EmailAddress", $("#email").val());
+                    formData.append("ContactNumber", $("#phoneNumber").val());
+
+                    // Append the selected image to FormData if it's selected
+                    if (selectedImage) {
+                        formData.append("ImagePath", selectedImage.name);
+                        formData.append("ImageFile", selectedImage);
+                        console.log("Image appended to FormData:", selectedImage.name);
+                    } else {
+                        const oldImagePath = $("#oldImagePath").val();
+                        formData.append("ImagePath", oldImagePath);
+                        console.log("No image selected. Old path appended to FormData:", oldImagePath);
+                    }
+
+                    $.ajax({
+                        url: 'http://localhost:5293/api/AccountAPI/UpdateProfile',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success!',
+                                text: 'Profile updated successfully.',
+                            });
+                            console.log("Server response:", response);
+                        },
+                        error: function (xhr, status, error) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Update Failed',
+                                text: 'There was an error updating the profile. Please try again.',
+                            });
+                            console.error("Error during upload:", xhr.responseText);
+                        },
+                    });
+                }
+
+            });
+            $("#btnChangePassword").click(function () {
+                var isPasswordValid = validatorpassword.validate();
+                if (isPasswordValid) {
+                    var formData = new FormData();
+                    formData.append("Id", userSessionId);
+                    formData.append("OldPassword", $("#currentPassword").val());
+                    formData.append("NewPassword", $("#newPassword").val());
+
+                    $.ajax({
+                        url: 'http://localhost:5293/api/AccountAPI/ChangePassword',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success!',
+                                text: 'Password Changed Successfully.'
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Invalid!',
+                                text: 'Incorrect Current Password'
+                            });
+                        }
+                    });
+                }
+
+            })
+
+            // Validators
+            var validator = $(".edit-profile").kendoValidator({
+                rules: {
+                    required: function (input) {
+                        if (input.is("[required]")) {
+                            return $.trim(input.val()) !== "";
+                        }
+                        return true;
+                    },
+                    alphabetsOnly: function (input) {
+                        if (input.is("[data-rule-alphabets-only]") && input.val()) {
+                            return /^[a-zA-Z]{2,}$/.test(input.val());
+                        }
+                        return true;
+                    },
+                    numbersOnly: function (input) {
+                        if (input.is("[data-rule-numbers-only]") && input.val()) {
+                            return /^[6-9]\d{9}$/.test(input.val());
+                        }
+                        return true;
+                    }
+                },
+                messages: {
+                    required: "This field is required.",
+                    alphabetsOnly: "Only two or more alphabet characters are allowed without spaces.",
+                    numbersOnly: "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9."
+                },
+                errorTemplate: "<span class='k-error'>#=message#</span>"
+            }).data("kendoValidator");
+
+            var validatorpassword = $(".edit-profile-password").kendoValidator({
+                rules: {
+                    required: function (input) {
+                        return $.trim(input.val()) !== "";
+                    },
+                    strongPassword: function (input) {
+                        if (input.is("#newPassword") && input.val()) {
+                            return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\u0040$!%*?&])[A-Za-z\d\u0040$!%*?&]{8,}$/.test(input.val());
+                        }
+                        return true;
+                    },
+                    passwordsMatch: function (input) {
+                        if (input.is("#confirmPassword") && input.val()) {
+                            return input.val() === $("#newPassword").val();
+                        }
+                        return true;
+                    }
+                },
+                messages: {
+                    required: "This field is required.",
+                    strongPassword: "Password must be at least 8 characters, include uppercase, lowercase, digits, and a special character.",
+                    passwordsMatch: "Passwords do not match."
+                },
+                errorTemplate: "<span class='custom-error'>#=message#</span>"
+            }).data("kendoValidator");
+
+            $(".edit-profile input[data-rule-alphabets-only]").on("input", function () {
+                validator.validate();
+            });
+
+            $(".edit-profile input[data-rule-numbers-only]").on("input", function () {
+                validator.validate();
+            });
+
+            $("#newPassword, #confirmPassword").on("input", function () {
+                validatorpassword.validate();
+            });
+
+            $(".btn-trans.ml-0").click(function () {
+                $(".edit-profile").find("#firstName").val("");
+                $(".edit-profile").find("#lastName").val("");
+                $(".edit-profile").find("#phoneNumber").val("");
+                var validator = $(".edit-profile").data("kendoValidator");
+                if (validator) {
+                    validator.hideMessages();
+                }
+
+                $(".edit-profile-password")[0].reset();
+                $("#profileImagePreview").hide();
+                $("#profileImagePreview").attr("src", `${apihost}/userdata/Default.jpeg`).show();
+        @* $("#profileImageInitial").show(); *@
+
+            });
+
+            $("#tabstrip").kendoTabStrip({
+                animation: {
+                    open: {
+                        effects: "fadeIn"
+                    }
+                }
+            });
+
+            $("#borederTabstrip").kendoTabStrip({
+                animation: {
+                    open: {
+                        effects: "fadeIn"
+                    }
+                }
+            });
+
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/Products",
+                        dataType: "jsonp"
+                    }
+                },
+            });
+
+            $("#thumbnail_grid").kendoListView({
+                dataSource: dataSource,
+                selectable: "multiple",
+                template: kendo.template($("#thumnail_template").html())
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

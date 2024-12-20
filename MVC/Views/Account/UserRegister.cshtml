@@ -1,0 +1,231 @@
+﻿@model Repository.Models.User.Post;
+@{
+    ViewData["Title"] = "Sign up";
+}
+
+@{
+    Layout = "Account_Layout";
+}
+<style>
+  
+.forgotpassword-wrapper-window {    
+    color: #333;   
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.forgotpassword-wrapper-window .highlight {
+    font-weight: bold;
+    color: #005555; 
+    display: contents;
+}
+.forgotpassword-wrapper-window p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.loginbtn{
+    background-color: #005555 !important;
+}
+.alert{
+    position: relative; 
+    padding-right: 2rem;
+}
+.alert .btn-close{
+    position: absolute;
+    top: 1.2rem;
+    right: 0.5rem;
+}
+
+</style>
+<div class="login-bg-wrapper d-flex flex-column overflow-auto">
+    <div class="login-logo-header d-flex align-items-center">
+        <a href="/Client/User">
+        
+        <img src="~/assets/theme/images/residize.png" class="login-logo-img" alt="Residize" />
+        </a>
+    </div>
+    <div class="d-flex flex-column flex-md-row">
+        <div class="login-left-wrapper">
+            <div>
+                <img src="~/assets/theme/images/login2.png" alt="Residize" class="login-graphice-img" />
+                <h3 style="color: #005555;">Residize: From Daydreams to Real Estate Dreams.</h3>
+            </div>
+        </div>
+        <div class="login-right-wrapper">
+            <div class="loginpage-box-wrapper">
+                <h2 class="login-title text-dark font-bold">Sign Up</h2>
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-@(TempData["message_type"])">@TempData["message"]!.ToString()!.Trim('"')
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                <form class="loginpage-box-content" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" class="k-textbox login-textbox" placeholder="First Name" asp-for="FirstName">
+                        <span class="login-textbox-icon"><i class="icon-user"></i></span>
+                        <span class="text-danger" asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="k-textbox login-textbox" placeholder="Last Name" asp-for="LastName">
+                        <span class="login-textbox-icon"><i class="icon-user"></i></span>
+                        <span class="text-danger" asp-validation-for="LastName"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="k-textbox login-textbox" placeholder="Email address"
+                            asp-for="EmailAddress">
+                        <span class="login-textbox-icon"><i class="icon-email"></i></span>
+                        <span class="text-danger" asp-validation-for="EmailAddress"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="k-textbox login-textbox" placeholder="Contact number"
+                            asp-for="ContactNumber">
+                        <span class="login-textbox-icon"><i class="icon-call-phone"></i></span>
+                        <span class="text-danger" asp-validation-for="ContactNumber"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="k-textbox login-textbox" id="loginPassword" placeholder="Password"
+                            asp-for="Password">
+                        <span class="login-textbox-icon"><i id="Password" class="icon-locked"></i></span>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="k-textbox login-textbox" id="confirmPasswordField"
+                            placeholder="Confirm Password" asp-for="ConfirmPassword">
+                        <span class="login-textbox-icon"><i id="ConfirmPassword" class="icon-locked"></i></span>
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                    <div class="login-input-checkbox">
+                        <div class="form-group">
+                            <input type="checkbox" class="k-checkbox " id="acceptTs" asp-for="AgreeTerms">
+                            <label class="k-checkbox-label p-0 mb-1" for="acceptTs"></label>
+                            <a style="color: #1f3de7;" class="ms-3" id="License">I Accept end user License
+                                agreement</a>
+                        </div>
+                        <span class="text-danger" asp-validation-for="AgreeTerms"></span>
+                    </div>
+                    <div class="form-group pb-10">
+                        <button type="submit" class="btn btn-primary k-button w100 loginbtn">Sign Up</button>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-dark font-medium">Have an account with us?</span> <a asp-action="Login"
+                            aria-label="Login"
+                            class="forgot-pwd btn-link-trans font-medium text-dark text-primary">Login here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="forgotpassword-wrapper-window mt-login" id="LicenseWindow">
+    <p>
+        @* <span class="highlight">Terms and Conditions for Using Residize:</span> *@
+         <br>
+        Welcome to Residize! By accessing or using our website, you agree to the following terms and conditions:
+    </p>
+    <p><span class="highlight">User Data Collection:</span> 
+        We collect and store your activities, interactions, and preferences while using Residize. This helps us improve
+        your experience, provide tailored services, and enhance the platform’s functionality.
+    </p>
+    <p><span class="highlight">Data Privacy and Security:</span> 
+        Your data is protected and managed in accordance with applicable privacy laws. For detailed information on how
+        we handle your data, please refer to our Privacy Policy. We do not sell or share your personal information with
+        third parties without your consent.
+    </p>
+    <p><span class="highlight">Website Usage:</span> 
+        You agree to use Residize responsibly and for its intended purposes. Activities such as attempting unauthorized
+        access, disrupting the website, or engaging in fraudulent activities are strictly prohibited.
+    </p>
+    <p><span class="highlight">Accuracy and Liability:</span> 
+        While we strive to provide accurate property listings, rent/price predictions, and other content, Residize does
+        not guarantee the absolute accuracy or completeness of the information. We are not liable for any losses
+        resulting from the use of our platform.
+    </p>
+    <p><span class="highlight">Intellectual Property:</span> 
+        All content on Residize, including text, graphics, logos, and algorithms, is the intellectual property of
+        Residize and may not be copied, reproduced, or distributed without our explicit consent.
+    </p>
+    <p><span class="highlight">Changes to Terms:</span> 
+        Residize reserves the right to update or modify these terms at any time. By continuing to use the website after
+        such changes, you agree to the revised terms.
+    </p>
+    <p><span class="highlight">Third-Party Services:</span> 
+        Residize may include links or integrations with third-party services. We are not responsible for the content or
+        practices of these external platforms.
+    </p>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $("#Password").on("click", function () {
+                const passwordInput = $("#loginPassword");
+                const inputType = passwordInput.attr("type");
+
+                if (inputType === "password") {
+                    passwordInput.attr("type", "text");
+                    $(this).removeClass("icon-locked").addClass("icon-unlock");
+                } else {
+                    passwordInput.attr("type", "password");
+                    $(this).removeClass("icon-unlock").addClass("icon-locked");
+                }
+            });
+
+            $("#ConfirmPassword").on("click", function () {
+                const passwordInput = $("#confirmPasswordField");
+                const inputType = passwordInput.attr("type");
+
+                if (inputType === "password") {
+                    passwordInput.attr("type", "text");
+                    $(this).removeClass("icon-locked").addClass("icon-unlock");
+                } else {
+                    passwordInput.attr("type", "password");
+                    $(this).removeClass("icon-unlock").addClass("icon-locked");
+                }
+            });
+
+            $("#LicenseWindow").kendoWindow({
+                width: 500,
+                 height: 450,
+                title: "Terms and Conditions ",
+                visible: false,
+                draggable: false,
+                resizable: false,
+                actions: [
+                    "Close"
+                ],
+                modal: true
+            }).data("kendoWindow");
+
+            $(document).on('click', '#License', function () {
+                $("#LicenseWindow").data("kendoWindow").center().open();
+            });
+            // Remove alert
+            $(document).on("click", ".btn-close", function () {
+                $(this).closest(".alert").fadeOut(300, function () {
+                    $(this).remove();
+                });
+            });
+
+            //user is tabbing
+            function handleFirstTab(e) {
+                document.body.classList.add('user-is-tabbing');
+                document.removeEventListener('keyup', handleFirstTab);
+                document.addEventListener('mousedown', handleMouseDownOnce);
+            }
+
+            function handleMouseDownOnce() {
+                document.body.classList.remove('user-is-tabbing');
+                document.removeEventListener('mousedown', handleMouseDownOnce);
+                document.addEventListener('keyup', handleFirstTab);
+            }
+
+            window.addEventListener('keyup', handleFirstTab);
+        });
+    </script>
+}

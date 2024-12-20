@@ -1,0 +1,251 @@
+@model Repository.Models.User.Login;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@{
+    Layout = "Account_Layout";
+}
+
+
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<link href="~/css/Loader.css" rel="stylesheet" type="text/css" />
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+<style>
+    .loginbtn {
+        background-color: #005555 !important;
+
+    }
+    .alert {
+        position: relative;
+        padding-right: 2rem;
+    }
+    .alert .btn-close {
+        position: absolute;
+        top: 1.1rem;
+        right: 0.5rem;
+    }
+</style>
+<div class="login-bg-wrapper d-flex flex-column">
+    <div class="login-logo-header d-flex align-items-center">
+        <a href="/Client/User">
+
+            <img src="~/assets/theme/images/residize.png" class="login-logo-img" alt="Residize" />
+        </a>
+    </div>
+    <div class="login-graphic-wrapper flex-1 overflow-auto d-flex flex-wrap">
+        <div class="login-left-wrapper">
+            <div>
+                <img src="~/assets/theme/images/login2.png" alt="Residize" class="login-graphice-img" />
+                <h3 style="color: #005555;">Residize: From Daydreams to Real Estate Dreams.</h3>
+            </div>
+
+        </div>
+
+
+        <div class="custom-loader" id="loader" style="display: none;">
+            <div class="logo-wrapper">
+                <img src="../Images/logo.png" alt="Loading..." />
+                <div class="rotating-dot"></div>
+            </div>
+        </div>
+
+        <div class="login-right-wrapper">
+            <div class="loginpage-box-wrapper">
+                <h2 class="login-title text-dark font-bold">Sign In</h2>
+                @if (TempData["message"] != null)
+                {
+                    if (TempData["message_type"] == null)
+                    {
+                        <div class="alert alert-danger">@TempData["message"]!.ToString()!.Trim('"')
+                            <button type="button" class="btn-close" aria-label="Close"></button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-@TempData["message_type"]">@TempData["message"]!.ToString()!.Trim('"')
+                            <button type="button" class="btn-close" aria-label="Close"></button>
+                        </div>
+                    }
+                }
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]!.ToString()!.Trim('"')
+                        <button type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                }
+
+                <form class="login" method="post">
+                    <div class="loginpage-box-content">
+                        <div class="form-group">
+                            <input type="email" class="k-textbox login-textbox" placeholder="Email"
+                                asp-for="EmailAddress">
+                            <span class="login-textbox-icon"><i class="icon-email"></i></span>
+                            <span class="text-danger" asp-validation-for="EmailAddress"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="k-textbox login-textbox" id="loginPassword"
+                                placeholder="Password" asp-for="Password">
+                            <span class="login-textbox-icon"><i id="Password" class="icon-locked"></i></span>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-group pb-10">
+                            <button type="submit" class="btn btn-primary k-button w100 loginbtn">Log In</button>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="forgot-pwd btn-link-trans font-medium text-dark outline-dark"
+                                aria-label="Forgot password" id="forgotpassword">Forgot Password?</button>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-dark font-medium">Don't Have an Account?</span> <a
+                                asp-action="UserRegister" aria-label="Login"
+                                class="forgot-pwd btn-link-trans font-medium text-dark text-primary">Register Here</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Forgot password window-->
+<div class="forgotpassword-wrapper-window mt-login" id="ForgotPasswordWindow">
+    <div class="form-group mt-10">
+        <input type="text" class="mt-input" id="forgotPasswordEmail" required>
+        <span class="mt-bar"></span>
+        <label class="mt-label">Enter your Email</label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary k-button w100 loginbtn" aria-label="Forgot password" id="forgotpasswordbtn">Send
+            Request</button>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="../../js/loginKenoValidation.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                $("#loader").fadeIn();
+            }).ajaxStop(function () {
+                $("#loader").fadeOut();
+            });
+
+            $(document).on('click','.btn-close',function(){
+                $(this).closest('.alert').fadeOut(300,function(){
+                    $(this).remove();
+                });
+            });
+
+            $("#Password").on("click", function () {
+                const passwordInput = $("#loginPassword");
+                const inputType = passwordInput.attr("type");
+
+                if (inputType === "password") {
+                    passwordInput.attr("type", "text");
+                    $(this).removeClass("icon-locked").addClass("icon-unlock");
+                } else {
+                    passwordInput.attr("type", "password");
+                    $(this).removeClass("icon-unlock").addClass("icon-locked");
+                }
+            });
+
+            $("#ForgotPasswordWindow").kendoWindow({
+                width: 450,
+                title: "Forgot Password",
+                visible: false,
+                draggable: false,
+                resizable: false,
+                actions: [
+                    "Close"
+                ],
+                modal: true
+            }).data("kendoWindow");
+
+            $("#forgotpasswordbtn").on("click", function () {
+
+                var forgotPasswordEmail = $("#forgotPasswordEmail").val();
+
+                $.ajax({
+                    url: "/Account/Forgotpassword",
+                    type: "POST",
+                    data: { EmailAddress: forgotPasswordEmail },
+                    success: function (response) {
+                        console.log(response.message, "dhruvresponse");
+
+                        if (response.success) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success!",
+                                text: response.message,
+                            });
+                            $("#forgotPasswordEmail").val("");
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops!",
+                                text: response.message,
+                            });
+
+                            $("#forgotPasswordEmail").val("");
+                        }
+                    },
+
+                });
+
+
+            });
+
+            $(document).on('click', '#forgotpassword', function () {
+                $("#ForgotPasswordWindow").data("kendoWindow").center().open();
+
+            });
+
+            $("#LicenseWindow").kendoWindow({
+                width: 450,
+                title: "License agreement",
+                visible: false,
+                draggable: false,
+                resizable: false,
+                actions: [
+                    "Close"
+                ],
+                modal: true
+            }).data("kendoWindow");
+
+            $(document).on('click', '#License', function () {
+                $("#LicenseWindow").data("kendoWindow").center().open();
+            });
+
+            //user is tabbing
+            function handleFirstTab(e) {
+                document.body.classList.add('user-is-tabbing');
+                document.removeEventListener('keyup', handleFirstTab);
+                document.addEventListener('mousedown', handleMouseDownOnce);
+            }
+
+            function handleMouseDownOnce() {
+                document.body.classList.remove('user-is-tabbing');
+                document.removeEventListener('mousedown', handleMouseDownOnce);
+                document.addEventListener('keyup', handleFirstTab);
+            }
+
+            window.addEventListener('keyup', handleFirstTab);
+
+            $(document).on('click', '.btn-close', function () {
+                $(this).closet('.alert').fadeOut(300, function () {
+                    $(this).remove();
+                });
+            });
+        })
+    </script>
+}

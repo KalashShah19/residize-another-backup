@@ -1,0 +1,1800 @@
+<!-- /*
+* Template Name: Property
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+
+@{
+  Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Untree.co" />
+  <link rel="shortcut icon" href="favicon.png" />
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap5" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css" />
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+  <link rel="stylesheet" href="css/tiny-slider.css" />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+
+  <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> *@
+  @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous"> *@
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- css -->
+  <link href="../../App_Themes/Default/css/core-pocket.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    .testimonailicon {
+      display: flex;
+      /* background-color: aqua; */
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+    }
+
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltip-container .tooltip-text {
+      visibility: hidden;
+      width: 220px;
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 12px;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      /* Place it above the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .fa-eye,
+    .fa-eye-slash {
+      font-size: 20px;
+      color: #aaa;
+    }
+
+    /* Fix hover area and star alignment */
+    .k-rating-item {
+      display: inline-flex;
+      /* Ensure proper alignment */
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      /* Adjust for desired star size */
+      height: 45px;
+      /* Adjust for desired star size */
+      cursor: pointer;
+    }
+
+    /* Adjust icon size */
+    .k-rating-item .k-icon {
+      font-size: 30px;
+      /* Match the desired star size */
+    }
+
+    .review-form {
+      color: #007777
+    }
+
+    .k-rating-icon-focus-selected-shadow {
+      box-shadow: 2px 3px rgb(99, 175, 33), 0 4px 16px rgba(208, 47, 47, 0.12);
+    }
+
+    .k-dialog .k-button {
+      float: "right";
+      margin-right: 10px;
+    }
+
+    .k-rating-container {
+      height: 50px;
+    }
+
+    .k-button-solid-primary {
+      background-color: #007777;
+    }
+
+    .k-button {
+      height: 42px;
+    }
+
+    .k-dialog-actions .k-actions .k-hstack .k-justify-content-stretch {
+      justify-content: end;
+      align-items: end;
+    }
+
+    .custom-style {
+      margin: 0;
+      color: #fff;
+    }
+
+    #reviewDialog {
+      width: 420px;
+      height: 320px;
+    }
+
+    #testimonial-slider {
+      display: flex;
+      /* Enables horizontal layout */
+      gap: 1rem;
+      /* Adds spacing between items */
+      overflow-x: auto;
+      /* Allows scrolling if content overflows */
+      scroll-snap-type: x mandatory;
+      /* Enables snapping for better usability */
+    }
+
+    #testimonial-slider {
+      scroll-behavior: smooth;
+    }
+
+    #testimonial-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    #testimonial-slider .item {
+      scroll-snap-align: start;
+      /* Aligns items to the start during snapping */
+      flex: 0 0 auto;
+      /* Ensures each item maintains its width */
+      max-width: 300px;
+      /* Optional: Define the max width for items */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      /* Optional: Adds a subtle shadow */
+    }
+  </style>
+
+
+  <title>
+    Residize
+  </title>
+</head>
+
+<body>
+  <div id="reviewDialog"></div>
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <header class="main-header">
+    <nav class="mt-navbar">
+      <div class="nav-left" id="dvLeftMenu" data-role="aratooltipv2">
+        <div class="logo-wrapper ms-5">
+          <img src="../../App_Themes/Default/images/residize-white.png" />
+        </div>
+        <ul class="left-menu list-unstyled list-inline">
+          @* <li class="separator"></li>
+                    <li class="active project-item"><a class="noPointer ellipsis" title="CorePocket">CorePocket</a></li> *@
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul class="user-menu">
+          @* <p style="color: white;">Residize AI</p> *@
+          <li class="support-mail-wrapper">
+            <a class="help">
+              <a href="../AI/index" class="icon">Residize AI</a>
+
+            </a>
+          </li>
+          @* <li class="notification-item item">
+            <a href="javascript:void(0)">
+              <span class="icon"><i class="icon-notification"></i></span>
+              <span class="counts">12</span>
+            </a>
+          </li> *@
+          <li class="separator"></li>
+          <li class="userprofile-item userprofile dropdown " id="toggleIcon">
+            <a href="javascript:void(0)">
+
+              <span><span class="navuser-ellipse" id="displayUserName"></span><br /><small>Space
+                  Client</small></span>
+              <span class="dw-icon"><i class="icon-arrow-down"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- #header -->
+
+
+  <!-- user profile -->
+  <div class="userprofile-menu dropdown-menu">
+    <div class="usermenu-wrap">
+      <div class="main-up">
+        <div class="userprofile-content-wrapper">
+          <div class="brief">
+            <div class="img-circle">
+              <img src="#" id="previewImage" name="previewImage" class="img-fluid" style="display: none;  " alt="" />
+            </div>
+
+          </div>
+          <div class="a-box">
+            <a id="settings"><i class="icon-setting"></i><span class="text-dark text-semibold">Settings</span></a>
+            <a class="bl-0" id="btnLogout">
+              <i class="icon-logout text-danger"></i>
+              <span class="text-dark text-semibold">Logout</span>
+            </a>
+          </div>
+          <div class="bottom-block">
+            <div class="userprofile-info d-flex align-items-center">
+              <span class="userprofile-info-icon"><i class="icon-user"></i></span>
+              <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                <span class="text-muted d-block ellipsis mb-5">Full Name</span>
+                <span class="text-dark d-block ellipsis fs-15" id="txtfirstName"></span>
+              </div>
+            </div>
+            <div class="userprofile-info d-flex align-items-center">
+              <span class="userprofile-info-icon"><i class="icon-user"></i></span>
+              <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                <span class="text-muted d-block ellipsis mb-5">Last Name</span>
+                <span class="text-dark d-block ellipsis fs-15" id="txtlastName"></span>
+              </div>
+            </div>
+            <div class="userprofile-info d-flex align-items-center">
+              <span class="userprofile-info-icon"><i class="icon-email"></i></span>
+              <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                <span class="text-muted d-block ellipsis mb-5">Email</span>
+                <span class="text-dark d-block ellipsis fs-15" id="txtEmail"></span>
+              </div>
+            </div>
+            <div class="userprofile-info d-flex align-items-center">
+              <span class="userprofile-info-icon"><i class="fas fa-phone"></i></span>
+              <div class="flex-1 overflow-hidden font-semi-bold ml-15">
+                <span class="text-muted d-block ellipsis mb-5">Phone Number</span>
+                <span class="text-dark d-block ellipsis fs-15" id="txtPhoneNumber"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settings">
+        <div class="head">
+          <a class="back"><i class="icon-arrow-left"></i></a>
+          <h3>Settings</h3>
+        </div>
+        <!-- tab strip -->
+        <div id="tabstrip" class="h100">
+          <ul>
+            <li class="k-state-active">
+              Edit Profile
+            </li>
+            <li>
+              Change Password
+            </li>
+          </ul>
+          <div>
+            <div class="setting-footer">
+              <a class="btn btn-trans close" id="btnclose">Close</a>
+              <a class="btn btn-trans ml-0">Reset</a>
+              <a class="btn btn-primary" id="btnUpdateProfile">Update</a>
+            </div>
+            <form class="edit-profile" enctype="multipart/form-data">
+              <div class="brief">
+                <div class="img-circle">
+                  <img id="profileImagePreview" src="#" style="display: none;" />
+                  <span id="profileImageInitial" style="display: inline-block;">R</span>
+                </div>
+                <input type="hidden" id="oldImagePath" />
+                <span class="input-pic">
+                  <input type="file" id="fileProfileImage" name="fileProfileImage" title="Change Photo">
+                  <i class="icon-photo"></i>Change Photo
+                </span>
+                <a class="resetPhoto" id="resetPhoto"><i class="icon-delete"></i>Reset Photo</a>
+              </div>
+              <div class="edit-profile-details">
+                @* <div class="form-group">
+                  <label>User Name</label>
+                  <input class="form-control" id="userName" name="userName" readonly type="text" />
+                </div> *@
+                <div class="form-group">
+                  <div class="half">
+                    <label>First Name</label>
+                    <input class="form-control" type="text" id="firstName" name="firstName"
+                      placeholder="Enter your first name" required data-rule-alphabets-only="true" />
+                  </div>
+                  <div class="half">
+                    <label>Last Name</label>
+                    <input class="form-control" type="text" id="lastName" name="lastName"
+                      placeholder="Enter your last name" required data-rule-alphabets-only="true" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input class="form-control" type="email" readonly id="email" name="email" />
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input class="form-control" required data-rule-numbers-only type="text" id="phoneNumber"
+                    name="phoneNumber" minlength="10" maxlength="10" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div>
+              <form class="edit-profile-password">
+                <div class="edit-profile-details">
+
+                  <div class="form-group">
+                    <label>Current Password</label>
+                    <div class="password-container">
+                      <input class="form-control" type="password" id="currentPassword" required name="currentPassword"
+                        placeholder="Current Password" />
+                      <span class="toggle-password" onclick="togglePassword('currentPassword')">
+                        <i class="fa fa-eye-slash"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>New Password
+                      <span class="tooltip-container">
+                        <i class="icon-info-unfill text-muted"></i>
+                        <span class="tooltip-text">Password should be at least 8 characters long
+                          and include uppercase, lowercase, and special characters.</span>
+                      </span>
+                    </label>
+                    <div class="password-container">
+                      <input class="form-control" type="password" name="newPassword" id="newPassword" required
+                        placeholder="New Password" />
+                      <span class="toggle-password" onclick="togglePassword('newPassword')">
+                        <i class="fa fa-eye-slash"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="password-container">
+                      <input class="form-control" type="password" name="confirmPassword" required id="confirmPassword"
+                        placeholder="Re-type New Password" />
+                      <span class="toggle-password" onclick="togglePassword('confirmPassword')">
+                        <i class="fa fa-eye-slash"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <br><br>
+            <div>
+              <span id="errorMessage"></span>
+            </div>
+            <div class="setting-footer">
+              <a class="btn btn-trans close" id="btnclosePass">Close</a>
+              <a class="btn btn-trans ml-0">Reset</a>
+              <a class="btn btn-primary" id="btnChangePassword">Save</a>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hero-slide">
+      <div class="img overlay" style="background-image: url('images/hero_bg_3.jpg')"></div>
+      <div class="img overlay" style="background-image: url('images/hero_bg_2.jpg')"></div>
+      <div class="img overlay" style="background-image: url('images/hero_bg_1.jpg')"></div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-9 text-center">
+          <h1 class="heading" data-aos="fade-up">
+            Easiest way to find your dream home
+          </h1>
+          <form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+            data-aos-delay="200">
+            <input type="text" class="form-control px-4" placeholder="Your ZIP code or City. e.g. New York" />
+            @* <button type="submit" class="btn btn-primary">Search</button> *@
+            <div class="searchdbtn text-center text-white">
+              Search
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-10">
+          <h2 class="font-weight-bold text-primary heading">
+            Popular Properties
+          </h2>
+        </div>
+        <div class="col-lg-2 text-center">
+          @* <div class="dashboardbtn text-white">
+            View all properties
+          </div> *@
+          <a type="submit" asp-action="ViewProperty" class="dashboardbtn text-white">View all properties</a>
+          @* <p>
+            <a href="#" target="_blank" class="text-white py-3 px-4">View all properties</a>
+          </p> *@
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="property-slider-wrap">
+            <div class="property-slider">
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
+                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
+                      See details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+            </div>
+
+            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+              <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
+              <span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <section class="features-1">
+    <div class="container">
+      <div class="d-flex d-grid gap-5  fade-up delay-300">
+        <div class="">
+          <div class="box-feature">
+            <span class="flaticon-house"></span>
+            <h3 class="mb-3">Our Properties</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates, accusamus.
+            </p>
+            <p><a href="#" class="learn-more">Learn More</a></p>
+          </div>
+        </div>
+        <div class="">
+          <div class="box-feature">
+            <span class="flaticon-building"></span>
+            <h3 class="mb-3">Property for Sale</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates, accusamus.
+            </p>
+            <p><a href="#" class="learn-more">Learn More</a></p>
+          </div>
+        </div>
+        <div class="">
+          <div class="box-feature">
+            <span class="flaticon-house-3"></span>
+            <h3 class="mb-3">Real Estate Agent</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates, accusamus.
+            </p>
+            <p><a href="#" class="learn-more">Learn More</a></p>
+          </div>
+        </div>
+        <div class="">
+          <div class="box-feature">
+            <span class="flaticon-house-1"></span>
+            <h3 class="mb-3">House for Sale</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptates, accusamus.
+            </p>
+            <p><a href="#" class="learn-more">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section sec-testimonials">
+    <div id="msgContainer" class="align-items-center" style="width=100%">
+      <span id="reviewMessage"></span>
+    </div>
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+          <h2 class="font-weight-bold heading text-primary mb-4 mb-2 mb-2">
+            Customer Says
+          </h2>
+          <p id="reviewMsg"></p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <button class="btn icon-add_shopping_cart mb-5" id="showReviewDialog"
+            style="background-color: #007777;border-radius:15px;height:50px;10px; font-size 22px; padding: 1px 16px; color:white;margin">
+            Give a review</button>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 mt-20"></div>
+      </div>
+      <div class="testimonial-slider-wrap">
+        <div class="testimonial-slider" id="testimonial-slider">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-4 bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-5">
+          <h2 class="font-weight-bold heading text-primary mb-4">
+            Let's find home that's perfect for you
+          </h2>
+          <p class="text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            enim pariatur similique debitis vel nisi qui reprehenderit.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-between mb-5">
+        <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+          <div class="img-about dots">
+            <img src="images/hero_bg_3.jpg" alt="Image" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex feature-h">
+            <span class="wrap-icon me-3">
+              <span class="icon-home2"></span>
+            </span>
+            <div class="feature-text">
+              <h3 class="heading">2M Properties</h3>
+              <p class="text-black-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nostrum iste.
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex feature-h">
+            <span class="wrap-icon me-3">
+              <span class="icon-person"></span>
+            </span>
+            <div class="feature-text">
+              <h3 class="heading">Top Rated Agents</h3>
+              <p class="text-black-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nostrum iste.
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex feature-h">
+            <span class="wrap-icon me-3">
+              <span class="icon-security"></span>
+            </span>
+            <div class="feature-text">
+              <h3 class="heading">Legit Properties</h3>
+              <p class="text-black-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nostrum iste.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="row justify-content-center footer-cta">
+      <div class="col-lg-7 mx-auto text-center">
+        <h2 class="mb-4">Be a part of our growing real state agents</h2>
+        <p class="">
+          @* <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Apply for Real Estate agent</a> *@
+        <div class="agentdbtn text-white">
+          Apply for Real Estate agent
+        </div>
+        </p>
+      </div>
+      <!-- /.col-lg-7 -->
+    </div>
+    <!-- /.row -->
+  </div>
+
+  <div class="section section-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-6 mb-5">
+          <h2 class="font-weight-bold heading text-primary mb-4">
+            Our Agents
+          </h2>
+          <p class="text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            enim pariatur similique debitis vel nisi qui reprehenderit totam?
+            Quod maiores.
+          </p>
+        </div>
+      </div>
+      <div class="row Agents">
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="h-100 person">
+            <img src="images/person_1-min.jpg" alt="Image" class="img-fluid" />
+
+            <div class="person-contents">
+              <h2 class="mb-0"><a href="#">James Doe</a></h2>
+              <span class="meta d-block mb-3">Real Estate Agent</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Facere officiis inventore cumque tenetur laboriosam, minus
+                culpa doloremque odio, neque molestias?
+              </p>
+
+              <ul class="social list-unstyled list-inline dark-hover">
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="h-100 person">
+            <img src="images/person_2-min.jpg" alt="Image" class="img-fluid" />
+
+            <div class="person-contents">
+              <h2 class="mb-0"><a href="#">Jean Smith</a></h2>
+              <span class="meta d-block mb-3">Real Estate Agent</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Facere officiis inventore cumque tenetur laboriosam, minus
+                culpa doloremque odio, neque molestias?
+              </p>
+
+              <ul class="social list-unstyled list-inline dark-hover">
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="h-100 person">
+            <img src="images/person_3-min.jpg" alt="Image" class="img-fluid" />
+
+            <div class="person-contents">
+              <h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
+              <span class="meta d-block mb-3">Real Estate Agent</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Facere officiis inventore cumque tenetur laboriosam, minus
+                culpa doloremque odio, neque molestias?
+              </p>
+
+              <ul class="social list-unstyled list-inline dark-hover">
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Contact</h3>
+            <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+            <ul class="list-unstyled links">
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+              <li>
+                <a href="mailto:info@mydomain.com">info@mydomain.com</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Sources</h3>
+            <ul class="list-unstyled float-start links">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Vision</a></li>
+              <li><a href="#">Mission</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+            <ul class="list-unstyled float-start links">
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Creative</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Links</h3>
+            <ul class="list-unstyled links">
+              <li><a href="#">Our Vision</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+
+            <ul class="list-unstyled social">
+              <li>
+                <a href="#"><span class="icon-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-pinterest"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-dribbble"></span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <!-- 
+              **==========
+              NOTE: 
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              **==========
+            -->
+
+          <p>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . All Rights Reserved. &mdash; Designed with love by
+            <a href="https://untree.co">Untree.co</a>
+            <!-- License information: https://untree.co/license/ -->
+          </p>
+          <div>
+            Distributed by
+            <a href="https://themewagon.com/" target="_blank">themewagon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.site-footer -->
+
+  <!-- Preloader -->
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/custom.js"></script>
+
+
+
+
+  @* <script src="../../Scripts/Kendo/jquery.min.js"></script>
+  <script src="../../Scripts/Kendo/kendo.all.min.js"></script>
+  <script src="../../Scripts/CLARENT/Other/Custom/Custom.js"></script>
+   <script src="../../notification/script.js"></script> *@
+  <script src="../../Scripts/Kendo/jquery.min.js"></script>
+  <script src="../../Scripts/Kendo/kendo.all.min.js"></script>
+  <script src="../../Scripts/CLARENT/Other/Custom/Custom.js"></script>
+  <script src="../../notification/script.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2023.3.1010/js/kendo.all.min.js"></script>
+  <link href="https://kendo.cdn.telerik.com/2023.3.1010/styles/kendo.default-v2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const apihost = "http://localhost:5293";
+  </script>
+  <script>
+    GetReviews();
+
+    function GetReviews() {
+      $.ajax({
+        url: 'http://localhost:5293/api/ReviewAPI/GetReviews?id=' + @ViewBag.Id,
+        method: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          if (response) {
+            const sliderContainer = $('#testimonial-slider');
+            sliderContainer.empty();
+            response.map(testimonial => {
+              const itemHTML = `
+        <div id="iconsupport-${testimonial.userId}" class="item border rounded p-2 position-relative" style="width:500px">
+      <a id="delete-${testimonial.userId}" onClick="deleteReview(this.id)" class="deleteIcon  widthbtn position-absolute top-1 end-0 me-2" ><i class='fa fa-trash fa-2x'></i></a>
+      <div class="testimonial" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <img 
+    src="http://localhost:5293/${testimonial.imagePath}" 
+    alt="Image" 
+    class="image-preview rounded-circle mb-4" 
+    style="width: 125px; height: 125px; object-fit: cover;" 
+  />
+  <div class="rate">
+    ${getStarsHTML(testimonial.rating)}
+  </div>
+  <h3 class="h5 text-primary mb-4">${testimonial.username}</h3>
+  <blockquote class="ms-0">
+    <p>${testimonial.comments}</p>
+  </blockquote>
+  <p class="text-black-50">${testimonial.createdAt}</p>
+</div>
+
+    </div>
+`;
+              sliderContainer.append(itemHTML);
+              if (`${@ViewBag.Id}` !== `${testimonial.userId}`) {
+                console.log('Yes matching ');
+                $(`#iconsupport-${testimonial.userId} .deleteIcon`).hide();
+              } else $('#showReviewDialog').hide();
+            });
+
+          }
+        },
+        error: function (error) {
+          console.log('Error fetching testimonials:', error);
+        }
+      });
+    }
+
+    function getStarsHTML(rating) {
+      let starsHTML = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+          starsHTML += `<span class="icon-star text-warning"></span>`;
+        } else {
+          starsHTML += `<span class="icon-star text-muted"></span>`;
+        }
+      }
+      return starsHTML;
+    }
+    function deleteReview(id) {
+      var c = id.split('-');
+      $.ajax({
+        url: 'http://localhost:5293/api/ReviewAPI/DeleteReview?id=' + c[1],
+        method: 'POST',
+        success: function (data) {
+          showMessage('msgContainer', 'reviewMessage', 'success', data);
+          GetReviews();
+          $('#showReviewDialog').show();
+        },
+        error: function (error) {
+          if (error.responseJSON) {
+            showMessage('msgContainer', 'reviewMessage', 'danger', error.responseJSON.toString());
+          }
+        }
+      });
+    }
+
+    var dialogContent = `<div class="review-form" >
+        <h3 style="margin-bottom:15px"><image src="/Images/logo.png" alt="logo"/>Share your experience</h3>
+          <form id="reviewForm" method="post" >
+            <div class="form-group">
+              <legend class="form-label">Comment</legend>
+              <textarea id="comment" class="k-textbox" style="width:100%" rows="4" cols="500" />
+            </div>
+            <div >
+              <legend for="starRating" class="form-label">Rating</legend>
+              <input id="starRating" style="border:none;font-size:30px;height:45px;"/>
+            </div>
+          </form>
+          <div class="mt-4 fs-20"><strong id="formError" class="text-danger" ></strong></div>
+        </div>`;
+    var dialog = $('#reviewDialog').kendoDialog({
+      title: "Share your experience",
+      content: dialogContent,
+      visible: false,
+      actions: [
+        {
+          text: '<p class="custom-style">Add review</p>',
+          primary: true,
+          action: function () {
+            if (!$('#comment').val().trim() || $('#starRating').data('kendoRating').value() == null) {
+              $('#formError').text("*Comment cannot be empty and Rating cannot be 0");
+              return false;
+            }
+            var formData = new FormData();
+            formData.append('UserId', @ViewBag.Id);
+            formData.append('Rating', $('#starRating').data('kendoRating').value());
+            formData.append('Comments', $('#comment').val());
+            $.ajax({
+              url: 'http://localhost:5293/api/ReviewAPI/AddReviews',
+              method: 'POSt',
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function (data) {
+                GetReviews();
+                showMessage('msgContainer', 'reviewMessage', 'success', data);
+                console.log(data);
+              },
+              error: function (error) {
+                if (error.responseJSON) {
+                  showMessage('msgContainer', 'reviewMessage', 'danger', error.responseJSON.toString());
+                }
+
+              }
+            });
+
+          }
+        },
+        {
+          text: "Cancel"
+        }
+      ],
+      open: function () {
+        $('#formError').text("");
+        if ($('#starRating').data('kendoRating')) $('#starRating').data('kendoRating').value(null);
+        if ($('#reviewForm')[0]) $('#reviewForm')[0].reset();
+        if (!$('#starRating').data("kendoRating")) {
+          $('#starRating').kendoRating({
+            min: 1,
+            max: 5,
+            selection: "continuous",
+            label: false,
+          });
+
+        }
+      },
+      animation: {
+        open: {
+          effects: "fade:in"
+        },
+        close: {
+          effects: "fade:out"
+        }
+      }
+    }).data("kendoDialog");
+
+    function showMessage(containerId, elementId, cls, msg) {
+
+      $('#' + containerId).removeClass().addClass('alert alert-' + cls);
+      $('#' + elementId).text(msg);
+      $('#' + containerId).fadeIn('fast'); // Ensure visibility before fadeOut
+      setTimeout(function () {
+        $('#' + containerId).fadeOut('slow');
+      }, 3000);
+    }
+
+    $('#showReviewDialog').on('click', () => dialog.open());
+
+    function togglePassword(fieldId) {
+      const passwordField = document.getElementById(fieldId);
+      const container = passwordField.parentNode;
+      const icon = container.querySelector('.toggle-password i');
+
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      } else {
+        passwordField.type = "password";
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      }
+    }
+    $(document).ready(function () {
+      $("#btnLogout").click(function () {
+        $.ajax({
+          url: '/Account/Logout',
+          type: 'POST',
+          success: function (response) {
+            window.location.href = '/Client/User';
+          },
+          error: function (xhr, status, error) {
+            alert("Logout failed: " + error);
+          }
+        });
+      });
+
+      const elements = document.querySelectorAll(".fade-up");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      });
+
+      elements.forEach((el) => observer.observe(el));
+
+    @* $("select:not([multiple])").kendoDropDownList();
+      //Kendo File Upload
+      $("#fileProfileImage").kendoUpload({
+        showFileList: false,
+        multiple: false,
+        localization: { select: 'Select File' }
+      }); *@
+        let selectedImage = null;
+      userSessionId = @ViewBag.Id;
+      const defaultImagePath = 'http://localhost:5293/default.png';
+      $.ajax({
+        url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+        type: 'GET',
+        data: { id: userSessionId },
+        dataType: 'json',
+        success: function (response) {
+          console.log(`${apihost}/${response.imagePath}`);
+          console.log(response.imagePath);
+          console.log(response);
+          $("#txtUsername").text(response.emailAddress);
+          $("#txtfirstName").text(response.firstName);
+          $("#txtlastName").text(response.lastName);
+          $("#txtEmail").text(response.emailAddress);
+          $("#txtPhoneNumber").text(response.contactNumber);
+          $("#displayUserName").text(response.emailAddress);
+
+          const constructedUrl = response.imagePath && response.imagePath.trim() !== ""
+            ? `${apihost}/${response.imagePath.replace(/\\/g, '/')}`
+            : defaultImagePath;
+
+          if (selectedImage) {
+            formData.append("ImagePath", selectedImage.name); // Pass the image name as `ImagePath`
+            formData.append("ImageFile", selectedImage);
+            console.log("Image appended to FormData:", selectedImage.name);
+          } else {
+            const oldImagePath = $("#oldImagePath").val();
+            formData.append("ImagePath", oldImagePath);
+            console.log("No image selected. Old path appended to FormData:", oldImagePath);
+          }
+
+        },
+        error: function (xhr, status, error) {
+        }
+      });
+
+      $("#fileProfileImage").change(function (e) {
+        const files = e.target.files;
+        if (files && files.length > 0) {
+          selectedImage = files[0];
+          console.log("Selected file:", selectedImage);
+
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            $("#profileImageInitial").hide();
+            $("#profileImagePreview").attr("src", event.target.result).show();
+          };
+          reader.readAsDataURL(selectedImage);
+        } else {
+          console.log("No file selected");
+          selectedImage = null;
+        }
+      });
+      $("#fileProfileImage").kendoUpload({
+        showFileList: false,
+        multiple: false,
+        localization: { select: 'Select File' },
+        select: function (e) {
+          var file = e.files[0];
+
+          reader.onload = function (e) {
+            $("#profileImageInitial").hide();
+            $("#profileImagePreview").attr("src", e.target.result).show();
+            console.log("New image loaded");
+          };
+        },
+
+        success: function (e) {
+          console.log("File uploaded successfully:", e.files[0].name);
+        },
+
+        error: function (e) {
+          console.log("Error occurred during file upload:", e);
+          alert("Error uploading file: " + e.files[0].name);
+        }
+      });
+      $(".icon-delete").click(function () {
+        $("#fileProfileImage").val("");
+        $("#profileImagePreview").hide();
+        $("#profileImageInitial").show();
+      });
+
+      $(".resetPhoto").click(function () {
+        //$("#fileProfileImage").val("");
+        $("#profileImagePreview").hide();
+        // $("#profileImageInitial").show();
+        $("#profileImagePreview").attr("src", `${apihost}/userdata/Default.jpeg`).show();
+      });
+
+      //btnclose
+      $("#btnclose").click(function () {
+        var validator = $(".edit-profile").data("kendoValidator");
+        if (validator) {
+          validator.hideMessages();
+        }
+        var validatorpassword = $(".edit-profile-password").data("kendoValidator");
+        if (validatorpassword) {
+          validatorpassword.hideMessages();
+        }
+      });
+      $("#btnclosePass").click(function () {
+        $(".edit-profile-password")[0].reset();
+        var validatorpassword = $(".edit-profile-password").data("kendoValidator");
+        if (validatorpassword) {
+          validatorpassword.hideMessages();
+        }
+      });
+
+
+
+
+
+      $("#settings").click(function () {
+
+        $.ajax({
+          url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+          type: 'GET',
+          data: { id: userSessionId },
+          dataType: 'json',
+          success: function (response) {
+            $("#firstName").val(response.firstName);
+            $("#lastName").val(response.lastName);
+            $("#email").val(response.emailAddress);
+            $("#phoneNumber").val(response.contactNumber);
+            $("#previewImage").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+            $("#userName").val(response.firstName + " " + response.lastName);
+            var validator = $(".edit-profile").data("kendoValidator");
+            if (validator) {
+              validator.hideMessages();
+            }
+          },
+          error: function (xhr, status, error) {
+          }
+        });
+
+      });
+
+
+      $("#toggleIcon").click(function () {
+        ClearText();
+        $.ajax({
+          url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',
+          type: 'GET',
+          data: { id: userSessionId },
+          dataType: 'json',
+          success: function (response) {
+            $("#firstName").val(response.firstName);
+            $("#lastName").val(response.lastName);
+            $("#email").val(response.emailAddress);
+            $("#phoneNumber").val(response.contactNumber);
+            $("#userName").val(response.emailAddress);
+            const formattedPath = `${apihost}/${response.imagePath.replace(/\\/g, '/')}`;
+            $("#previewImage").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+            $("#profileImagePreview").attr("src", `${apihost}/${response.imagePath.replace(/\\/g, '/')}`).show();
+            $("#oldImagePath").val(response.imagePath);
+            $("#txtUsername").text(response.emailAddress);
+            $("#txtfirstName").text(response.firstName);
+            $("#txtlastName").text(response.lastName);
+            $("#txtEmail").text(response.emailAddress);
+            $("#txtPhoneNumber").text(response.contactNumber);
+            $("#displayUserName").text(response.emailAddress);
+            var validator = $(".edit-profile").data("kendoValidator");
+            if (validator) {
+              validator.hideMessages();
+            }
+          },
+          error: function (xhr, status, error) {
+          }
+        });
+      });
+
+      $("#btnUpdateProfile").click(function () {
+        var isFormValid = validator.validate();
+        if (isFormValid) {
+          const formData = new FormData();
+          formData.append("Id", userSessionId);
+          formData.append("FirstName", $("#firstName").val());
+          formData.append("LastName", $("#lastName").val());
+          formData.append("EmailAddress", $("#email").val());
+          formData.append("ContactNumber", $("#phoneNumber").val());
+
+          if (selectedImage) {
+            formData.append("ImagePath", selectedImage.name);
+            formData.append("ImageFile", selectedImage);
+            console.log("Image appended to FormData:", selectedImage.name);
+          } else {
+            const oldImagePath = $("#oldImagePath").val();
+            formData.append("ImagePath", oldImagePath);
+            console.log("No image selected. Old path appended to FormData:", oldImagePath);
+          }
+
+          $.ajax({
+            url: 'http://localhost:5293/api/AccountAPI/UpdateProfile',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Profile updated successfully.',
+              });
+              console.log("Server response:", response);
+            },
+            error: function (xhr, status, error) {
+              Swal.fire({
+                icon: 'error',
+                title: 'Update Failed',
+                text: 'There was an error updating the profile. Please try again.',
+              });
+              console.error("Error during upload:", xhr.responseText);
+            },
+          });
+        }
+
+      });
+      function ClearText() {
+        $("#currentPassword").val('');
+        $("#newPassword").val('');
+        $("#confirmPassword").val('');
+      }
+      $("#btnChangePassword").click(function () {
+        var isPasswordValid = validatorpassword.validate();
+        if (isPasswordValid) {
+          var formData = new FormData();
+          formData.append("Id", userSessionId);
+          formData.append("OldPassword", $("#currentPassword").val());
+          formData.append("NewPassword", $("#newPassword").val());
+
+          $.ajax({
+            url: 'http://localhost:5293/api/AccountAPI/ChangePassword',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Password Changed Successfully.'
+              });
+              ClearText();
+            },
+            error: function (xhr, status, error) {
+              ClearText();
+              $("#errorMessage")
+                .addClass("alert alert-danger")
+                .text("Invalid Current Password.")
+                .show()
+                .css({
+                  position: "absolute",
+                  bottom: "50px",
+                  left: "0",
+                  right: "0"
+                });
+
+              setTimeout(function () {
+                $("#errorMessage").fadeOut(function () {
+                  $(this).removeClass("alert alert-danger");
+                });
+              }, 4000);
+            }
+          });
+        }
+
+      })
+
+      // Validators
+      var validator = $(".edit-profile").kendoValidator({
+        rules: {
+          required: function (input) {
+            if (input.is("[required]")) {
+              return $.trim(input.val()) !== "";
+            }
+            return true;
+          },
+          alphabetsOnly: function (input) {
+            if (input.is("[data-rule-alphabets-only]") && input.val()) {
+              return /^[a-zA-Z]{2,}$/.test(input.val());
+            }
+            return true;
+          },
+          numbersOnly: function (input) {
+            if (input.is("[data-rule-numbers-only]") && input.val()) {
+              return /^[6-9]\d{9}$/.test(input.val());
+            }
+            return true;
+          }
+        },
+        messages: {
+          required: "This field is required.",
+          alphabetsOnly: "Only two or more alphabet characters are allowed without spaces.",
+          numbersOnly: "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9."
+        },
+        errorTemplate: "<span class='k-error'>#=message#</span>"
+      }).data("kendoValidator");
+
+      var validatorpassword = $(".edit-profile-password").kendoValidator({
+        rules: {
+          required: function (input) {
+            return $.trim(input.val()) !== "";
+          },
+          strongPassword: function (input) {
+            if (input.is("#newPassword") && input.val()) {
+              return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\u0040$!%*?&])[A-Za-z\d\u0040$!%*?&]{8,}$/.test(input.val());
+            }
+            return true;
+          },
+          passwordsMatch: function (input) {
+            if (input.is("#confirmPassword") && input.val()) {
+              return input.val() === $("#newPassword").val();
+            }
+            return true;
+          }
+        },
+        messages: {
+          required: "This field is required.",
+          strongPassword: "Password must be at least 8 characters, include uppercase, lowercase, digits, and a special character.",
+          passwordsMatch: "Passwords do not match."
+        },
+        errorTemplate: "<span class='custom-error'>#=message#</span>"
+      }).data("kendoValidator");
+
+      $(".edit-profile input[data-rule-alphabets-only]").on("input", function () {
+        validator.validate();
+      });
+
+      $(".edit-profile input[data-rule-numbers-only]").on("input", function () {
+        validator.validate();
+      });
+
+      $("#newPassword, #confirmPassword").on("input", function () {
+        validatorpassword.validate();
+      });
+
+      $(".btn-trans.ml-0").click(function () {
+        $(".edit-profile").find("#firstName").val("");
+        $(".edit-profile").find("#lastName").val("");
+        $(".edit-profile").find("#phoneNumber").val("");
+        var validator = $(".edit-profile").data("kendoValidator");
+        if (validator) {
+          validator.hideMessages();
+        }
+
+        $(".edit-profile-password")[0].reset();
+        $("#profileImagePreview").hide();
+        $("#profileImagePreview").attr("src", `${apihost}/userdata/Default.jpeg`).show();
+    @* $("#profileImageInitial").show(); *@
+
+            });
+
+      $("#tabstrip").kendoTabStrip({
+        animation: {
+          open: {
+            effects: "fadeIn"
+          }
+        }
+      });
+
+      $("#borederTabstrip").kendoTabStrip({
+        animation: {
+          open: {
+            effects: "fadeIn"
+          }
+        }
+      });
+
+      var dataSource = new kendo.data.DataSource({
+        transport: {
+          read: {
+            url: "https://demos.telerik.com/kendo-ui/service/Products",
+            dataType: "jsonp"
+          }
+        },
+      });
+
+      $("#thumbnail_grid").kendoListView({
+        dataSource: dataSource,
+        selectable: "multiple",
+        template: kendo.template($("#thumnail_template").html())
+      });
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+    @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+    @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+    @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+    @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/themes/10.0.1/default/default-main.css" rel="stylesheet" />
+
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2024.4.1112/js/kendo.all.min.js"></script>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="mt-navbar">
+            <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+                <a href="/Client/Home">
+                    <div class="logo-wrapper ms-5 ">
+                        <img src="../../App_Themes/Default/images/residize-white.png" />
+                    </div>
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="user-menu">
+                    <li class="support-mail-wrapper">
+                        <a href="../AI/index" class="icon">Residize AI </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <div class="d-flex">
+        <div class="row">
+            <div class="me-1">
+                <div id="filter" class="col-12"></div>
+            </div>
+        </div>
+        <div>
+            <div id="example" role="application">
+                <div id="main-section">
+                    <ul id="listView" class="list-group"></ul>
+                    <div id="pager" class="k-pager"></div>
+                </div>
+
+                <script type="text/x-kendo-template" id="item">
+                    <li class="list-group-item products">
+                        <div id="con " class="">
+                            <div class="view-details">
+                                <div class="card" >
+                                    <div class=" d-flex" style="min-width:850px">
+                                        <div style="width:350px">
+                                            <img class="card-img-top"  src="#=(propertyPicture)#" alt="Kendo UI for jQuery Filter #: propertyName#" title="#: propertyName #" />
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row" style="text-align:left;">
+                                                <h6 style="margin-left:5px">#= name #</h6>
+                                            </div>
+                                            <div class="row" style="text-align:left">
+                                                <p class="text-semibold">📍#:bedrooms# BHK in #= locality # ,#:city#</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <b>💰 #= formatPrice(propertyAmount) #</b>
+                                                </div>
+                                                <div class="col-md-4">
+                                                     <b>➕ #= propertySize # sqft</b>
+                                                </div>
+                                                <div class="col-md-4">
+                                                     <b>🏠 #= bedrooms # BHK</b>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                     <p >#= propertySize #/sqft</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                     <p> #=  bedrooms #</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                     <p>#= propertyListingType #</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="rowbtn d-flex gap-3 justify-content-end" style="margin-top: 3px;">
+                                                <div class="hover" style="text-align:end">
+                                                   <a class="btnContect" href="/Client/ViewOneProperty/#= propertyId #">View Details</a>
+                                                </div>
+                                                <div class="hover" style="text-align:end">
+                                                    <button class="btnContect" id="sendContactInfo" data-id="5">Request Contact Info</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </script>
+                @* http://localhost:5293/api/AccountAPI/SendContect?propertie_id=5&userEmail=pumbhadiyasahil%40gmail.com *@
+
+                <script>
+                    function formatPrice(price)
+                    {
+                        if(price >= 10000000) return (price/10000000).toFixed(1)+" Cr";
+                        else return (price/100000).toFixed(2)+" Lacs";
+                    }
+                    $(document).on('click', '#sendContactInfo', function () {
+                        const propertyId = $(this).data('id');
+                        const userEmail = "pumbhadiyasahil@gmail.com";
+                        const apiUrl = `http://localhost:5293/api/AccountAPI/SendContect?propertie_id=${propertyId}&userEmail=${userEmail}`;
+                        $.ajax({
+                            url: apiUrl,
+                            method: 'GET',
+                            success: function (response) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success!',
+                                    text: 'Contact infomation send your mail'
+                                });
+                            },
+                            error: function (error) {
+                                Swal.fire({
+                                    icon: 'danger',
+                                    title: 'Invalid',
+                                    text: 'Please Try Again!'
+                                });
+                            }
+                        });
+                    });
+                </script>
+
+                <script>
+                    $(document).ready(function () {
+
+                        console.log($('#readyToMove').val());
+                        printDta();
+                        function printDta(){
+                            $.ajax({
+                                url:'http://localhost:5293/api/PropertyAPI/ViewProperty',
+                                dataType:'json',
+                                success:function(data){
+                                    console.log(data);
+                                }
+                            });
+                        }
+                        var dataSource = new kendo.data.DataSource({
+                            transport: {
+                                read: {
+                                    dataType: "json",
+                                    url: "http://localhost:5293/api/PropertyAPI/ViewProperty" 
+                                }
+                            },
+                            pageSize: 10,
+                            schema: {
+                                model: {
+                                    fields: {
+                                        propertyId:{type:"number"},
+                                        propertyName: { type: "string" },
+                                        projectId:{type:"number"},
+                                        projectName:{type:"string"},
+                                        propertyAmount: { type: "number" },
+                                        propertySize: { type: "number" },
+                                        bedrooms: { type: "number" },
+                                        propertyListingType: { type: "string" },
+                                        propertyPicture: { type: "string" },
+                                        furnished:{type:"string"},
+                                        propertyType: { type: "string" },
+                                        areaType:{type:"string"},
+                                        propertyAge:{type:"number"},
+                                        city: { type: "string" },
+                                        locality:{type:"string"},
+                                        readyToMove: { type: "boolean" },
+                                        address:{type:"string"}
+                                    }
+                                }
+                            }
+                        });
+
+                        $("#filter").kendoFilter({
+                            dataSource: dataSource,
+                            expressionPreview: true,
+                            applyButton: true,
+                            fields: [
+                                { name: "propertyName", type: "string", label: "Name" },
+                                { name: "projectName", type: "string", label: "Name" },
+                                { name: "propertyAmount", type: "number", label: "Price" },
+                                { name: "bedrooms", type: "number", label: "BHK" },
+                                { name: "city", type: "string", label: "City" },
+                                { name: "propertySize", type: "number", label: "sqft" },
+                                { name: "propertyType", type: "string", label: "propertyType" },
+                                { name: "readyToMove", type: "boolean", label: "ready To move" },
+                                { name: "propertyListingType", type: "string", label: "listingtype" }
+                            ],
+                            expression: {
+                                logic: "and",
+                                filters: [
+                                    { field: "propertyAmount", value: 1000000, operator: "gte" },
+                                ]
+                            }
+                        }).data("kendoFilter").applyFilter();
+
+                        $("#listView").kendoListView({
+                            dataSource: dataSource,
+                            template: kendo.template($("#item").html())
+                        });
+
+                        $("#pager").kendoPager({
+                            dataSource: dataSource,
+                            responsive: true
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .k-button-solid-base.k-selected {
+            background-color: #007777 !important;
+            border: 0cap !important;
+        }
+
+        .k-grid .k-state-selected {
+            background-color: #007777 !important;
+            color: #000000;
+        }
+
+        .k-grid .k-alt.k-state-selected {
+            background-color: #f1f1f1 !important;
+            color: #000000;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h6 {
+            color: :#007777;
+        }
+
+        .btnContect {
+            background-color: #005555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btnContect:hover {
+            background-color: #007777;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        #con {
+            border: 0px solid #9e9e9e;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-align {
+            text-align: left;
+            display: block;
+        }
+
+        #main-section ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #main-section ul li {
+            width: 100%;
+        }
+
+        .products {
+            position: relative;
+            width: 200px;
+            height: 230px;
+            padding: 10px 10px 62px 10px;
+            text-align: center;
+        }
+
+        #panelbar {
+            width: 300px;
+        }
+
+        .view-details,
+        .view-details:hover {
+            display: block;
+            position: relative;
+            user-select: none;
+        }
+
+        .view-details:after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+
+
+        .main-image {
+            @* position: relative; *@
+            width: 200px;
+            height: auto;
+        }
+
+        .products h2 {
+            color: #ab7829;
+            font-size: 21px;
+            font-weight: normal;
+            padding-top: 25px;
+        }
+
+        .products strong {
+            display: inline-block;
+            color: #de5d20;
+            font-size: 21px;
+            font-weight: normal;
+            padding-top: 25px;
+            padding-bottom: 5px;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .price {
+            font-size: 17px;
+            color: #9e9e9e;
+            width: 100%;
+            position: relative;
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #848484;
+            width: 100%;
+            display: inline-block;
+            line-height: 1em;
+            padding-top: 15px;
+        }
+
+        .cart-image-wrapper {
+            display: block;
+            float: left;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        #main-section ul li {
+            float: left;
+        }
+
+        #main-section {
+            line-height: 0;
+            max-width: 882px;
+        }
+
+        #listView {
+            display: inline-block;
+            width: 100%;
+            border-bottom: 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+</body>
+
+</html>

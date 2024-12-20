@@ -1,0 +1,1069 @@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+        
+    
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+    @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+    @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+    @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+    @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="~/Client/fonts/icomoon/style.css" />
+  <link rel="stylesheet" href="~/Client/fonts/flaticon/font/flaticon.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+  @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+  @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+  @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+  @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+  <link rel="stylesheet" href="~/Client/css/tiny-slider.css" />
+  <link rel="stylesheet" href="~/Client/css/aos.css" />
+  <link rel="stylesheet" href="~/Client/css/style.css" />
+
+  @* <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
+  <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    @* <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" /> *@
+    @* <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" /> *@
+    @* <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" /> *@
+    @* <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
+    <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+    <title>
+        Residize
+    </title>
+    <style>
+        .property-box {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .property-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            justify-items: start;
+
+
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* image Details*/
+
+        .property-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .property-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .property-info {
+            width: 650px;
+            height: 420px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-info .row {
+            margin-bottom: 15px;
+        }
+
+        .property-info .icon {
+            font-size: 17px;
+            margin-right: 10px;
+        }
+
+        .property-info .title {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .property-info .value {
+            font-size: small;
+            color: #333;
+        }
+
+        .property-info .value small {
+            color: #888;
+        }
+
+        /*Footer Panel*/
+
+        .features {
+            margin-top: 20px;
+        }
+
+  
+        .details {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .details .row div {
+            margin-bottom: 10px;
+        }
+
+        .link {
+            color: black;
+            font-size: 12px;
+        }
+
+        h1 {
+            color: #007777;
+            font-weight: 700;
+        }
+
+        .features {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .features .title {
+            @* font-size: 1.5em; *@
+            font-weight: bold;
+            color: #007777;
+            margin: 20px 0px;
+        }
+        .project {
+            @* font-size: 1.5em; *@
+            font-weight: bold;
+            color: #007777;
+            @* margin: 20px 0px; *@
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+            gap: 10px;
+        }
+
+        .badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 12px !important;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white !important;
+            font-size: 14px;
+            font-weight: 500;
+           max-width: 200px !important;
+            color: #444;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .badge i {
+            margin-right: 8px;
+            font-size: 20px !important;
+            color: #007777;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h3 {
+            color: :#007777;
+        }
+
+        .btnContect {
+            background-color: #005555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btnContect:hover {
+            background-color: #007777;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        #con {
+            border: 0px solid #9e9e9e;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-align {
+            text-align: left;
+            display: block;
+        }
+
+        #main-section ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #main-section ul li {
+            width: 100%;
+        }
+
+        .products {
+            position: relative;
+            width: 200px;
+            height: 230px;
+            padding: 10px 10px 62px 10px;
+            text-align: center;
+        }
+
+        #panelbar {
+            width: 300px;
+        }
+
+        .view-details,
+        .view-details:hover {
+            display: block;
+            position: relative;
+            user-select: none;
+        }
+
+        .view-details:after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+
+
+        .main-image {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .products h2 {
+            color: #ab7829;
+            font-size: 21px;
+            font-weight: normal;
+            padding-top: 25px;
+        }
+
+        .products strong {
+            display: inline-block;
+            color: #de5d20;
+            font-size: 21px;
+            font-weight: normal;
+            padding-top: 25px;
+            padding-bottom: 5px;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .price {
+            font-size: 17px;
+            color: #9e9e9e;
+            width: 100%;
+            position: relative;
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #848484;
+            width: 100%;
+            display: inline-block;
+            line-height: 1em;
+            padding-top: 15px;
+        }
+
+        .cart-image-wrapper {
+            display: block;
+            float: left;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        #main-section ul li {
+            float: left;
+        }
+
+        #main-section {
+            line-height: 0;
+            max-width: 882px;
+        }
+
+        #listView {
+            display: inline-block;
+            width: 100%;
+            border-bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .badge i {
+            margin-right: 8px;
+            color: #007777;
+        }
+
+        .badge:hover {
+            background-color: #007777 !important;
+            color: #fff !important;
+        }
+
+        .badge:hover i {
+            color: #fff !important;
+        }
+        .projectbtn{
+            background-color: #005555 !important;
+            border-radius: 10px !important;
+        }
+        .sliderbtn{
+            background-color: #005555 !important;
+            border-radius: 10px !important;
+            color: white;
+            padding: 13px 25px;
+        }
+        .icon-color{
+            color: #005555 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header class="main-header">
+        <nav class="mt-navbar">
+            <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+                <a href="/Client/Home">
+                    <div class="logo-wrapper ms-5 ">
+                        <img src="../../App_Themes/Default/images/residize-white.png" />
+                    </div>
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="user-menu">
+                    <li class="support-mail-wrapper">
+                        <a href="../AI/index" class="icon">Residize AI </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    </div>
+    <br>
+    <div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="property-title">
+                    <h3 class="project">Project Details</h3>
+                </div>
+            </div>
+            <div class="row">
+    <div class="col-md-6">
+        <div class="property-box">
+            <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carousel-items" style="max-height: 365px;"> 
+                    <!-- Images will be dynamically inserted here -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <h6 class="mt-3" id="photo-count">Photos (1/0)</h6>
+        </div>
+    </div>
+
+    <div class="col-md-6 property-info" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+    <h2 id="project-name" style="margin-bottom: 16px; font-size: 2rem; font-weight: bold; color: #333;">Project Name</h2>
+    <div style="margin-top: 16px;">
+        <div class="d-flex align-items-center" style="gap: 16px; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; color: #007bff;">🏠</span>
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; color: #555; font-weight: bold;">Address</p>
+                <p style="margin: 0; font-size: 1.2rem; color: #333;">
+                    <span id="address">Loading...</span>
+                </p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center" style="gap: 16px; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; color: #007bff;">🎂</span>
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; color: #555; font-weight: bold;">Property Age</p>
+                <p style="margin: 0; font-size: 1.2rem; color: #333;">
+                    <span id="property-age">Loading...</span> 
+                </p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center" style="gap: 16px; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; color: #007bff;">➕</span>
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; color: #555; font-weight: bold;">Availability</p>
+                <p style="margin: 0; font-size: 1.2rem; color: #333;">
+                    <span id="availability-status">Loading...</span>
+                </p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center" style="gap: 16px; margin-bottom: 20px;">
+            <span style="font-size: 1.5rem; color: #007bff;">📅</span>
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; color: #555; font-weight: bold;">Posted On</p>
+                <p style="margin: 0; font-size: 1.2rem; color: #333;">
+                    <span id="posted-date">Loading...</span>
+                </p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center" style="gap: 16px;">
+            <span style="font-size: 1.5rem; color: #007bff;">✔</span>
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; color: #555; font-weight: bold;">Verified</p>
+                <p style="margin: 0; font-size: 1.2rem; color: #333;">
+                    <span id="is-verified">Loading...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<hr>
+
+<div class="row">
+    <!-- PDF Brochure -->
+    <div class="col-md-5">
+        <object id="brochure-pdf" data="" type="application/pdf" width="100%" height="400">
+            <p>Your browser does not support PDFs. Download the brochure <a href="#" id="brochure-link">here</a>.</p>
+        </object>
+    </div>
+
+    <!-- Video -->
+    <div class="col-md-7">
+        <video id="property-video" width="100%" height="400" controls>
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<div class="features">
+    <div class="title h3 mb-3">Amenities</div>
+    <div class="amenities-grid" id="amenities-container">
+        
+    </div>
+</div>
+
+            <br><br>
+            <div class="col-lg-12">
+                <h3 class="project">Properties available in this project</h3>
+            </div>
+            <br>
+            <div id="property-list" class="d-flex flex-wrap">
+    <!-- Property cards will be appended here -->
+</div>
+
+        </div>
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close">
+                    <span class="icofont-close js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+
+
+
+
+
+        <div class="section">
+            <div class="container">
+                <div class="row mb-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h3 class="project">
+                            Popular Project
+                        </h3>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <p>
+                            <a target="_blank" href="ViewProperty" class="projectbtn text-white py-3 px-4">View all
+                                Project</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="property-slider-wrap">
+                            <div class="property-slider">
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+
+                                <div class="property-item">
+                                    <a class="img">
+                                        <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                                    </a>
+
+                                    <div class="property-content">
+                                        <div class="price mb-2"><span>$1,291,000</span></div>
+                                        <div>
+                                            <span class="d-block mb-2 text-black-50">5232 California Fake, Ave.
+                                                21BC</span>
+                                            <span class="city d-block mb-3">California, USA</span>
+
+                                            <div class="specs d-flex mb-4">
+                                                <span class="d-block d-flex align-items-center me-3">
+                                                    <span class="icon-bed me-2"></span>
+                                                    <span class="caption">2 beds</span>
+                                                </span>
+                                                <span class="d-block d-flex align-items-center">
+                                                    <span class="icon-bath me-2"></span>
+                                                    <span class="caption">2 baths</span>
+                                                </span>
+                                            </div>
+
+                                            <a class="sliderbtn">See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .item -->
+                            </div>
+
+                            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+                                <span class="prev" data-controls="prev" aria-controls="property"
+                                    tabindex="-1">Prev</span>
+                                <span class="next" data-controls="next" aria-controls="property"
+                                    tabindex="-1">Next</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/tiny-slider.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="../../Scripts/Kendo/jquery.min.js"></script>
+  <script src="../../Scripts/Kendo/kendo.all.min.js"></script>
+  <script src="../../Scripts/CLARENT/Other/Custom/Custom.js"></script>
+  <script src="../../notification/script.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2023.3.1010/js/kendo.all.min.js"></script>
+  <link href="https://kendo.cdn.telerik.com/2023.3.1010/styles/kendo.default-v2.min.css" rel="stylesheet">
+
+<script>
+    $(document).ready(function () {
+        const apiUrl = "http://localhost:5293/api/ProjectApi/GetProjectByProjectId?id=5"; // Replace with your actual API URL
+
+        // Fetch data from API
+        $.ajax({
+            url: apiUrl,
+            type: "GET",
+            success: function (data) {
+                populatePropertyData(data);
+                loadAmenities();
+               
+            },
+            error: function (error) {
+                console.error("Error fetching property data:", error);
+            }
+        });
+
+        function loadAmenities(){
+           $.ajax({
+    url: 'http://localhost:5293/api/ProjectApi/GetProjectAmenitiesByProjectId', // Adjust the controller name
+    type: 'GET',
+    data: { projectId: 22 }, // Sending projectId as query parameter
+    success: function (amenities) {
+         relatedProperties();
+        var iconMap = {
+            "Swimming Pool": "fas fa-swimming-pool",
+            "Gym": "fas fa-dumbbell",
+            "Parking": "fas fa-parking",
+            "Child": "fas fa-child",
+            "Clubhouse": "fas fa-building",
+            "Garden": "fas fa-tree",
+            "Security": "fas fa-shield-alt",
+            "CCTV": "fas fa-video",
+            "Power Backup": "fas fa-battery-full",
+            "Lift": "fas fa-sort",
+            "Wi-Fi": "fas fa-wifi",
+            "Fire Safety": "fas fa-fire-extinguisher",
+            "Conference": "fas fa-users",
+            "Library": "fas fa-book",
+            "Sports Area": "fas fa-futbol",
+            "Yoga Room": "fas fa-dove",
+            "Kids Zone": "fas fa-child",
+            "Jacuzzi": "fas fa-hot-tub",
+            "Spa": "fas fa-spa",
+            "Theater": "fas fa-film",
+            "Tennis Court": "fas fa-table-tennis",
+            "Basketball Court": "fas fa-basketball-ball",
+            "Temple": "fas fa-place-of-worship"
+        };
+
+        // Clear the existing amenities
+        $('#amenities-container').empty();
+        // Loop through the amenities and create badge elements
+        amenities.forEach(function (amenity) {
+            console.log(amenity.name);
+            var badge = $('<span class="badge"></span>');
+            var iconClass = iconMap[amenity.name] || "fas fa-check"; // Use amenity name for the icon
+            var icon = $('<i></i>').addClass(iconClass);
+            badge.append(icon).append(" " + amenity.name); // Use the name of the amenity
+            $('#amenities-container').append(badge);
+        });
+    },
+    error: function (error) {
+        console.log('Error fetching amenities: ', error.responseJSON);
+    }
+});
+
+        }
+        function relatedProperties(){
+            var dataSource = new kendo.data.DataSource({
+        transport: {
+            read: {
+                url: "http://localhost:5293/api/ProjectApi/GetPropertiesByProjectId?projectId=22", // URL endpoint where the data is fetched
+                dataType: "json" // Specify that we expect JSON data
+            }
+        },
+        schema: {
+        model: {
+            fields: {
+                propertyId: { type: "number" },
+                projectId: { type: "number" },
+                propertyName: { type: "string" },
+                propertyAmount: { type: "number" },
+                propertySize: { type: "number" },
+                bedrooms: { type: "number" },
+                propertyListingType: { type: "string" },
+                propertyPicture: { type: "string" },
+                furnished: { type: "string" },
+                propertyType: { type: "string" },
+                areaType: { type: "string" },
+                propertyAge: { type: "number" },
+                city: { type: "string" },
+                locality: { type: "string" },
+                readytoMove: { type: "boolean" },
+                address: { type: "string" }
+            }
+        }
+    },
+        pageSize: 10, // Optional, if you are paginating
+    });
+    function bindPropertyCards() {
+        var container = $('#property-list');
+        container.empty(); // Clear any existing content
+
+        // Get data from DataSource and create the property cards
+        dataSource.fetch(function() {
+            var data = dataSource.view(); // Get the view (filtered data if any)
+            
+            // Loop through the data and create property cards dynamically
+            data.forEach(function (property) {
+    var propertyCard = `
+        <div class="card shadow-sm" style="width: 20rem; margin-right: 20px; margin-bottom: 20px; border: none; border-radius: 8px; overflow: hidden;">
+            <img class="card-img-top" src="${property.propertyPicture}" alt="${property.propertyName}" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title text-truncate" style="font-weight: bold; font-size: 1.1rem;">${property.propertyName}</h5>
+                <p class="text-muted" style="margin: 0; font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt icon-color" style="color: #007bff;"></i> ${property.locality}, ${property.city}
+                </p>
+                <hr style="margin: 0.5rem 0;">
+                <p style="margin: 0.5rem 0;">
+                    <i class="fas fa-tag icon-color" style="color: #28a745;"></i> <b>${property.propertyAmount.toLocaleString()} INR</b>
+                </p>
+                <p style="margin: 0.5rem 0;">
+                    <i class="fas fa-expand icon-color" style="color: #17a2b8;"></i> <b>${property.propertySize} sqft</b>
+                </p>
+                <p style="margin: 0.5rem 0;">
+                    <i class="fas fa-bed icon-color" style="color: #ffc107;"></i> ${property.bedrooms} BHK
+                </p>
+                <p class="text-muted" style="font-size: 0.9rem;">${property.PropertyAge} years old</p>
+                <p class="${property.ReadytoMove ? 'text-success' : 'text-danger'}" style="font-weight: bold;">
+                    ${property.ReadytoMove ? 'Ready To Move' : 'Not Ready'}
+                </p>
+                <div class="d-flex justify-content-between mt-3">
+                    <a href="ViewOneProperty?id=${property.propertyId}" class="btn btn-primary btn-sm" style="width: 48%;">View Details</a>
+                    <button class="btn btn-secondary btn-sm" style="width: 48%;padding=5px">Request Contact Info</button>
+                </div>
+            </div>
+        </div>
+    `;
+    container.append(propertyCard); // Append card to the container
+});
+
+        });
+    }
+    bindPropertyCards();
+        }
+
+        function populatePropertyData(data) {
+            console.log(data.picturePath);
+            // Update carousel
+            const carouselItems = $("#carousel-items");
+            let carouselContent = "";
+            if (data.pictureFiles && data.pictureFiles.length > 0) {
+                data.pictureFiles.forEach((picture, index) => {
+                    carouselContent += `
+                        <div class="carousel-item ${index === 0 ? "active" : ""}">
+                            <img src="${picture}" class="d-block w-100" alt="Property Image ${index + 1}">
+                        </div>`;
+                });
+            } else {
+                carouselContent = `
+                    <div class="carousel-item active">
+                        <img src="${data.picturePath}" class="d-block w-100" alt="Default Property Image">
+                    </div>`;
+            }
+            carouselItems.html(carouselContent);
+            $("#photo-count").text(`Photos (1/${data.pictureFiles?.length || 1})`);
+
+            // Update property information
+            $("#project-name").text(data.projectName);
+            $("#address").text(`${data.address}, ${data.locality}, ${data.city} - ${data.pinCode}`);
+            $("#property-age").text(`${data.propertyAge} years`);
+            $("#availability-status").text(data.availabilityStatus ? "Ready to move" : "Under construction");
+            $("#posted-date").text(new Date(data.postedDate).toLocaleDateString());
+            $("#is-verified").text(data.isReraVerified ? "Yes" : "No");
+
+            // Update brochure PDF
+            $("#brochure-pdf").attr("data", data.brochureFiles);
+            $("#brochure-link").attr("href", data.brochureFiles);
+
+            // Update video
+            $("#property-video source").attr("src", data.videoFiles);
+            $("#property-video")[0].load();
+        }
+    });
+</script>
+
+</body>
+
+</html>

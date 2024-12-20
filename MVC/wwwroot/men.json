@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Green Villas",
+        "price": 100000,
+        "bhk": 2,
+        "address": "Kamrej, Surat",
+        "location":"Surat",
+        "sqft": 1000,
+        "propertyType": "Residency",
+        "listingType": "Rent" 
+    },
+    {
+        "name": "Ocean Heights",
+        "price": 200000,
+        "bhk": 5,
+        "address": "Pal, Surat",
+        "location":"Surat",
+        "sqft": 2000,
+        "propertyType": "Commercial",
+        "listingType": "Sale" 
+    },
+    {
+        "name": "Sunrise Apartments",
+        "price": 300000,
+        "bhk": 5,
+        "address": "Varachha, Surat",
+        "location":"Surat",
+        "sqft": 1500,
+        "propertyType": "Residency",
+        "listingType": "Rent" 
+    },
+    {
+        "name": "Lakeview Residency",
+        "price": 400000,
+        "bhk": 3,
+        "address": "Adajan, Surat",
+        "location":"Surat",
+        "sqft": 750,
+        "propertyType": "Commercial",
+        "listingType": "Sale" 
+    },
+    {
+        "name": "Downtown Plaza",
+        "price": 500000,
+        "bhk": 1,
+        "address": "Kapodara, Surat",
+        "location":"Surat",
+        "sqft": 3000,
+        "propertyType": "Commercial",
+        "listingType": "Sale" 
+    },
+    {
+        "name": "Sunrise Apartments",
+        "price": 600000,
+        "bhk": 4,
+        "address": "Jhangirpura, Surat",
+        "location":"Surat",
+        "sqft": 2800,
+        "propertyType": "Residency",
+        "listingType": "Rent" 
+    },
+    {
+        "name": "Ocean Heights",
+        "price": 700000,
+        "bhk": 2,
+        "address": "Puna Gam, Surat",
+        "location":"Surat",
+        "sqft": 2200,
+        "propertyType": "Commercial",
+        "listingType": "Rent" 
+    },
+    {
+        "name": "Green Villas",
+        "price": 800000,
+        "bhk": 3,
+        "address": "Mota Varachha, Surat",
+        "location":"Surat",
+        "sqft": 1200,
+        "propertyType": "Residency",
+        "listingType": "Sale" 
+    },
+    {
+        "name": "Ocean Heights",
+        "price": 900000,
+        "bhk": 4,
+        "address": "Pasodra, Surat",
+        "location":"Surat",
+        "sqft": 900,
+        "propertyType": "Commercial",
+        "listingType": "Rent" 
+    }
+]
