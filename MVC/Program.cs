@@ -2,11 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = "localhost:6379";
-    options.InstanceName = "Residize:";
-});
+// builder.Services.AddStackExchangeRedisCache(options =>
+// {
+//     options.Configuration = "localhost:6379";
+//     options.InstanceName = "Residize:";
+// });
 builder.Services.AddSession();
 
 var app = builder.Build();

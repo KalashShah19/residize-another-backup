@@ -11,5 +11,7 @@ namespace Repository.Interfaces
       public void AddReviews(Reviews.Post reviews);
       public List<Reviews.Get> ViewLatestReviews(int id);
       bool RemoveReview(int id);
+      
+      public void UpdateReview(Reviews.Post reviews);
     }
 }

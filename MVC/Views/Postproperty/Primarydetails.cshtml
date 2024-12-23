@@ -1,0 +1,2196 @@
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+    @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+    @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+    @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+    @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    @* <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> *@
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery Validation Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- css -->
+    <link href="../../App_Themes/Default/css/core-pocket.css" rel="stylesheet" />
+        <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<link href="~/css/Loader.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+            }
+
+
+            ::-moz-scrollbar {
+            width: 0; 
+            background: transparent;
+            }
+
+
+            ::-ms-scrollbar {
+            width: 0; 
+            background: transparent;
+            }
+
+        #dvLeftMenu {
+            margin-left: 98px !important;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+
+        }
+        .Amenities {
+        @* display: flex; *@
+            gap: 150px;
+            margin-bottom: 10px;
+        }
+
+        .option {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: fit-content;
+            cursor: pointer;
+            background-color: #fff;
+            color: #007777;
+            padding: 3px 20px !important;
+           margin: 0% !important;
+        }
+        .optionsell {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: fit-content;
+            cursor: pointer;
+            background-color: #fff;
+            color: #007777;
+            padding: 3px 20px !important;
+           margin: 0% !important;
+        }
+
+        .option:hover,.optionsell:hover, .optionsell.selected ,
+        .option.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+
+        .property-type {
+            margin: 20px 0;
+        }
+
+        .radio-group,.checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        .radio-group input[type="radio"] , .checkbox-group input[type="checkbox"]{
+            display: none;
+        }
+
+        .radio-group label ,.checkbox-group label  {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            color: #555;
+            font-size: 16px;
+
+        }
+
+        .radio-group label:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #007777;
+            background-color: #fff;
+        }
+        .checkbox-group label:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 30%;
+            border: 2px solid #007777;
+            background-color: #fff;
+        }
+
+        .radio-group input[type="radio"]:checked+label:after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 8px;
+            height: 8px;
+            background-color: #007777;
+            border-radius: 50%;
+        }
+        .checkbox-group input[type="checkbox"]:checked+label:after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 8px;
+            height: 8px;
+            background-color: #007777;
+            border-radius: 50%;
+        }
+
+        .property-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .property-option {
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #555;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .furnishing-option {
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #555;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .stauts-option,.age-option{
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #555;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+
+        .property-option:hover,
+        .property-option.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+        .furnishing-option:hover,
+        .furnishing-option.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+        .stauts-option:hover,
+        .stauts-option.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+        .age-option:hover,
+        .age-option.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+        .bathOption:hover,
+        .bathOption.selected {
+            background-color: #007777;
+            color: #fff;
+        }
+
+        .btn-continue {
+            width: 100%;
+            background-color: #007777;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-continue:hover {
+            background-color: #007777;
+        }
+
+       .container {
+            display: flex;
+            margin: 20px auto;           
+             height: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px #d6e6e6;
+            overflow: hidden;
+            overflow-y: auto
+        }
+
+        /* Sidebar */
+       .sidebar {
+            flex: 0 0 25%;
+             overflow-y: auto;
+            background-color: #f4f6f8;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+
+        .step.active .step-number {
+            background-color: #007777;
+            color: #fff;
+        }
+
+        @* .step-line {
+            width: 2px;
+            height: 100%;
+            background-color: #410055;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .step-line.active {
+            opacity: 1;
+        } *@
+
+
+        .step-label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .step.active .step-label {
+            color: #007777;
+        }
+
+
+        .main-content {
+            @* flex-grow: 1;  *@
+            overflow-y: auto; 
+            padding: 40px;
+            height: 100%;
+            @* width: 100%; *@
+        }
+
+
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .navigation-buttons {
+            width: fit-content;
+            display: flex;
+            gap: 20px;
+
+        }
+
+
+        .next-btn,.submit {
+            background-color: #005555;
+            color: white;
+            padding: 10px 35px;
+            border-radius: 10px;
+        }
+
+        .next-btn:hover {
+            background-color: #007777;
+        }
+
+        .back-btn {
+            background-color: #005555;
+            color: white;
+             padding: 10px 50px;
+             border-radius: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #007777;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .room-details {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .rowclass {
+        @* display: flex; *@
+            align-items: center;
+            margin-bottom: 10px;          
+        @* display: block !important;   *@
+        }
+        .Amenities button{
+            padding: 10px !important;
+            margin: 0px 20px 20px 0px !important;
+            width: 200px !important;
+        @* background-color: #009999; *@
+        }
+
+
+        .row label {
+
+            font-weight: 500;
+        }
+.step-3{
+    margin-top: 50px;
+}
+
+.roomadd{
+    color: rgb(26, 25, 25);
+    margin: 20px 0px;
+    width: fit-content;
+    border-bottom: 2px solid #007777;
+}
+.plot{
+    border: 1px solid rgb(201, 199, 199) !important;
+    width: fit-content;
+        @* background-color: #007777; *@
+
+}
+
+.propertyfloor{
+   height: 50px;
+    border:1px solid rgb(201, 199, 199) ;
+        @* padding: 20px; *@
+    margin-left: 40px ;
+    margin-top: 5px;
+    padding: 0px 140px 0px 15px;
+}
+.totalfloor input{
+
+    border:1px solid rgb(201, 199, 199) ;
+    border-radius: 0;
+    width: 250px;
+    height: 50px !important;
+
+}
+.loction{
+    margin-bottom: 20px;
+    width: 350px;
+
+}
+
+.city input{
+
+    border:1px solid rgb(201, 199, 199) ;
+    border-radius: 0;
+    width: 350px;
+    height: 50px !important;
+
+
+}
+
+.plot input{
+    border: 0;
+    border-right:1px solid rgb(201, 199, 199) ;
+    border-radius: 0;
+    height: 40px !important;
+
+}
+.form-floating>.form-control{
+    height: 0;
+}
+.plot select{
+    border: 0;
+   margin: 0px 30px 0px 2px;
+}
+.sqfit{
+
+    margin: auto;
+    padding: 0px 20px;
+}
+.area-details {
+    padding: 20px;
+    border-radius: 10px;
+}
+input:not([role=listbox]):focus{
+    box-shadow: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.info-icon {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+.upload-btn {
+  width: 300px;  
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+   border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+.upload-container {
+  width: 300px;  
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+   border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+.upload-container:hover {
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+background-color: #e8f0fe;
+}
+
+
+.upload-area {
+  text-align: center;
+}
+
+.upload-area img {
+  width: 100vw;
+  height: 180px;
+}
+
+.upload-area p {
+  color: #999;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.upload-area button {
+  background-color: #009999;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.video-preview{width: 200px;}
+.videodiv{
+    justify-items: center;
+    @* margin-bottom: 10px; *@
+}
+.video-upload-container { 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+   border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    width: 890px;
+
+}
+.video-upload-container:hover { 
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e8f0fe;
+}
+.pdf-upload-container {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.pdf-upload-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e8f0fe;
+}
+.pdf-upload-area {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+.pdf-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+   padding: 8px !important;
+   border-radius: 5px;
+    margin-top: 15px !important;
+   display: contents; 
+}
+.areaArea .error-message {
+        color:red !important;
+    font-size: 12px;
+    border-radius: 5px;
+    position: absolute !important;
+     top: 25px !important; 
+    display: flex !important;
+    background: none;
+    border: 0;
+}
+.areabtn{
+    width: fit-content;
+    margin: 0;
+        @* padding: 10px 20px; *@
+    background-color: white;
+    border-radius: 0px;
+    border: 0 ;
+   color: #005555;  
+    font-weight: 500;
+    font-style: oblique !important;
+}
+.getcity{
+    width: fit-content;
+    background-color: white !important;
+    margin-left: 10px;
+    height: 50px;
+}
+.range-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px;
+        }
+
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 300px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 2px;
+            outline: none;
+        }
+
+
+        .value-box {
+            cursor: pointer !important;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #007777;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+            width: fit-content;
+            text-align: center;
+        }
+        .arealabel{           
+            padding: 30px 0px 15px 10px !important;
+        }
+
+        .form-select:focus {
+    border-color: black;
+    outline: 0;
+    box-shadow:none;
+    }
+    .welcome{
+    justify-items: center
+}
+.delete-icon {
+    position: absolute;
+    top: 0px; 
+    right: 6px; 
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(105px) !important; 
+    border: none;
+    border-radius: 50% !important;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.delete-icon:hover {
+    background-color: rgba(255, 0, 0, 0.5) !important;
+    color: white;
+}
+
+   
+
+    </style>
+
+    <title>Residize post property</title>
+
+    <link rel="icon" href="/Images/whitelogo.png">
+</head>
+
+<body>
+    <!-- Header (Existing Code) -->
+    <header class="main-header">
+        <nav class="mt-navbar">
+            <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+                <a href="/Client/Home">
+                    <div class="logo-wrapper ms-5 ">
+                        <img src="../../App_Themes/Default/images/residize-white.png" />
+                    </div>
+                </a>
+            </div>
+            @* <div class="nav-right">
+                <ul class="user-menu">
+                    <li class="support-mail-wrapper">
+                        <a href="../AI/index" class="icon">Residize AI </a>
+                    </li>
+                </ul>
+            </div> *@
+        </nav>
+    </header>
+
+    <!-- Multi-Step Form -->
+    <div>
+          <div class="custom-loader" id="loader" style="display: none;" >
+            <div class="logo-loader">
+                <img src="/Images/logo.png" alt="Loading..." />
+                <div class="rotating-dot"></div>
+            </div>
+        </div>
+               
+               
+
+<form action="" id="myForm">
+        <div class="container">
+            <div class="sidebar">
+                 <div class="welcome mb-3">
+
+               <h1>Welcome, @ViewBag.username</h1>
+               @* <h1>User Name</h1> *@
+                </div>
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Basic Details</div>
+                </div>
+                    @* <div class="step-line"></div> *@
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Location Details</div>
+                </div>
+                    @* <div class="step-line"></div> *@
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Property Profile</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Photos & Videos</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-label">Amenities Section</div>
+                </div>
+
+            </div>
+
+
+            <div class="main-content">
+                <!-- Step 1 -->
+                <div class="form-section  active" id="step-1">
+                    <div class="">
+                     
+                        <h2>Fill out basic details</h2>
+
+                        <div>
+                            <p>I'm looking for</p>
+                            <div class="options">
+                                <div class="optionsell" onclick="selectOption(this)">Sell</div>
+                                <div class="optionsell" onclick="selectOption(this)">Rent </div>                              
+                            </div>
+                        </div>
+
+                        <div class="property-type">
+                            <p>Select type of property </p>
+                            <div class="radio-group">
+                                <input type="radio" id="residential" value="residential" name="property_type">
+                                <label  for="residential"><span class="">Residential</span></label>
+
+                                <input  type="radio" id="commercial" value="commercial" name="property_type" >
+                                <label for="commercial">Commercial</label>
+                            </div>
+
+                                @* <div class="property-options">
+                                <button type="button" style="width: fit-content;" class="property-option selected" onclick="selectPropertyOption(this)">
+                                    Flat/Apartment</button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Independent House /
+                                    Villa</button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Independent / Builder
+                                    Floor</button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Plot / Land</button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">1 RK/Studio Apartment
+                                </button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Serviced Apartment
+                                </button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Farmhouse</button>
+                                <button type="button" style="width: fit-content;" class="property-option" onclick="selectPropertyOption(this)">Other</button>
+                            </div> *@
+                        </div>
+
+
+                        <div class="navigation-buttons">
+
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-section " id="step-2">
+                    <h2>Location Details</h2>
+                    <p>Provide the location details of the property.</p>                    
+                     <div class="">
+
+                                      <div class="row">
+                                         <div class="area-details">
+                                             <div class="city ">
+                                                <div class="loction form-floating">
+                                                <select name="project" class="form-select" id="project">
+                                                    <option value="" disabled selected>Select Project</option>
+                                                    <option value="1">Green City</option>
+                                                    <option value="2">Sahil Villa</option>
+                                                    <option value="3">Case Point</option>
+                                                </select>
+                                                <label for="project">Project <span class="text-xs"> (optional)</span> </label>
+                                            </div>
+                                                 <div class="loction form-floating">
+                                                    <input name="Property_name" type="text" class="form-control"  id="property-Name" placeholder=" Name" required>
+                                                    <label for="property-Name">Property Name</label>
+                                                </div>  
+                                                <div class="d-flex">
+
+
+                                                  <div class="loction form-floating">
+                                                    <input name="Pincode" type="number" class="Pincode form-control" id="Pincode" placeholder="Pincode" required>
+                                                    <label for="Pincode">Pincode</label>
+                                                </div> 
+
+                                                 <button type="button" class="getcity" id="showMoreFields" style="display: none;">Get City</button>
+                                                </div>
+
+
+
+                                                 <div  id="hiddenFields" class="mt-3" style="display: none;">
+
+                                                <div class="loction form-floating">
+                                                    <input name="city" type="" class="form-control" id="city" placeholder="City">
+                                                    <label for="city">City</label>
+                                                </div>                                               
+                                                <div class="loction form-floating">
+                                                <select name="locality" class="form-select" id="locality" required>
+                                                    <option value="" disabled selected>Select Locality</option>
+                                                    <option value="Locality1">Locality 1</option>
+                                                    <option value="Locality2">Locality 2</option>
+                                                    <option value="Locality3">Locality 3</option>
+                                                </select>
+                                                <label for="locality">Locality</label>
+                                            </div>                                              
+                                                    <label for="Address">Address</label>
+                                                <div class="loction form-floating">
+
+                                                      <textarea id="Address" name="Address" class="p-2" rows="3"  cols="43"></textarea>
+                                                 </div>
+                                                </div>                                      
+
+                                            </div>                                       
+                                    </div>
+                                </div>
+                               </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="back-btn">Back</button>
+                        <button type="button" class="next-btn">Continue</button>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="form-section "  id="step-3">
+                    <div class="">
+                        <h2 class="">Tell us about your property</h2>
+
+                        <div>
+                            <div class="step-3">                              
+
+
+                                    @* Add Room Details *@
+                                <div class="">
+                                    <h4 class="roomadd">Add Room Details</h4>
+                                    <div class="row">
+                                        <label>No. of Bedrooms</label>
+                                        <div class="options">
+                                            <button type="button" onclick="selectbedOption(this)" data-value="1" class="h6 option bedOption">1</button>
+                                            <button type="button" onclick="selectbedOption(this)" data-value="2" class="h6 option bedOption">2</button>
+                                            <button type="button" onclick="selectbedOption(this)" data-value="3" class="h6 option bedOption">3</button>
+                                            <button type="button" onclick="selectbedOption(this)" data-value="4" class="h6 option bedOption">4</button>
+                                            <button type="button" onclick="selectbedOption(this)" data-value="5" class="h6 option bedOption">5</button>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label>No. of Bathrooms</label>
+                                        <div class="options">
+                                            <button type="button" onclick="selectbathOption(this)"  data-value="1" class="h6 option bathOption">1</button>
+                                            <button type="button" onclick="selectbathOption(this)"  data-value="2" class="h6 option bathOption">2</button>
+                                            <button type="button" onclick="selectbathOption(this)"  data-value="3" class="h6 option bathOption">3</button>
+                                            <button type="button" onclick="selectbathOption(this)"  data-value="4" class="h6 option bathOption">4</button>
+                                            <button type="button" onclick="selectbathOption(this)"  data-value="5"  class="h6 option bathOption">5</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                    @* Add Area Details      *@
+                                <div class="">
+                                    <h4 class="roomadd">Add Area Details</h4>
+                                        @* <div class="row">
+                                        <label>Atleast one area type is mandatory</label>
+                                         <div class="areaArea -details">
+                                            <div class="mt-3 plot carpet" style="display: flex;">
+
+                                                <div class="error form-floating">
+                                                    <input name="carpet-area" type="number" class="form-control" id="floatingInput" placeholder="Plot Area">
+                                                    <label for="floatingInput">Carpet Area</label>
+                                                </div>
+                                                    <p class="sqfit">sq.ft.</p>                                                  
+
+                                            </div>     
+                                            <div class="mt-3 Built plot" style="display: none;">
+
+                                              <div class="d-flex">
+                                                <div class="form-floating">
+                                                    <input name="built-area" type="number" class="form-control" id="floatingInput" placeholder="Built-up Area">
+                                                    <label for="floatingInput">Built-up Area</label>
+                                                </div>
+                                                        <p class="sqfit">sq.ft.</p>   
+
+                                              </div>
+
+                                            </div>     
+                                            <div class="mt-3">
+
+                                            <button class="areabtn " id="addPlot" >+ Add Built-up Area</button>                                   
+                                            <button class="areabtn " style="display: none;" id="addcarpet">+ Add Carpet-Area</button>                                   
+                                            </div>
+                                    </div> *@
+                                    <div class="areaArea-details">
+                                        <div class="mt-3" style="display: flex; gap: 1rem; align-items: center;">
+
+                                            <select id="areaType" class="form-select areadropdown" style="width: 250px;">
+                                                <option value="carpet">Carpet Area</option>
+                                                <option value="built">Built-up Area</option>                                           
+                                            </select>
+                                        </div>
+
+                                        <div class="mt-3 formArea">
+
+                                            <div class="form-floating" style="width: 250px;">
+                                                <input name="property_sq_ft" type="number" class="property_sq_ft arealabel form-control" id="areaInput" placeholder="Enter Area">
+                                                <label class="" for="areaInput" id="areaLabel">Carpet Area <span>(sq.ft.)</span></label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                               </div>
+                                @* Furnishing *@
+                                <div class="">
+                                    <h4 class="roomadd">Furnishing</h4>
+                                    <div class="furnishing-options">
+                                <button type="button" style="width: fit-content;" class="furnishing-option" data-value="Furnished" onclick="selectFurnishing(this)">
+                                    Furnished</button>
+                                <button type="button" style="width: fit-content;" class="furnishing-option " data-value="Semi-furnished" onclick="selectFurnishing(this)">
+                                    Semi-furnished</button>
+                                <button type="button" style="width: fit-content;" class="furnishing-option " data-value="Un-furnished" onclick="selectFurnishing(this)">
+                                    Un-furnished</button>
+
+                                  </div>
+                                </div>
+                                @* Availability stauts *@
+                                <div class="">
+                                    <h4 class="roomadd">Availability Status</h4>
+                                    <div class="furnishing-options">
+                                <button type="button" style="width: fit-content;" class="stauts-option" data-value="true"  onclick="selectstauts(this)">Ready to move</button>
+                                <button type="button" style="width: fit-content;" class="stauts-option " data-value="false" onclick="selectstauts(this)">Under construction</button>
+                                    </div>
+                               </div>
+                                <div style="display: none;" class="age-options">
+                                    <h4 class="roomadd">Age of property <span class="text-sm">( In year )</span></h4>
+                                    <div>
+
+                                                                        <label for="customRange1" class="form-label"></label>
+                                                                        <input  min="0" max="20" type="range" class="form-range" id="customRange1">
+                                                                         <div class="value-box" id="rangeValue">10</div>
+                                                                    </div>
+                                    @* <div class="">
+                                                                <button type="button" style="width: fit-content;" data-value="0-1 year" class="age-option" onclick="selectAge(this)">
+                                                                    0-1 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="1-5 year" class="age-option" onclick="selectAge(this)">
+                                                                    1-5 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="5-10 year" class="age-option" onclick="selectAge(this)">
+                                                                    5-10 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="10 +year" class="age-option" onclick="selectAge(this)">
+                                                                    10+ years</button>
+
+                                                                    </div> *@
+                               </div>
+                                @* Floor Details *@
+                                 <div class="">
+                                    <h4 class="roomadd">Floor Details</h4>
+                                    <div class="row">
+                                        <label>Property floor </label>
+                                         <div class="area-details">
+                                            <div class=" floor d-flex">
+
+                                                <div class="totalfloor form-floating">
+                                                    <input name="floor" type="number" class="form-control floor" id="floatingInput" placeholder="Total Floor">
+                                                    <label for="floatingInput">Floor Number</label>
+                                                </div>
+                                                @* <select class="propertyfloor" id="propertyFloor">
+                                                    <option disabled selected>Property onclick Floor</option>
+                                                    <option value="Basement">Basement</option>
+                                                    <option value="Lower-Ground">Lower Ground</option>
+                                                    <option value="Ground">Ground</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                                    *@
+
+
+                                            </div>                                        
+                                    </div>
+                                </div>
+                                </div>
+                                @* Price Details *@
+                             <div class="">
+                                    <h4 class="roomadd">Price Details</h4>
+                                    <div class="row">
+
+                                         <div class="area-details">
+                                            <div class="floor d-flex">
+
+                                                <div class="totalfloor form-floating">
+                                                    <input name="ex_price" type="number" class="form-control ex_price" id="floatingInput" placeholder="Expected Price">
+                                                    <label for="floatingInput">Expected Price</label>
+                                                </div>
+                                               
+                                            </div> 
+
+                                             <div class="checkbox-group mt-3">
+
+
+                                <input  type="checkbox" id="Tax" name="Tax" >
+                                <label for="Tax">Tax and Govt charges include</label>
+
+                            </div>
+
+                                    </div>
+                                </div>
+                               </div>
+
+                               </div>
+                        </div>
+
+
+
+                        <div class="navigation-buttons ">
+                            <button type="button"class="back-btn">Back</button>
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                <!-- Step 4 -->
+                <div class="form-section  " id="step-4">
+                    <div class="">
+                        <h4>Add property media</h4>
+                        <span class="h6" style="color: #7C7C7C;">A picture is worth a thousand words. 87% of buyers look at photos before buying</span><br>
+                        @* <h5 class="h5 mt-5" style="color: #212529;font-size: 20px;">Upload media files</h5> *@
+                        <div class="h5" style="color: black; margin-top: 40px !important;">Images Upload :</div><br>
+
+                        <div class=" gap-5  mt-4 row rowclass ms-1">
+
+                            <div class="upload-container  col-sm-12 col-lg-6" style="display: none;">
+                                <div class="upload-area position-relative"  >
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+
+                            <div class="upload-container  col-sm-12 col-lg-6" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+
+                            <div class="upload-container  col-sm-12 col-lg-6" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+
+                            <div class="upload-container  col-sm-12 col-lg-6" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="upload-container  col-sm-12 col-lg-6" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                         <div class="upload-btn  col-sm-12 col-lg-6">
+                            <div class="upload-area imageupload">
+                            <p>Add Atmost 5 photos</p>
+                            <p>size 15 MB • Formats: png, jpg, jpeg</p>
+                            <button onclick="uploadimage(this)" type="button" class="upload">Upload Photos</button>
+                             <input name="image" type="file" accept="image/jpeg, image/png, image/jpg" multiple hidden id="fileInput">
+                            </div>
+
+                        </div>
+                            @* <input type="file" accept="image/*" hidden id="fileInput" multiple> *@
+                        </div>
+                        <div class="h5" style="color: black; margin-top: 40px !important;">Video Upload :</div><br>
+
+                        @* <span style="color: #7C7C7C;"> ------------------------------------------------------- Video Upload ------------------------------------------------------- </span> *@
+
+                        @* video *@
+                        <div class="gap-4  videodiv mt-4 row ms-1">
+                        <div class="video-upload-container col col-sm-6 col-lg-6" style="display: none;" >
+                            <div class="position-relative video-upload-area">
+                                <video controls class="video-preview" width="100%" height="auto">
+                                    <source src="" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                            </div>
+                        </div>
+
+
+
+
+                        </div>
+                         <div class="upload-btn col col-sm-12 col-lg-3">
+                            <div class="upload-area">
+                            <p>Add a Video</p>
+                            <p>size 100 MB • Formats: MP4</p>
+                            <input name="video" type="file" accept="video/*" hidden id="videoFileInput" multiple>
+                            <button type="button" class="upload-videos mt-3">Upload Videos</button>
+
+                            </div>
+
+                        </div>
+
+                        @* <span style="color: #7C7C7C;"> ------------------------------------------------------- Brochure Upload ------------------------------------------------------- </span> *@
+
+                        @* pdf *@
+
+                         <div class="d-flex gap-5 mt-4 row">
+
+                             <div class="pdf-upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="pdf-upload-area">
+                                    <embed class="pdf-preview" type="application/pdf" width="100%" height="300px" src="">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        @* 
+
+                         <div class="upload-btn col col-sm-12 col-lg-3">
+                            <div class="upload-area">
+                            <p>Add atleast 2 PDF</p>
+                            <p>size 10 MB • Formats: MP4</p>                           
+                                <input type="file" accept=".pdf" hidden id="pdfFileInput" multiple>                 
+                                <button class="upload-pdfs mt-3">Upload Brochure</button>
+
+                            </div>
+
+                        </div> *@
+
+
+
+                        <div class="navigation-buttons my-5">
+                            <button type="button" class="back-btn">Back</button>
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="form-section" id="step-5">
+                    <div class="">
+                       <h4 class="mb-3">Add Amenities</h4>
+                        @* <span class="h6" style="color: #7C7C7C;">These fields are used to populate USP & captions</span><br> *@
+                        @* <span class="h6" style="color: #7C7C7C;">All fields on this page are optiosnal</span><br> *@
+
+                                    <div class=" mt-5">
+                                         @* <span class="h6" style="color: #302e2e; margin-bottom: 30px;">Amenities :</span> *@
+
+                                       <div class="Amenities mt-3 rowclass">
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="1"class="option amemitiesOption"> <i class="fas fa-swimming-pool"></i> Swimming Pool</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="2"class="option amemitiesOption"><i class="fas fa-dumbbell"></i> Gym</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="3"class="option amemitiesOption"> <i class="fas fa-parking"></i> Parking</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="4" class="option amemitiesOption"><i class="fas fa-child"></i> Playground</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="5"class="option amemitiesOption"><i class="fas fa-building"></i> Clubhouse</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="6"class="option amemitiesOption"> <i class="fas fa-tree"></i> Garden</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="7"class="option amemitiesOption"> <i class="fas fa-shield-alt"></i> Security</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="8"class="option amemitiesOption"> <i class="fas fa-video"></i> CCTV</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="9"class="option amemitiesOption"><i class="fas fa-battery-full"></i> Power Backup</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="10"class="option amemitiesOption"> <i class="fas fa-sort"></i> Lift</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="11"class="option amemitiesOption"><i class="fas fa-wifi"></i> Wi-Fi</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="12"class="option amemitiesOption"><i class="fas fa-fire-extinguisher"></i> Fire Safety</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="13"class="option amemitiesOption"><i class="fas fa-users"></i> Conference Room</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="14"class="option amemitiesOption"><i class="fas fa-book"></i> Library</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="15"class="option amemitiesOption"><i class="fas fa-futbol"></i> Sports Area</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="16"class="option amemitiesOption"> <i class="fas fa-dove"></i> Yoga Room</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="17"class="option amemitiesOption"> <i class="fas fa-child"></i>  Kids Zone</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="18"class="option amemitiesOption"><i class="fas fa-hot-tub"></i> Jacuzzi</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="19"class="option amemitiesOption"><i class="fas fa-spa"></i> Spa</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="22"class="option amemitiesOption"> <i class="fas fa-film"></i> Theater</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="23"class="option amemitiesOption"><i class="fas fa-table-tennis"></i> Tennis Court</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="24"class="option amemitiesOption"><i class="fas fa-basketball-ball"></i> Basketball Court</button>
+                                    </div>
+
+                        <div class="navigation-buttons mt-5">
+                            <button type="button" class="back-btn">Back</button>
+                            <button type="button" class="submit">submit</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+         </div>
+
+
+</form>
+         </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        
+$(document).ajaxStart(function () {
+    $("#loader").fadeIn();
+}).ajaxStop(function () {
+    $("#loader").fadeOut();
+});
+
+  const propertyNameInput = $('#property-Name');
+  const pincodeInput1 = $('#Pincode');
+
+        const steps = document.querySelectorAll('.step');
+        const formSections = document.querySelectorAll('.form-section');
+        const nextButtons = document.querySelectorAll('.next-btn');
+        const backButtons = document.querySelectorAll('.back-btn');
+        const stepLines = document.querySelectorAll('.step-line');
+        const pincodeInput = document.getElementById("Pincode");
+        const showMoreButton = document.getElementById("showMoreFields");
+        const hiddenFields = document.getElementById("hiddenFields");
+
+pincodeInput1.on('input', function () {
+    let inputValue = $(this).val().trim();    
+    if (inputValue.length > 6) {
+        inputValue = inputValue.slice(0, 6);
+        $(this).val(inputValue); 
+    }    
+    if (inputValue.length === 6) {      
+        $(this).next('.error-message').remove();
+    } else {
+       
+        if ($(this).next('.error-message').length === 0) {
+            const errorMsg = `<span class="error-message">Pincode must be 6 digits.</span>`;
+            $(this).after(errorMsg);
+        }
+    }
+});
+
+
+
+
+       propertyNameInput.on('input', function () {
+    const inputValue = $(this).val().trim();
+
+    // Check if the field is empty
+    if (inputValue === '') {
+        // Show error if not already present
+        if ($(this).next('.error-message').length === 0) {
+            const errorMsg = `<span class="error-message">Property Name is required.</span>`;
+            $(this).after(errorMsg);
+        }
+    } else {
+        // Remove error if value is not empty
+        $(this).next('.error-message').remove();
+    }
+});
+
+         $('.ex_price').on('change', function () {
+                   
+                const ex_price = $(this).val();
+                   
+                      $(this).next('.error-message').remove();
+                if(ex_price < 9000 || !Number.isInteger(Number(ex_price))){
+                   
+                     const errorMsg = `<span class="error-message">Expected Price must be greater than integer 9000.</span>`;
+                    $(this).after(errorMsg);
+                }
+         });
+         $('.floor').on('change', function () {                    
+                const floor = $(this).val();
+                 
+                      $(this).next('.error-message').remove();
+              
+                if(floor < 0 || floor > 15 || !Number.isInteger(Number(floor)) ){
+                 
+                     const errorMsg = `<span class="error-message">Floor number must be an integer between 0 and 15.</span>`;
+                    $(this).after(errorMsg);
+                }
+         });
+         $('.property_sq_ft').on('change', function () {                    
+                const property_sq_ft = $(this).val();
+                 
+                      $(this).next('.error-message').remove();
+              
+                if(property_sq_ft  < 400 || property_sq_ft > 10000 ){
+                 
+                     const errorMsg = `<span class="error-message">Carpet Area must be between 400 and 10000 sq ft.</span>`;
+                    $(this).after(errorMsg);
+                }
+         });
+
+         $('.radio-group input[type="radio"]').on('change', function () {
+    const radioGroup = $(this).closest('.radio-group');
+   
+    if (radioGroup.next('.error-message').length > 0) {
+        radioGroup.next('.error-message').remove();
+    }
+});
+
+
+$('#locality').on('change', function () {
+    const inputValue = $(this).val();
+    
+    if (inputValue) {
+       
+        $(this).next('.error-message').remove();
+    } else {
+       
+        if ($(this).next('.error-message').length === 0) {
+            const errorMsg = `<span class="error-message">Please select a locality.</span>`;
+            $(this).after(errorMsg);
+        }
+    }
+});
+
+
+$('#Address').on('input', function () {
+    const inputValue = $(this).val().trim();
+    
+    if (inputValue) {
+      
+        $(this).next('.error-message').remove();
+    } else {
+       
+        if ($(this).next('.error-message').length === 0) {
+            const errorMsg = `<span class="error-message">Address is required.</span>`;
+            $(this).after(errorMsg);
+        }
+    }
+});
+
+
+        // AJAX call to fetch data
+    $.ajax({
+        url: 'http://localhost:5293/api/ProjectApi/GetAllProjects', // Replace with your actual API endpoint
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // Check if data exists
+            if (data && Array.isArray(data)) {
+                // Clear and append default option
+                const $projectDropdown = $('#project');
+                $projectDropdown.empty();
+                $projectDropdown.append('<option value="" selected>Select Project</option>');
+
+                // Populate the dropdown
+                data.forEach(function (project) {
+                    $projectDropdown.append(
+                        `<option value="${project.projectId}">${project.projectName}</option>`
+                    );
+                });
+            } else {
+                console.error('No data found!');
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('Failed to fetch projects:', error);
+        }
+    });
+       
+     
+        let currentStep = 0;
+         const formData = {};
+
+
+
+
+          pincodeInput.addEventListener("input", function () {
+                if (pincodeInput.value.trim() !== "") {
+                    showMoreButton.style.display = "inline-block";
+                } else {
+                    showMoreButton.style.display = "none";
+                }
+            });
+
+            showMoreButton.addEventListener("click", function () {
+            const Pincode = document.querySelector("#Pincode");
+            "dhruv error"
+            const errorMessage = Pincode.nextElementSibling;
+                @* hiddenFields.style.display = "block"; *@
+                if (errorMessage && errorMessage.classList.contains("error-message")) {
+        errorMessage.remove();
+    }
+
+                pincodeInput.disabled = false; 
+                showMoreButton.disabled = false; 
+            });
+
+     function validateStep(step) {
+        let isValid = true;
+
+
+        $(formSections[step]).find('.error-message').remove();
+
+
+        $(formSections[step])
+             .find('input:radio, input:text, textarea, input[type="number"]')
+            .each(function () {
+                const $this = $(this);
+                if ($this.is(':radio')) {
+
+                   if (
+                    $(`input[name="${$this.attr('name')}"]:checked`).length === 0 &&
+                    !$this.closest('.radio-group').next('.error-message').length
+                ) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Please select a property option.</span>`;
+                    $this.closest('.radio-group').after(errorMsg);
+                }
+                 } 
+                else if ($this.val().trim() === '') {
+
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">This field is required.</span>`;
+                    $this.after(errorMsg);
+                }  
+               else if ($this.attr('type') === 'number') {
+                // Validation for Expected Price
+                const value = parseFloat($this.val());
+                if ($this.attr('name') === 'ex_price' && (value < 9000 || !Number.isInteger(Number(value)))) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Expected Price must be greater than integer 9000.</span>`;
+                    $this.after(errorMsg);
+                } 
+                 else if ($this.attr('name') === 'property_sq_ft' && (value < 400 || value > 10000)) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Carpet Area must be between 400 and 10000 sq ft.</span>`;
+                    $this.after(errorMsg);
+                } 
+                 else if ($this.attr('name') === 'floor' && (value < 0 || value > 15 || !Number.isInteger(Number(value)))) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Floor number must be an integer between 0 and 15.</span>`;
+                    $this.after(errorMsg);
+                } 
+                else if (isNaN(value)) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Please enter a valid number.</span>`;
+                    $this.after(errorMsg);
+                }
+            }
+            });
+
+                 const uploadStep = $(formSections[step]).find('.upload-container');                   
+                 const imageupload = $(formSections[step]).find('.imageupload');
+               if (uploadStep.length > 0) {                          
+                    const uploadedImages = uploadStep.find('.uploaded-image').filter(function () {
+                        return $(this).attr('src') && $(this).attr('src').trim() !== '';
+                    });
+
+                         
+                    if (uploadedImages.length === 0) {
+                        isValid = false;
+                        const errorMsg = `<span class="error-message">Please upload at least one image.</span>`;
+                        imageupload.after(errorMsg);
+                    }
+                }
+
+              
+             const Pincode = $(formSections[step]).find('.Pincode');             
+                if (Pincode.length > 0) {
+            
+                    const pincodeValue = Pincode.val().trim();              
+                   
+                    Pincode.next('.error-message').remove();                    
+                 
+                    if (pincodeValue.length !== 6 || isNaN(pincodeValue)) {
+             
+                        isValid = false;
+                        const errorMsg = `<span class="error-message">Please enter a valid 6-digit pincode.</span>`;
+                        Pincode.after(errorMsg);
+                    }
+                }
+                 const Locality = $(formSections[step]).find('#locality');
+                    if (Locality.length > 0) {
+                        const selectedValue = Locality.val(); 
+                       
+                        Locality.next('.error-message').remove();
+                        
+                   
+                        if (!selectedValue || selectedValue === "") {
+                            isValid = false;
+                            if (Locality.next('.error-message').length === 0) {
+                                const errorMsg = `<span class="error-message">Please select a locality.</span>`;
+                                Locality.after(errorMsg);
+                            }
+
+                            
+                            if (Pincode.next('.error-message').length === 0) {
+                                const errormsg = `<span class="error-message">Please Click Get City.</span>`;
+                                Pincode.after(errormsg);
+                            }
+                        }
+                    }
+                const Listing_type = $(formSections[step]).find('.optionsell');
+                if (Listing_type.length > 0 && Listing_type.filter('.selected').length === 0) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Please select a listing type option.</span>`;
+                
+                    if (Listing_type.closest('.options').next('.error-message').length === 0) {
+                        Listing_type.closest('.options').after(errorMsg);
+                    }
+                }
+
+
+
+            const bedOptions = $(formSections[step]).find('.bedOption');
+            if (bedOptions.length > 0 && bedOptions.filter('.selected').length === 0) {
+                isValid = false;
+                const errorMsg = `<span class="error-message">Please select an bedroom option.</span>`;
+                bedOptions.closest('.options').after(errorMsg);
+            }
+            const bathOptions = $(formSections[step]).find('.bathOption');
+            if (bathOptions.length > 0 && bathOptions.filter('.selected').length === 0) {
+                isValid = false;
+                const errorMsg = `<span class="error-message">Please select an bathrooms option.</span>`;
+                bathOptions.closest('.options').after(errorMsg);
+            }
+           const furnishingOptions = $(formSections[step]).find('.furnishing-option');
+            if (furnishingOptions.length > 0 && furnishingOptions.filter('.selected').length === 0) {
+                isValid = false;
+                const errorMsg = `<span class="error-message">Please select a furnishing option.</span>`;
+                furnishingOptions.closest('.furnishing-options').after(errorMsg);
+            }
+             const statusOptions = $(formSections[step]).find('.stauts-option');
+            if (statusOptions.length > 0 && statusOptions.filter('.selected').length === 0) {
+                isValid = false;
+                const errorMsg = `<span class="error-message">Please select an availability status.</span>`;
+                statusOptions.closest('.furnishing-options').after(errorMsg);
+            }
+
+
+            const ageOptions = $(formSections[step]).find('.age-options');
+            if (ageOptions.is(':visible')) {
+        @* const ageButtons = ageOptions.find('.age-option');
+                if (ageButtons.filter('.selected').length === 0) {
+                    isValid = false;
+                    const errorMsg = `<span class="error-message">Please select the age of the property.</span>`;
+                    ageOptions.find('div').append(errorMsg);
+                } *@
+            }
+
+                return isValid;
+            }
+
+            nextButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {     
+                if(validateStep(currentStep)){
+                formSections[currentStep].classList.remove('active');
+                steps[currentStep].classList.remove('active');
+                currentStep++;
+                formSections[currentStep].classList.add('active');
+                steps[currentStep].classList.add('active');
+                }           
+
+            });
+         });
+
+
+         $('#fileInput').on('change', function () {
+   
+     const imageupload = $('.imageupload');
+        imageupload.next('.error-message').remove();
+   
+});
+         
+
+
+        backButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                formSections[currentStep].classList.remove('active');
+                steps[currentStep].classList.remove('active');
+                currentStep--;
+                formSections[currentStep].classList.add('active');
+                steps[currentStep].classList.add('active');
+
+            });
+        });
+
+                document.addEventListener('DOMContentLoaded', function () {
+                const areaTypeDropdown = document.getElementById('areaType');
+                const areaLabel = document.getElementById('areaLabel');
+                const areaInput = document.getElementById('areaInput');
+                    formData["area_type"] = 'Carpet Area';
+
+
+            areaTypeDropdown.addEventListener('change', function () {
+                if (areaTypeDropdown.value === 'carpet') {
+                    areaLabel.innerText = 'Carpet Area';
+                    areaInput.placeholder = 'Enter Carpet Area';
+                    formData["area_type"] = 'Carpet Area';
+                } else if (areaTypeDropdown.value === 'built') {
+                    areaLabel.innerText = 'Built-up Area';
+                    areaInput.placeholder = 'Enter Built-up Area';
+                    formData["area_type"] = 'Built-up Area';
+                    }
+                });
+            });
+
+
+
+
+  const fileInput = document.getElementById('fileInput');
+                    const uploadContainers = Array.from(document.querySelectorAll('.upload-container')); 
+                    let uploadedImages = [];
+                    let fileNames = []; 
+                    let fileNames1 = [];
+
+                    function uploadimage() {
+                        fileInput.click();
+                    }
+
+        fileInput.addEventListener('change', (event) => {
+                const files = event.target.files;
+                const fileInputimages = document.getElementById('fileInput');
+               
+                if (uploadedImages.length + files.length > uploadContainers.length) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: "You can upload a maximum of 5 images.",
+                        confirmButtonText: 'OK'
+                    });
+                    return;
+                }
+
+                     Array.from(files).forEach((file) => {
+                         const validTypes = ['image/jpeg','image/jpg', 'image/png'];
+                        if (!validTypes.includes(file.type)) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: "Invalid file type. Please upload an image type jpg/png/jpeg.",
+                                confirmButtonText: 'OK'
+                            });
+                            return;
+                        }
+                       
+                         if (file.size > 15 * 1024 * 1024) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: "File size exceeds 15mb. Please upload a smaller image.",
+                            confirmButtonText: 'OK'
+                        });
+                        return;
+                    }
+       
+             const availableIndex = uploadContainers.findIndex((container, index) => 
+                !uploadedImages.includes(index)
+            );
+
+                if (availableIndex !== -1) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                const container = uploadContainers[availableIndex];
+                const image = container.querySelector('.uploaded-image');
+                image.src = e.target.result;
+                container.style.display = 'block';
+                uploadedImages.push(availableIndex);
+                
+
+                     fileNames.push(file?.name);
+                     fileNames1.push(file);
+                  
+                };
+                   
+
+                reader.readAsDataURL(file);
+                }
+            });
+
+    
+                fileInput.value = '';
+            
+            });
+
+uploadContainers.forEach((container, index) => {
+    const deleteButton = container.querySelector('.delete-icon');
+
+    deleteButton.addEventListener('click', () => {
+        const image = container.querySelector('.uploaded-image');
+        image.src = ''; 
+        container.style.display = 'none';
+      
+        const imageIndex = uploadedImages.indexOf(index);
+        if (imageIndex !== -1) {
+            uploadedImages.splice(imageIndex, 1); 
+            fileNames.splice(imageIndex, 1);
+        }
+       
+    });
+});
+
+
+                    const uploadvideobtn= document.querySelector('.upload-videos');
+                    const videoFileInput = document.getElementById('videoFileInput');
+                    const uploadvideoContainers = document.querySelectorAll('.video-upload-container');
+
+
+                    let videoindex = 0;
+                    uploadvideobtn.addEventListener('click', () => {
+
+                        videoFileInput.click(); 
+                    });
+
+
+                    videoFileInput.addEventListener('change', (event) => {
+                        const files = event.target.files;
+                        if (videoindex + files.length > uploadvideoContainers.length) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'error',
+                                    text: "You can upload a maximum of 1 Video.",
+                                    confirmButtonText: 'OK'
+                                });
+                                return;
+                            }
+
+                        if (files.length > 0) {
+                            Array.from(files).forEach((file) => {
+                                if (videoindex < uploadvideoContainers .length) {
+                                    const container = uploadvideoContainers [videoindex];
+                                    const video = container.querySelector('.video-preview');
+                                    const source = video.querySelector('source');
+
+
+                                    const videoURL = URL.createObjectURL(file);
+                                    source.src = videoURL;
+                                    video.load(); 
+                                    container.style.display = 'block';
+                                    videoindex++;
+                                }
+                            });
+                        }
+                    });
+
+
+
+                 function selectOption(element) {
+                  
+                    const options = document.querySelectorAll('.optionsell');
+                    options.forEach(option => option.classList.remove('selected'));
+                      const options1 = $(element).closest('.options');
+      
+                        if (options1.next('.error-message').length > 0) {
+                        
+                            options1.next('.error-message').remove();
+                        }
+                     const selectedValue = element.textContent.trim();
+                    formData['Listing_type'] = selectedValue;
+
+                    element.classList.add('selected');
+                }
+        function selectPropertyOption(element) {
+            const propertyOptions = document.querySelectorAll('.property-option');
+            propertyOptions.forEach(option => option.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        function selectbathOption(element) {
+            const bathOptions = document.querySelectorAll('.bathOption');
+            bathOptions.forEach(option => option.classList.remove('selected'));
+             const selectedValue = element.textContent.trim();
+                    formData['bath'] = selectedValue;
+            element.classList.add('selected');
+            const errorMessage = element.closest('.row').querySelector('.error-message');
+                if (errorMessage) {
+                    errorMessage.remove();
+                }
+        }
+        function selectbedOption(element) {
+            const bedOptions = document.querySelectorAll('.bedOption');
+            bedOptions.forEach(option => option.classList.remove('selected'));
+             const selectedValue = element.textContent.trim();
+              formData['bed'] = selectedValue;
+             element.classList.add('selected');
+             const errorMessage = element.closest('.row').querySelector('.error-message');
+                if (errorMessage) {
+                    errorMessage.remove();
+                }
+        }
+        function selectamemitiesOption(element) {
+            const amemitiesOptions = document.querySelectorAll('.amemitiesOption');
+
+             element.classList.toggle('selected');
+
+
+             const selectedAmenities = Array.from(document.querySelectorAll('.amemitiesOption.selected'))
+               .map(option => option.getAttribute('data-value')); 
+                formData['amenities'] = selectedAmenities;
+
+        }
+        function removeError(container) {    
+    $(container).next('.error-message').remove();
+}
+        function selectFurnishing(element) {
+            const furnishingOptions = document.querySelectorAll('.furnishing-option');
+            furnishingOptions.forEach(option => option.classList.remove('selected'));
+             const selectedValue = element.textContent.trim();
+                    formData['Furnishing'] = selectedValue;
+            element.classList.add('selected');
+            removeError($(element).closest('.furnishing-options'));
+           
+        }
+        function selectstauts(element) {
+            const stautsOptions = document.querySelectorAll('.stauts-option');
+            stautsOptions.forEach(option => option.classList.remove('selected'));
+            element.classList.add('selected');
+            removeError($(element).closest('.furnishing-options'));
+
+
+             const ageOptionsDiv = document.querySelector('.age-options');
+
+                if (element.textContent == 'Ready to move') {
+                    ageOptionsDiv.style.display = 'block';
+                    formData['age'] = "10";
+
+                } else {
+                    ageOptionsDiv.style.display = 'none';
+                    formData['age'] = "0";
+
+                }
+        }
+       
+
+
+         const rangeInput = document.getElementById("customRange1");
+         const valueBox = document.getElementById("rangeValue");
+
+
+        valueBox.textContent = rangeInput.value;
+        
+        rangeInput.onchange = function () {
+            valueBox.textContent = rangeInput.value;
+            formData['age'] = rangeInput.value;
+        };
+
+       
+
+
+        
+
+  function collectFormData() {
+                $(formSections).find('input, select, textarea').each(function () {
+                    const $this = $(this);
+
+        @* if ($this.is(':radio') || $this.is(':checkbox')) {
+
+                            formData[$this.attr('name')] = $this.is(':checked') ? true : false;
+                        } else {
+
+                            formData[$this.attr('name')] = $this.val().trim();
+                        } *@
+
+
+                        if ($this.is(':radio')) {
+
+                            if ($this.is(':checked')) {
+                                formData[$this.attr('name')] = $this.val().trim();
+                            }
+                        } else if($this.is(':checkbox')) {
+
+                            formData[$this.attr('name')] = $this.is(':checked');
+                        }else {
+
+                            formData[$this.attr('name')] = $this.val()?.trim();
+                        }
+
+                });
+
+                const option = $(formSections).find('.option');
+                if (option.length > 0) {
+                    const selloption = option.filter('.selected').data('value');
+                    if (selloption ) {
+                        formData['listing_type'] = selloption ;
+                    }
+                }
+       
+                const stautsOptions = $(formSections).find('.stauts-option');
+                if (stautsOptions .length > 0) {
+                    const selectedstauts = stautsOptions .filter('.selected').data('value');                    
+                        formData['Ready_to_Move'] = selectedstauts;                   
+                }
+
+
+                return formData;
+            }
+
+                const buttons = document.querySelectorAll('.submit');
+                buttons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+
+                        if (validateStep(currentStep)) {
+
+                            const formData = collectFormData();
+                            const pictures = $("#fileInput").prop("files");
+                          ;
+                            const videos = $("#videoFileInput").prop("files")[0];
+
+                            const propertyData = new FormData();
+                            propertyData.append("propertyName", formData.Property_name);
+                            propertyData.append("propertyAmount", formData.ex_price);
+                            propertyData.append("propertySize", formData.property_sq_ft);
+                            propertyData.append("propertyListingType", formData.Listing_type);
+                            @* propertyData.append("propertyPictures", fileNames1); *@
+                          
+
+                             for (let i = 0; i < fileNames1.length; i++) {
+                          
+                                propertyData.append("propertyPictures", fileNames1[i]);
+                            }
+
+                            @* for(var picture of pictures) {
+                                propertyData.append("propertyPictures", picture);
+                            } *@
+                            propertyData.append("propertyVideos", videos);
+                            propertyData.append("bedrooms", formData.bed);
+                            propertyData.append("bathrooms", formData.bath);
+                            propertyData.append("floor", formData.floor);
+                            propertyData.append("furnished", formData.Furnishing);
+                            propertyData.append("taxInclusion", formData.Tax);
+                            propertyData.append("propertyType", formData.property_type);
+                            propertyData.append("areaType", formData.area_type);
+                            propertyData.append("propertyAge", formData.age ? formData.age : 0);
+                            propertyData.append("city", formData.city);
+                            propertyData.append("locality", formData.locality);
+                            propertyData.append("readytoMove", formData.Ready_to_Move);
+                            propertyData.append("address", formData.Address);
+                            propertyData.append("pincode", formData.Pincode);
+                            
+                            if(formData.amenities) {
+                                formData.amenities.forEach(amenity => {
+                                    propertyData.append("ammenties", amenity);
+                                });
+                            } else {
+                                propertyData.append("ammenties", 0);
+                            }
+                            propertyData.append("userId", @ViewBag.Id);
+
+                            $.ajax({
+                                url:"http://localhost:5293/api/PropertyAPI/AddProperty",
+                                dataType:"json",
+                                contentType: false,
+                                processData: false,
+                                type: "POST",
+                                data: propertyData,                                                
+                                complete: function(response) {
+                                    console.log(response)
+                                    if(response?.status === 200) {
+
+                                   Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: response?.responseText,
+                                    confirmButtonText: 'OK'
+                                });
+                                setTimeout(function () {
+                                 window.location.href = '@Url.Action("User", "Client")';
+                                }, 2000);
+                                    } else {
+                                    Swal.fire({
+                                    icon: 'error',
+                                    title: 'error',
+                                    text: response?.statusText,
+                                    confirmButtonText: 'OK'
+                                }); 
+                                    }
+                             
+                                }
+                            });
+
+                        } else {
+
+                        }
+                    });
+                });
+
+
+
+
+    </script>
+
+     <script>
+        document.getElementById('showMoreFields').addEventListener('click', function () {
+        const pincode = document.getElementById('Pincode').value.trim();
+        const loader = document.getElementById('loader');
+        const hiddenFields = document.getElementById('hiddenFields');
+
+        // Check if pincode is 6 digits
+        if (pincode.length === 6) {
+                loader.style.display = 'flex';
+
+            fetch(`https://api.postalpincode.in/pincode/${pincode}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data[0].Status === "Success") {
+                        const cityField = document.getElementById('city');
+                        const localitySelect = document.getElementById('locality');
+
+                        // Set city field and make it read-only (not editable)
+                        cityField.value = data[0].PostOffice[0].District;
+                        cityField.readOnly = true;
+
+                        // Populate locality dropdown
+                        localitySelect.innerHTML = '<option value="" disabled selected>Select Locality</option>';
+                        data[0].PostOffice.forEach(office => {
+                            const option = document.createElement('option');
+                            option.value = office.Name;
+                            option.textContent = office.Name;
+                            localitySelect.appendChild(option);
+                           hiddenFields.style.display = 'block';
+                        });
+
+                    } else {
+                         Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: "Invalid Pincode or no data found.",
+                        confirmButtonText: 'OK'
+                    });
+                        @* alert('Invalid Pincode or no data found.'); *@
+                        hiddenFields.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                   
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: "Unable to fetch data. Please try again later.",
+                        confirmButtonText: 'OK'
+                    });
+                    @* alert('Unable to fetch data. Please try again later.'); *@
+                })
+                .finally(() => {
+                 loader.style.display = 'none';
+            });
+        } else {
+            alert('Please enter a valid 6-digit Pincode.');
+             Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: "Please enter a valid 6-digit Pincode.",
+                        confirmButtonText: 'OK'
+                    });
+            
+        }
+    });
+
+    // Show "Get City" button dynamically based on pincode validation
+    document.getElementById('Pincode').addEventListener('input', function () {
+        const showMoreFields = document.getElementById('showMoreFields');
+        if (this.value.trim().length === 6) {
+            showMoreFields.style.display = 'block';
+        } else {
+            showMoreFields.style.display = 'none';
+            document.getElementById('hiddenFields').style.display = 'none';
+        }
+    });
+    </script>
+
+</body>
+
+</html>

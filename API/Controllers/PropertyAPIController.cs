@@ -10,20 +10,23 @@ namespace API.Controllers;
 public class PropertyAPIController : ControllerBase
 {
     private readonly PropertyRepository propertyRepository;
-    public PropertyAPIController(PropertyRepository propertyRepository)
+    private readonly ProjectRepository projectRepository;
+    public PropertyAPIController(PropertyRepository propertyRepository, ProjectRepository projectRepository)
     {
         this.propertyRepository = propertyRepository;
+        this.projectRepository = projectRepository;
     }
 
     [HttpPost("AddProperty")]
-    public IActionResult AddProperty([FromForm] Properties.Post property, [FromForm] Properties.PropertyDetails.Post propertyDetails)
+    public IActionResult AddProperty([FromForm] Properties.Post property, [FromForm] Properties.PropertyDetails.Post propertyDetails, [FromForm] List<int> ammenties)
     {
         try
         {
             if (!ModelState.IsValid) return BadRequest("Please provide property details id");
             int propertydetailsid = propertyRepository.AddPropertyDetails(propertyDetails);
             propertyRepository.AddProperty(property, propertydetailsid);
-            return Ok(propertydetailsid);
+            projectRepository.AllAmenities(new() { AllAmenities = ammenties, ProjectDetailsId = propertydetailsid });
+            return Ok("Property added successfully");
         }
         catch (Exception e)
         {
@@ -74,14 +77,69 @@ public class PropertyAPIController : ControllerBase
         }
     }
 
+    [HttpDelete("DeleteProperty")]
+    public IActionResult DeleteProperty(int propertyid)
+    {
+        try
+        {
+            if (!ModelState.IsValid) return BadRequest("Please provide a property id");
+            int propertydetailsid = propertyRepository.DeleteProperty(propertyid);
+            propertyRepository.DeletePropertyDetails(propertydetailsid);
+            propertyRepository.DeleteAmenities(propertydetailsid);
+            return Ok($"Property {propertyid} deleted successfully");
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
+    }
+
+    // TODO
+    [HttpDelete("DeleteImage")]
+    public IActionResult DeleteImage(string path)
+    {
+        FileHandler.DeleteDirectory(path);
+        return Ok();
+    }
+
+    [HttpGet("GetPropertyByUserId")]
+    public IActionResult GetPropertyByUserId(int id)
+    {
+        try
+        {
+            return Ok(propertyRepository.GetPropertyDetailsByUserId(id));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest("Cannot get the property" + ex.Message);
+        }
+    }
+
+    [HttpPost("MarkasSold")]
+    public IActionResult MarkasSold(int propertyid)
+    {
+        propertyRepository.SoldProperty(propertyid);
+        return Ok();
+    }
+
+    [HttpPost("MarkasunSold")]
+    public IActionResult MarkasunSold(int propertyid)
+    {
+        propertyRepository.unSoldProperty(propertyid);
+        return Ok();
+    }
+
     [HttpGet("ViewProperty")]
-    public IActionResult ViewProperty(){
-        try{
+    public IActionResult ViewProperty()
+    {
+        try
+        {
             var properties = propertyRepository.GetProperties();
             return Ok(properties);
         }
-        catch(Exception ex){
-            return BadRequest("Not found: "+ ex.Message);        
+        catch (Exception ex)
+        {
+            return BadRequest("Not found: " + ex.Message);
         }
     }
 
@@ -91,31 +149,10 @@ public class PropertyAPIController : ControllerBase
         try
         {
             return Ok(propertyRepository.GetPropertyDetails(id));
-        }catch(Exception ex){
-            return BadRequest("Cannot get the property"+ex.Message);
         }
-    }
-    [HttpGet("GetPropertyByUserId")]
-    public IActionResult GetPropertyByUserId(int id)
-    {
-        try
+        catch (Exception ex)
         {
-            return Ok(propertyRepository.GetPropertyDetailsByUserId(id));
-        }catch(Exception ex){
-            return BadRequest("Cannot get the property"+ex.Message);
+            return BadRequest("Cannot get the property" + ex.Message);
         }
-    }
-    // [HttpGet]
-    // public IActionResult GetPropertyByUserId(int id)
-    // {
-        
-    // }
-
-    // TODO
-    [HttpDelete("DeleteImage")]
-    public IActionResult DeleteImage(string path)
-    {
-        FileHandler.DeleteDirectory(path);
-        return Ok();
     }
 }

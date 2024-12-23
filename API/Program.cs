@@ -131,10 +131,9 @@ builder.Services.AddCors(policy =>
 {
     policy.AddPolicy("CorsPolicy", rules =>
     {
+        rules.AllowAnyOrigin();
         rules.AllowAnyMethod();
-        rules.WithOrigins("http://localhost:5154");
         rules.AllowAnyHeader();
-        rules.AllowCredentials();
 
     });
 });
@@ -144,20 +143,23 @@ builder.Services.AddSingleton<IAccountRepository, AccountRepository>(provider =>
     IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
     return new AccountRepository(configuration);
 });
-builder.Services.AddSingleton<IReviewsRepository, ReviewsRepository>(provider =>
-{
-    IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
-    return new ReviewsRepository(configuration);
-});
-builder.Services.AddSingleton<IAdminRepository, AdminRepository>(provider =>
-{
-    IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
-    return new AdminRepository(configuration);
-});
+
 builder.Services.AddSingleton(provider =>
 {
     IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
     return new MailerService(configuration);
+});
+
+builder.Services.AddSingleton(provider =>
+{
+    IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
+    return new PropertyRepository(configuration);
+});
+
+builder.Services.AddSingleton<IPropertyRepository, PropertyRepository>(provider =>
+{
+    IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
+    return new PropertyRepository(configuration);
 });
 
 builder.Services.AddSingleton<IProjectRepository, ProjectRepository>(provider =>
@@ -169,8 +171,15 @@ builder.Services.AddSingleton<IProjectRepository, ProjectRepository>(provider =>
 builder.Services.AddSingleton(provider =>
 {
     IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
-    return new PropertyRepository(configuration);
+    return new ProjectRepository(configuration);
 });
+
+builder.Services.AddSingleton<IReviewsRepository, ReviewsRepository>(provider =>
+{
+    IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
+    return new ReviewsRepository(configuration);
+});
+
 
 var app = builder.Build();
 

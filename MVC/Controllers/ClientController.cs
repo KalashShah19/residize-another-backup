@@ -1,4 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace MVC.Controllers
 {
@@ -24,25 +30,35 @@ namespace MVC.Controllers
         {
 
         }
-
-        public IActionResult Home()
+        public IActionResult MyInterest()
         {
-            Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
-            Response.Headers["Pragma"] = "no-cache";
-            Response.Headers["Expires"] = "0";
-
-            if (IsLogin())
-            {
-                if (string.Equals("admin", GetRole()))
-                    return RedirectToAction("Dashboard", "Admin");
-            }
-
             int? UserId = HttpContext.Session.GetInt32("userid");
             if (UserId == null)
             {
                 return RedirectToAction("Login", "Account");
             }
             ViewBag.Id = UserId;
+            return View();
+        }
+
+        public IActionResult Home()
+        {
+            // Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+            // Response.Headers["Pragma"] = "no-cache";
+            // Response.Headers["Expires"] = "0";
+
+            // if (IsLogin())
+            // {
+            //     if (string.Equals("admin", GetRole()))
+            //         return RedirectToAction("Dashboard", "Admin");
+            // }
+
+            // int? UserId = HttpContext.Session.GetInt32("userid");
+            // if (UserId == null)
+            // {
+            //     return RedirectToAction("Login", "Account");
+            // }
+            // ViewBag.Id = UserId;
             return View();
         }
         public IActionResult User()
@@ -54,7 +70,26 @@ namespace MVC.Controllers
                 if (string.Equals("client", GetRole()))
                     return RedirectToAction("Home", "Client");
             }
+
+
             return View();
+        }
+
+        public IActionResult ViewProject()
+        {
+            // if (HttpContext.Session.GetString("email") == null)
+            // {
+            //     return RedirectToAction("User", "Client");
+            // }
+            // ViewBag.loginUserEmail = HttpContext.Session.GetString("email");
+            return View();
+        }
+
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View("Error!");
         }
 
         public IActionResult ViewProperty()
@@ -67,17 +102,18 @@ namespace MVC.Controllers
             ViewBag.PropId = id;
             return View();
         }
+        public IActionResult ViewOnePropert(int id)
+        {
+            ViewBag.PropId = id;
+            return View();
+        }
 
 
         public IActionResult ViewOneProject(int id)
         {
+            ViewBag.ProjId = id;
+            Console.WriteLine(id);
             return View(id);
-        }
-        
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
         }
     }
 }

@@ -49,7 +49,7 @@ namespace Repository.Models
         }
         public class GET
         {
-            public int? ProjectId {get;set;}
+            public int ProjectId { get; set; }
             public string ProjectName { get; set; }
             public string PicturePath { get; set; }
             public string BrochurePath { get; set; }

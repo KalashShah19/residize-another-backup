@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj": {}
+    "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj": {
+    "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj",
+        "projectPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\intern035\\.nuget\\packages\\",
-        "outputPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\obj\\",
+        "outputPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

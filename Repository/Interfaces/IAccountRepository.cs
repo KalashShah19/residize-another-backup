@@ -16,8 +16,10 @@ public interface IAccountRepository
     public User.GetUpdateProfile? GetProfile(int id);
     public void UpdateProfile(User.GetUpdateProfile User);
     public bool ChangePassword(User.ChangePassword User);
-    public void Forgotpassword (User.Forgot Useremail);
-    public bool Resetpassword (User.Resetpassword Userpassword);
+    public void Forgotpassword(User.Forgot Useremail);
+    public bool Resetpassword(User.Resetpassword Userpassword);
 
+    public User.GetContectInfo GetContectInfoProject(int project_id);
     public User.GetContectInfo GetContectInfo(int propertie_id);
+
 }

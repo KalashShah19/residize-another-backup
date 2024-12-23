@@ -1,0 +1,877 @@
+@{
+  Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Untree.co" />
+  <link rel="shortcut icon" href="favicon.png" />
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap5" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css" />
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+  @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+  @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+  @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+  @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+  <link rel="stylesheet" href="css/tiny-slider.css" />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  @* <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
+  <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+  <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <title>
+    Residize
+  </title>
+  <style>
+    .property-box {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .property-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      justify-items: start;
+
+
+    }
+
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* image Details*/
+
+    .property-details {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .property-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .property-info {
+      width: 650px;
+      height: 420px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-info .row {
+      margin-bottom: 15px;
+    }
+
+    .property-info .icon {
+      font-size: 17px;
+      margin-right: 10px;
+    }
+
+    .property-info .title {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .property-info .value {
+      font-size: small;
+      color: #333;
+    }
+
+    .property-info .value small {
+      color: #888;
+    }
+
+    /*Footer Panel*/
+
+    .features {
+      margin-top: 20px;
+    }
+
+    .details {
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    .details .row div {
+      margin-bottom: 10px;
+    }
+
+    .link {
+      color: black;
+      font-size: 12px;
+    }
+
+    h1 {
+      color: #007777;
+      font-weight: 700;
+    }
+
+    .features {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .features .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .amenities-grid {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 12px !important;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: white !important;
+      font-size: 14px;
+      max-width: 200px !important;
+      font-weight: 500;
+      color: #444;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .badge i {
+      margin-right: 8px;
+      font-size: 20px !important;
+      color: #007777;
+    }
+
+    .projectbtn {
+      background-color: #005555 !important;
+      border-radius: 10px !important;
+    }
+
+    .sliderbtn {
+      background-color: #005555 !important;
+      border-radius: 10px !important;
+      color: white;
+      padding: 13px 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div>
+
+    <header class="main-header">
+      <nav class="mt-navbar">
+        <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+          <a href="/Client/Home">
+            <div class="logo-wrapper ms-5 ">
+              <img src="../../App_Themes/Default/images/residize-white.png" />
+            </div>
+          </a>
+        </div>
+        <div class="nav-right">
+          <ul class="user-menu">
+            <li class="support-mail-wrapper">
+              <a href="../AI/index" class="icon">Residize AI </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+  </div><br>
+  <a href="/Client/ViewProperty" style="color: #005555; text-decoration: none;margin-left: 30px;">
+    <span style="font-size: 24px; font-weight: bold;">←</span>
+    Back
+  </a>
+  <br>
+
+  <div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="property-title">
+          <h1 id="displyPropName">Property</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="property-box">
+            @* <div class="property-title">Property</div> *@
+            <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/images/photo-15.jpg" class="d-block w-100" alt="Property Image 1" />
+                  <div class="carousel-caption">Image 1 of 5</div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/Ai8.jpg" class="d-block w-100" alt="Property Image 2" />
+                  <div class="carousel-caption">Image 2 of 5</div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/profile-back.jpg" class="d-block w-100" alt="Property Image 3" />
+                  <div class="carousel-caption">Image 3 of 5</div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/Ai8.jpg" class="d-block w-100" alt="Property Image 4" />
+                  <div class="carousel-caption">Image 4 of 5</div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/salad.jpg" class="d-block w-100" alt="Property Image 5" />
+                  <div class="carousel-caption">Image 5 of 5</div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <h5 class="mt-3">Photos (1/5)</h5>
+        </div>
+        <div class="property-info">
+          <div class="row align-items-center">
+            <h3 id="displyPropName"></h3>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-chart-area icon-color"></i></span>
+              <div>
+                <div class="title">Area</div><small id="display"></small>
+                <div class="value">
+                  <span id="displayareaType"></span> <a href="#">sq.ft.</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-home icon-color"></i></span>
+              <div>
+                <div class="title">Configuration</div>
+                <div class="value"><span id="displaybathrooms"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-tags icon-color"></i></span>
+              <div>
+                <div class="title">Price</div>
+                <div class="value">
+                  <span id="displaypropertyAmount"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-address-book icon-color"></i></span>
+              <div>
+                <div class="title">Address</div>
+                <div class="value"><span id="displayAddress"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-building icon-color"></i></span>
+              <div>
+                <div class="title">Total Floors</div>
+                <div class="value"><span id="displayFloor"></span> Floors</div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-map icon-color"></i></span>
+              <div>
+                <div class="title">Locality</div>
+                <div class="value"><span id="displayLocality"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+              <span class="icon"><i class="fas fa-calendar-alt icon-color"></i></span>
+              <div>
+                <div class="title">Property Age</div>
+                <div class="value"><span id="displayPropAge"></span> Year</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse" style="margin-top: 60px;margin-right: 50px;">
+            <div>
+              <div class="">Posted date</div>
+              <div class=""><span id="displayDate"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="title mb-3">Amenities</div><br>
+          <div class="amenities-grid">
+            <span class="badge"><i class="fas fa-swimming-pool"></i> Swimming Pool</span>
+            <span class="badge"><i class="fas fa-dumbbell"></i> Gym</span>
+            <span class="badge"><i class="fas fa-parking"></i> Parking</span>
+            <span class="badge"><i class="fas fa-child"></i> Child</span>
+            <span class="badge"><i class="fas fa-building"></i> Clubhouse</span>
+            <span class="badge"><i class="fas fa-tree"></i> Garden</span>
+            <span class="badge"><i class="fas fa-shield-alt"></i> Security</span>
+            <span class="badge"><i class="fas fa-video"></i> CCTV</span>
+            <span class="badge"><i class="fas fa-battery-full"></i> Power Backup</span>
+            <span class="badge"><i class="fas fa-sort"></i> Lift</span>
+            <span class="badge"><i class="fas fa-wifi"></i> Wi-Fi</span>
+            <span class="badge"><i class="fas fa-fire-extinguisher"></i> Fire Safety</span>
+            <span class="badge"><i class="fas fa-users"></i> Conference</span>
+            <span class="badge"><i class="fas fa-book"></i> Library</span>
+            <span class="badge"><i class="fas fa-futbol"></i> Sports Area</span>
+            <span class="badge"><i class="fas fa-dove"></i> Yoga Room</span>
+            <span class="badge"><i class="fas fa-child"></i> Kids Zone</span>
+            <span class="badge"><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+            <span class="badge"><i class="fas fa-spa"></i> Spa</span>
+            <span class="badge"><i class="fas fa-film"></i> Theater</span>
+            <span class="badge"><i class="fas fa-table-tennis"></i> Tennis Court</span>
+            <span class="badge"><i class="fas fa-basketball-ball"></i> Basketball Court</span>
+            <span class="badge"><i class="fas fa-place-of-worship"></i> Temple</span>
+          </div>
+        </div>
+
+
+        <div class="details">
+          <div class="row">
+            <div class="col-md-3">
+              <strong class="text-secondary">Property Listing Type:</strong>
+              <span id="displaypropertyListingType"></span>
+            </div>
+            <div class="col-md-3">
+              <strong class="text-secondary">Property Type:</strong>
+              <span id="displayPropertyType"></span>
+            </div>
+            <div class="col-md-3">
+              <strong class="text-secondary">Furnishing:</strong>
+              <span id="displayFurnished"></span>
+            </div>
+            <div class="col-md-3">
+              <strong class="text-secondary">Property Size:</strong>
+              <span id="displayPropertySize"></span>/sqft
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+
+
+  <div class="section">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-6">
+          <h1>
+            Popular Properties
+          </h1>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <p>
+            <a target="_blank" href="ViewProperty" class="projectbtn text-white py-3 px-4">View all properties</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="property-slider-wrap">
+            <div class="property-slider">
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div><span class="city d-block mb-3">Green City</span></div><br>
+                  <div class="price mb-2"><span>Rs. 12,91,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-i
+                      tems-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a class="sliderbtn" asp-action="ViewOneProperty">See details</a>
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+            </div>
+
+            <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+              <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
+              <span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "http://localhost:5293/api/PropertyAPI/GetPropertyById",
+        type: "GET",
+        data: { id: 18 },
+        dataType: "json",
+        success: function (response) {
+          console.log("Response:", response);
+          $("#displayPropertyType").text(response.property.propertyType);
+          $("#displayFurnished").text(response.property.furnished);
+          $("#displayPropertySize").text(response.property.propertySize);
+          $("#displayPropAge").text(response.details.propertyAge);
+          $("#displayFloor").text(response.property.floor);
+          $("#displayAddress").text(response.details.address + ", " + response.details.city);
+          $("#displaypropertyAmount").text("₹" + response.property.propertyAmount);
+          $("#displaybathrooms").text(response.property.bathrooms + " Bathrooms, " + response.property.bedrooms + " Badrooms");
+          $("#displyPropName").text(response.property.propertyName);
+          var postedDate = response.details.postedDate;
+          var dateOnly = postedDate.split('T')[0];
+          $("#displayDate").text(dateOnly);
+          $("#displayLocality").text(response.details.locality);
+          $("#displaypropertyListingType").text(response.property.propertyListingType);
+          $("#displayareaType").text(response.property.areaType + ":" + response.property.propertySize);
+        },
+        error: function (xhr, status, error) {
+          console.error("Error:", error);
+          alert("Failed to fetch property details.");
+        }
+      });
+    });
+  </script>
+
+
+  <div class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Contact</h3>
+            <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+            <ul class="list-unstyled links">
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+              <li>
+                <a href="mailto:info@mydomain.com">info@mydomain.com</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Sources</h3>
+            <ul class="list-unstyled float-start links">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Vision</a></li>
+              <li><a href="#">Mission</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+            <ul class="list-unstyled float-start links">
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Creative</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Links</h3>
+            <ul class="list-unstyled links">
+              <li><a href="#">Our Vision</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+
+            <ul class="list-unstyled social">
+              <li>
+                <a href="#"><span class="icon-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-pinterest"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-dribbble"></span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <!-- 
+              **==========
+              NOTE: 
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              **==========
+            -->
+
+          <p>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . All Rights Reserved. &mdash; Designed with love by
+            <a href="https://untree.co">Untree.co</a>
+            <!-- License information: https://untree.co/license/ -->
+          </p>
+          <div>
+            Distributed by
+            <a href="https://themewagon.com/" target="_blank">themewagon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.site-footer -->
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/custom.js"></script>
+
+
+
+</body>
+
+</html>

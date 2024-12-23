@@ -42,11 +42,9 @@
   <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
   <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> *@
-  @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous"> *@
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
   <!-- css -->
   <link href="../../App_Themes/Default/css/core-pocket.css" rel="stylesheet" />
@@ -204,6 +202,56 @@
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       /* Optional: Adds a subtle shadow */
     }
+
+    @* Kalash *@
+    .nav {
+      background-color: white !important;
+      margin-bottom: 20px;
+    }
+    .mark{
+      background-color: #005555 !important;
+      color: white;
+      border: 0;
+          margin: auto;
+    padding: 10px;
+    border-radius: 7px;
+    }
+    .notificationtext .notification { 
+      list-style-type: disc !important;
+      padding: 5px;
+      font-family: none;
+      font-size: 17px;
+      display: list-item;
+      margin-left: 23px;
+      cursor: pointer !important;
+    }
+
+    .next-btn{
+      background-color: #005555;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    }
+    .tns-controls{
+      display: flex;
+      justify-content: space-between;
+    }
+    .tns-nav{display: none;}
+    .tns-outer [aria-controls]{
+      background-color: #005555;
+      padding: 5px 20px;
+      border: 0;
+      border-radius: 5px;
+      margin: 10px;
+      color: white;
+
+    }
+    [data-action="stop"] {
+  display: none !important; /* Hides the element */
+}
+
+@* Kalash *@
   </style>
 
 
@@ -213,15 +261,7 @@
 </head>
 
 <body>
-  <div id="reviewDialog"></div>
-  <div class="site-mobile-menu site-navbar-target">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close">
-        <span class="icofont-close js-menu-toggle"></span>
-      </div>
-    </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
+
 
 
   <header class="main-header">
@@ -238,6 +278,20 @@
       <div class="nav-right">
         <ul class="user-menu">
           @* <p style="color: white;">Residize AI</p> *@
+          <li class="">
+            <a class="">
+              <a href="../Postproperty/Primarydetails" style="color: black;" class="icon postproperties">Post Properties
+              </a>
+
+            </a>
+          </li>
+          <li class="">
+            <a class="">
+              <a href="../Projectproperty/Primarydetails" style="color: black;" class="icon postproperties">Post Project
+                Properties </a>
+
+            </a>
+          </li>
           <li class="support-mail-wrapper">
             <a class="help">
               <a href="../AI/index" class="icon">Residize AI</a>
@@ -250,6 +304,13 @@
               <span class="counts">12</span>
             </a>
           </li> *@
+
+          <li class="notification-item item" id="License">
+            <a href="javascript:void(0)">
+              <span class="icon"><i class="icon-notification"></i></span>
+              <span class="counts" id="unread-count1"></span>
+            </a>
+          </li>
           <li class="separator"></li>
           <li class="userprofile-item userprofile dropdown " id="toggleIcon">
             <a href="javascript:void(0)">
@@ -278,6 +339,10 @@
 
           </div>
           <div class="a-box">
+            <a class="bl-0" id="btnMyInterest" asp-controller="CLient" asp-action="MyInterest">
+              <i class="icon-heart text-primary"></i>
+              <span class="text-dark text-semibold">Interest</span>
+            </a>
             <a id="settings"><i class="icon-setting"></i><span class="text-dark text-semibold">Settings</span></a>
             <a class="bl-0" id="btnLogout">
               <i class="icon-logout text-danger"></i>
@@ -434,10 +499,121 @@
             </div>
           </div>
         </div>
-        <!--  -->
       </div>
     </div>
   </div>
+
+  
+  @* Kalash *@
+  <div id="LicenseWindow" style="display: none;">
+    <div class="" style="">
+      <div class="nav">
+        <h2 style="color: #005555 !important;font-weight: 500;font-family: -webkit-body;">Click on Properties You Like :
+        </h2>
+          <span class="" id="unread-count" style="display: none;"></span>
+        @* <button class="mark" id="">Mark all as read</button> *@
+      </div>
+
+      <div class="notificationtext" id="notifications">
+        Notification Text
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  async function fetchNotifications(userId) {
+  const apiUrl = `http://127.0.0.1:5000/get_notifications?user_id=${userId}`;
+
+  try {
+  const response = await fetch(apiUrl, {
+  method: 'GET',
+  headers: {
+  'Content-Type': 'application/json',
+  },
+  });
+
+  if (!response.ok) {
+  const error = await response.json();
+  throw new Error(error.message || 'Failed to fetch notifications');
+  }
+
+  const notifications = await response.json();
+  return notifications;
+  } catch (error) {
+  console.error('Error fetching notifications:', error.message);
+  throw error;
+  }
+  }
+
+  // Function to render notifications
+  function renderNotifications(notifications) {
+  const notificationsContainer = document.getElementById('notifications');
+  const unreadCountElement = document.getElementById('unread-count');
+
+  // Clear existing notifications
+  notificationsContainer.innerHTML = '';
+
+  // Update unread count
+  const unreadCount = notifications.filter((notification) => !notification.c_read).length;
+  unreadCountElement.textContent = unreadCount;
+
+  // Add notifications to the container
+  notifications.forEach((notification) => {
+  const notificationElement = document.createElement('div');
+  notificationElement.classList.add('notification');
+  if (!notification.c_read) {
+  notificationElement.classList.add('unread');
+  }
+  notificationElement.textContent = notification.c_text;
+
+  // Add click event to redirect to the property view page
+  notificationElement.addEventListener('click', () => {
+  window.location.href = `ViewOneProperty/${notification.c_property_id}`;
+  });
+
+  notificationsContainer.appendChild(notificationElement);
+  });
+  }
+
+  const userId = '1';
+  fetchNotifications(userId)
+  .then((notifications) => {
+  console.log(notifications)
+  renderNotifications(notifications);
+  document.getElementById('LicenseWindow').style.display = 'block';
+  })
+  .catch((error) => {
+  console.error('Error:', error.message);
+  });
+
+  // Mark all notifications as read
+  document.getElementById('mark-all-read').addEventListener('click', async () => {
+  const apiUrl = `/api/markAllAsRead?user_id=${userId}`;
+  read
+  try {
+  const response = await fetch(apiUrl, {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json',
+  },
+  });
+
+  if (response.ok) {
+  const notifications = await fetchNotifications(userId);
+  renderNotifications(notifications);
+  } else {
+  console.error('Failed to mark notifications as read');
+  }
+  } catch (error) {
+  console.error('Error marking notifications as read:', error.message);
+  }
+  });
+
+  </script>
+
+  @* Kalash *@
+
   <div class="hero">
     <div class="hero-slide">
       <div class="img overlay" style="background-image: url('images/hero_bg_3.jpg')"></div>
@@ -464,318 +640,124 @@
     </div>
   </div>
 
+  
+  @* Kalash *@
+
   <div class="section">
     <div class="container">
       <div class="row mb-5 align-items-center">
         <div class="col-lg-10">
           <h2 class="font-weight-bold text-primary heading">
-            Popular Properties
+            Recommended Properties
           </h2>
         </div>
         <div class="col-lg-2 text-center">
           @* <div class="dashboardbtn text-white">
-            View all properties
+          View all properties
           </div> *@
           <a type="submit" asp-action="ViewProperty" class="dashboardbtn text-white">View all properties</a>
           @* <p>
-            <a href="#" target="_blank" class="text-white py-3 px-4">View all properties</a>
+          <a href="#" target="_blank" class="text-white py-3 px-4">View all properties</a>
           </p> *@
         </div>
       </div>
       <div class="row">
         <div class="col-12">
           <div class="property-slider-wrap">
-            <div class="property-slider">
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
-                </a>
+            <div class="property-slider" >
 
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
-
-              <div class="property-item">
-                <a href="property-single.html" class="img">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
-                </a>
-
-                <div class="property-content">
-                  <div class="price mb-2"><span>$1,291,000</span></div>
-                  <div>
-                    <span class="d-block mb-2 text-black-50">5232 California Fake, Ave. 21BC</span>
-                    <span class="city d-block mb-3">California, USA</span>
-
-                    <div class="specs d-flex mb-4">
-                      <span class="d-block d-flex align-items-center me-3">
-                        <span class="icon-bed me-2"></span>
-                        <span class="caption">2 beds</span>
-                      </span>
-                      <span class="d-block d-flex align-items-center">
-                        <span class="icon-bath me-2"></span>
-                        <span class="caption">2 baths</span>
-                      </span>
-                    </div>
-
-                    @* <a href="property-single.html" class="btn btn-primary py-2 px-3">See details</a> *@
-                    <a class="Propertiesdbtn text-white" asp-action="ViewOneProperty">
-                      See details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- .item -->
             </div>
-
             <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
-              <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
-              <span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
+              <!-- <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1" id="prevBtn">Prev</span>
+              <span class="next" data-controls="next" aria-controls="property" tabindex="-1" id="nextBtn">Next</span> -->
+              <span class="prev" id="prevBtn">Prev</span>
+              <span class="next-btn next" id="nextBtn">Next</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+
+      async function fetchRecommendations(userId) {
+        const url = `http://127.0.0.1:5000/get_recommendations?user_id=${userId}`;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log("API Response:", data);
+          let slider = tns({
+            container: '.property-slider-wrap',
+            items: 3,
+            slideBy: 'page',
+            autoplay: true,
+            controls: true,
+            nav: true,
+            gutter: 10
+          });
+          if (data.status === "success" && Array.isArray(data.recommendations)) {
+            const recommendations = data.recommendations;
+            let card = "";
+            recommendations.forEach((recommendation, i) => {
+              card += `<div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+                <div class="property-content">
+                  <div class="city mb-2"><span> ${recommendation.c_property_name} </span></div>
+                  <div class="price mb-2"><span> ₹ ${recommendation.c_property_amount} </span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50" id="address0"> ${recommendation.c_address} </span>
+                    <span class="city d-block mb-3"> ${recommendation.c_city} </span>
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption"> ${recommendation.c_bhk} BHK </span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption"> ${recommendation.c_bath} Baths </span>
+                      </span>
+                    </div>
+                    <a href="ViewOneProperty/${recommendation.c_recommendation_id}" class="Propertiesdbtn text-white">See details</a>
+                  </div>
+                </div>
+              </div>`;
+
+            });
+            document.querySelector('.property-slider-wrap').innerHTML = card;
+            @* slider.destroy(); // Destroy the current instance *@
+            slider = tns({
+              container: '.property-slider-wrap',
+              items: 3,
+              slideBy: 'page',
+              autoplay: true,
+              controls: true,
+              nav: true,
+              gutter: 10
+            });
+    
+          } else {
+            console.error("No recommendations found or invalid response format:", data);
+          }
+        } catch (error) {
+          console.error("An error occurred while fetching recommendations:", error);
+        }
+      }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      @* fetchRecommendations(@ViewBag.Id); *@
+      fetchRecommendations(1);
+    });
+  </script>
+
+  @* Kalash *@
 
 
 
@@ -1165,6 +1147,16 @@
     </div>
   </div>
 
+  <div id="reviewDialog"></div>
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/tiny-slider.js"></script>
   <script src="js/aos.js"></script>
@@ -1184,17 +1176,54 @@
   <script src="../../Scripts/CLARENT/Other/Custom/Custom.js"></script>
   <script src="../../notification/script.js"></script>
   <script src="https://kendo.cdn.telerik.com/2023.3.1010/js/kendo.all.min.js"></script>
+  <script src="~/js/kendo-ui-license.js"></script>
   <link href="https://kendo.cdn.telerik.com/2023.3.1010/styles/kendo.default-v2.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script>
     const apihost = "http://localhost:5293";
   </script>
+
   <script>
+
+    $("#LicenseWindow").kendoWindow({
+      width: 650,
+      height: 500,
+      title: "Notifications ",
+      visible: false,
+      draggable: false,
+      resizable: false,
+      actions: ["Close"],
+      modal: true
+    });
+
+    // Open the window and center it
+    $(document).on('click', '#License', function () {
+      @* alert("OUTSIDE"); *@
+      var licenseWindow = $("#LicenseWindow").data("kendoWindow");
+      if (licenseWindow) {
+      @* alert("INSIDE"); *@
+        licenseWindow.center();
+        licenseWindow.open();
+      } else {
+      @* alert("ELSE"); *@
+        console.error("LicenseWindow instance is not initialized.");
+      }
+    });
+
+    // Re-center on window resize for responsiveness
+    $(window).on('resize', function () {
+      var licenseWindow = $("#LicenseWindow").data("kendoWindow");
+      if (licenseWindow) {
+        licenseWindow.center();
+      }
+    });
+
     GetReviews();
 
     function GetReviews() {
       $.ajax({
-        url: 'http://localhost:5293/api/ReviewAPI/GetReviews?id=' + @ViewBag.Id,
+        url: 'http://localhost:5293/api/ReviewAPI/GetReviews?id=' + "@ViewBag.Id",
         method: 'GET',
         dataType: 'json',
         success: function (response) {
@@ -1204,28 +1233,22 @@
             response.map(testimonial => {
               const itemHTML = `
         <div id="iconsupport-${testimonial.userId}" class="item border rounded p-2 position-relative" style="width:500px">
-      <a id="delete-${testimonial.userId}" onClick="deleteReview(this.id)" class="deleteIcon  widthbtn position-absolute top-1 end-0 me-2" ><i class='fa fa-trash fa-2x'></i></a>
-      <div class="testimonial" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <img 
-    src="http://localhost:5293/${testimonial.imagePath}" 
-    alt="Image" 
-    class="image-preview rounded-circle mb-4" 
-    style="width: 125px; height: 125px; object-fit: cover;" 
-  />
-  <div class="rate">
-    ${getStarsHTML(testimonial.rating)}
-  </div>
-  <h3 class="h5 text-primary mb-4">${testimonial.username}</h3>
-  <blockquote class="ms-0">
-    <p>${testimonial.comments}</p>
-  </blockquote>
-  <p class="text-black-50">${testimonial.createdAt}</p>
-</div>
-
+      <button id="delete-${testimonial.userId}" onClick="deleteReview(this.id)" class="deleteIcon mt-3  widthbtn position-absolute top-0 end-0 me-2"><i class="fa fa-trash fa-2x"></i></button>
+      <div class="testimonial text-center">
+          <img src="http://localhost:5293/${testimonial.imagePath}" alt="Image" class="border image-preview rounded-circle mb-4" height='125' width='125' />
+        <div class="rate">
+          ${getStarsHTML(testimonial.rating)}
+        </div>
+        <h3 class="h5 text-primary mb-4">${testimonial.username}</h3>
+        <blockquote>
+          <p>${testimonial.comments}</p>
+        </blockquote>
+        <p class="text-black-50">${testimonial.createdAt}</p>
+      </div>
     </div>
 `;
               sliderContainer.append(itemHTML);
-              if (`${@ViewBag.Id}` !== `${testimonial.userId}`) {
+              if (`${"@ViewBag.Id"}` !== `${testimonial.userId}`) {
                 console.log('Yes matching ');
                 $(`#iconsupport-${testimonial.userId} .deleteIcon`).hide();
               } else $('#showReviewDialog').hide();
@@ -1296,7 +1319,7 @@
               return false;
             }
             var formData = new FormData();
-            formData.append('UserId', @ViewBag.Id);
+            formData.append('UserId', "@ViewBag.Id");
             formData.append('Rating', $('#starRating').data('kendoRating').value());
             formData.append('Comments', $('#comment').val());
             $.ajax({
@@ -1409,7 +1432,7 @@
         localization: { select: 'Select File' }
       }); *@
         let selectedImage = null;
-      userSessionId = @ViewBag.Id;
+      userSessionId = "@ViewBag.Id";
       const defaultImagePath = 'http://localhost:5293/default.png';
       $.ajax({
         url: 'http://localhost:5293/api/AccountAPI/getUserProfileById',

@@ -79,6 +79,25 @@ public class AccountRepository : IAccountRepository
         return reader.HasRows;
     }
 
+    public User.GetContectInfo GetContectInfo(int propertie_id)
+    {
+        Console.WriteLine("id:", propertie_id);
+        NpgsqlCommand UserNameCmd = new("SELECT tp.c_property_name, tusr.c_email, tusr.c_phone_number FROM t_properties tp JOIN t_details ts ON tp.c_property_detail_id = ts.c_property_detail_id JOIN t_users tusr ON ts.c_user_id = tusr.c_user_id WHERE tp.c_property_id = @propertie_id", connection);
+        UserNameCmd.Parameters.AddWithValue("propertie_id", propertie_id);
+        using NpgsqlDataReader reader = UserNameCmd.ExecuteReader();
+        if (reader.Read()) return new User.GetContectInfo() { UserName = reader.GetString(0), Email = reader.GetString(1), Phone = reader.GetString(2) };
+        return null;
+    }
+
+    public User.GetContectInfo GetContectInfoProject(int project_id)
+    {
+        NpgsqlCommand UserNameCmd = new("SELECT tp.c_project_name, tusr.c_email, tusr.c_phone_number FROM t_projects tp JOIN t_details ts ON tp.c_property_detail_id = ts.c_property_detail_id JOIN t_users tusr ON ts.c_user_id = tusr.c_user_id WHERE tp.c_project_id = @project_id", connection);
+        UserNameCmd.Parameters.AddWithValue("project_id", project_id);
+        using NpgsqlDataReader reader = UserNameCmd.ExecuteReader();
+        if (reader.Read()) return new User.GetContectInfo() { UserName = reader.GetString(0), Email = reader.GetString(1), Phone = reader.GetString(2) };
+        return null;
+    }
+
     public User.Get? Login(User.Login credentials)
     {
         if (!DoesEmailExist(credentials.EmailAddress)) throw new UserException("You are not registered, please create a new account.");
@@ -234,15 +253,5 @@ public class AccountRepository : IAccountRepository
         NpgsqlCommand UserNameCmd = new("select concat(c_first_name,' ',c_last_name) from t_users where c_email = @email", connection);
         UserNameCmd.Parameters.AddWithValue("email", email);
         return UserNameCmd.ExecuteScalar()?.ToString() ?? "User";
-    }
-
-    public User.GetContectInfo GetContectInfo(int propertie_id)
-    {
-        // throw new NotImplementedException();
-         NpgsqlCommand UserNameCmd = new("SELECT tp.c_property_name, tusr.c_email, tusr.c_phone_number FROM t_properties tp JOIN t_details ts ON tp.c_property_detail_id = ts.c_property_detail_id JOIN t_users tusr ON ts.c_user_id = tusr.c_user_id WHERE tp.c_property_id = @propertie_id", connection);
-        UserNameCmd.Parameters.AddWithValue("propertie_id", propertie_id);
-        using NpgsqlDataReader reader = UserNameCmd.ExecuteReader();
-        if (reader.Read()) return new User.GetContectInfo() { UserName = reader.GetString(0), Email = reader.GetString(1), Phone = reader.GetString(2)};
-        return null;
     }
 }

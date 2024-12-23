@@ -15,10 +15,11 @@ namespace Repository.Interfaces
         public void AssetsMange(string filePath);
         public List<Project.GET> GetProjects(int id);
         public void AllAmenities(Project.Amenities amenities);
-        public List<Project.GET> GetAllProjects(); 
+        public List<Project.GET> GetAllProjects();
+
+
         public Project.GET GetProjectByProjectId(int id);
         public List<Properties.ListGet> GetPropertiesByProjectId(int projectId);
         public List<Amenities.Get> GetProjectAmenitiesByProjectId(int projectId);
-
     }
 }

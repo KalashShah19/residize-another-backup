@@ -1,6 +1,7 @@
 @{
     Layout = "";
 }
+@model int
 <!DOCTYPE html>
 <html lang="en">
 
@@ -878,7 +879,7 @@
 
 <script>
     $(document).ready(function () {
-        const apiUrl = "http://localhost:5293/api/ProjectApi/GetProjectByProjectId?id=5"; // Replace with your actual API URL
+        const apiUrl = "http://localhost:5293/api/ProjectApi/GetProjectByProjectId?id="@ViewBag.ProjId; // Replace with your actual API URL
 
         // Fetch data from API
         $.ajax({
@@ -890,6 +891,9 @@
                
             },
             error: function (error) {
+                
+                
+                
                 console.error("Error fetching property data:", error);
             }
         });
@@ -898,7 +902,7 @@
            $.ajax({
     url: 'http://localhost:5293/api/ProjectApi/GetProjectAmenitiesByProjectId', // Adjust the controller name
     type: 'GET',
-    data: { projectId: 22 }, // Sending projectId as query parameter
+    data: { projectId: @ViewBag.ProjId }, // Sending projectId as query parameter
     success: function (amenities) {
          relatedProperties();
         var iconMap = {
@@ -949,7 +953,7 @@
             var dataSource = new kendo.data.DataSource({
         transport: {
             read: {
-                url: "http://localhost:5293/api/ProjectApi/GetPropertiesByProjectId?projectId=22", // URL endpoint where the data is fetched
+                url: "http://localhost:5293/api/ProjectApi/GetPropertiesByProjectId?projectId="+@ViewBag.ProjId, // URL endpoint where the data is fetched
                 dataType: "json" // Specify that we expect JSON data
             }
         },
@@ -1025,7 +1029,7 @@
         }
 
         function populatePropertyData(data) {
-            console.log(data.picturePath);
+            console.log(data);
             // Update carousel
             const carouselItems = $("#carousel-items");
             let carouselContent = "";
@@ -1039,11 +1043,11 @@
             } else {
                 carouselContent = `
                     <div class="carousel-item active">
-                        <img src="${data.picturePath}" class="d-block w-100" alt="Default Property Image">
+                        <img src="https://www.shutterstock.com/image-vector/no-photo-blank-image-icon-260nw-1955339317.jpg" class="d-block w-100" alt="Default Property Image">
                     </div>`;
             }
             carouselItems.html(carouselContent);
-            $("#photo-count").text(`Photos (1/${data.pictureFiles?.length || 1})`);
+            $("#photo-count").text(`Photos (0/${data.pictureFiles?.length || 0})`);
 
             // Update property information
             $("#project-name").text(data.projectName);

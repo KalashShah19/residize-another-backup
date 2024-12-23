@@ -25,33 +25,6 @@ namespace API.Controllers
             _mailerService = mailerService;
         }
 
-        [HttpGet]
-        [Route("[action]")]
-        public IActionResult SendContect(int propertie_id,string userEmail)
-        {
-            var data = _accountRepository.GetContectInfo(propertie_id);
-            
-            _mailerService.SendEmail(
-                    userEmail,
-                    "Property Owner Information...",
-                    MailerService.EmailTemplate2(
-                        data.UserName,
-                        data.Email,
-                        data.Phone
-                    )
-                );
-            _mailerService.SendEmail(
-                    data.Email,
-                    "your contact information send user",
-                    MailerService.EmailTemplate2(
-                        "",
-                        "",
-                        ""
-                    )
-                );
-            return Ok("Mail sent successfully...");
-        }
-
         [HttpPost("Login")]
         [Consumes("multipart/form-data")]
         [Produces("application/json")]
@@ -78,6 +51,61 @@ namespace API.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult SendContect([FromQuery] int propertie_id, [FromQuery] User.GetContectInfo loginuserinfo)
+        {
+            var data = _accountRepository.GetContectInfo(propertie_id);
+
+            _mailerService.SendEmail(
+                    loginuserinfo.Email
+                    ,
+                    "Contact Information for Property Owner",
+                    MailerService.EmailTemplate3(
+                        data.UserName,
+                        data.Email,
+                        data.Phone
+                    )
+                );
+            _mailerService.SendEmail(
+                    data.Email,
+                    "Your Contact Information Has Been Shared",
+                    MailerService.EmailTemplate2(
+                        loginuserinfo.UserName,
+                        loginuserinfo.Email,
+                        loginuserinfo.Phone
+                    )
+                );
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult SendContectForProject([FromQuery] int project_id, [FromQuery] User.GetContectInfo loginuserinfo)
+        {
+            var data = _accountRepository.GetContectInfoProject(project_id);
+
+            _mailerService.SendEmail(
+                     loginuserinfo.Email,
+                    "Contact Information for Property Owner",
+                    MailerService.EmailTemplate3(
+                        data.UserName,
+                        data.Email,
+                        data.Phone
+                    )
+                );
+            _mailerService.SendEmail(
+                    data.Email,
+                    "Your Contact Information Has Been Shared",
+                    MailerService.EmailTemplate2(
+                        loginuserinfo.UserName,
+                        loginuserinfo.Email,
+                        loginuserinfo.Phone
+                    )
+                );
+            return Ok("Mail sent successfully...");
         }
 
         [HttpGet("EmailExists")]

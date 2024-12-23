@@ -9,83 +9,123 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC
 build_property.RootNamespace = MVC
-build_property.ProjectDir = D:\! Kalash\GitHub\merged\Residize\MVC\
+build_property.ProjectDir = D:\! Kalash\GitHub\Merging\Residize\MVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\! Kalash\GitHub\merged\Residize\MVC
+build_property.MSBuildProjectDirectory = D:\! Kalash\GitHub\Merging\Residize\MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Account/ForgotPassword.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Account/Login.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Account/UserRegister.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Account/UserRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Admin/Dashboard.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Admin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/AI/index.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/AI/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUlcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Client/Home.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/Home - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEhvbWUgLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Client/User.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/MyInterest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XE15SW50ZXJlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/User.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Client/ViewOneProject.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/ViewOneProject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZpZXdPbmVQcm9qZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Client/ViewOneProperty.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/ViewOnePropert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZpZXdPbmVQcm9wZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/ViewOneProperty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZpZXdPbmVQcm9wZXJ0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Client/ViewProperty.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/ViewProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZpZXdQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Client/ViewProperty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZpZXdQcm9wZXJ0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Home/Index.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Home/Privacy.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Shared/Account_Layout.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Postproperty/Primarydetails copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzIGNvcHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Postproperty/Primarydetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Postproperty/Primarydetails1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzMS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Postproperty/Primarydetailsfinal copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzZmluYWwgY29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Projectproperty/Primarydetails copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzIGNvcHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Projectproperty/Primarydetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHByb3BlcnR5XFByaW1hcnlkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Shared/Account_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFjY291bnRfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Shared/Error.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/_ViewImports.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/_ViewStart.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/\! Kalash/GitHub/merged/Residize/MVC/Views/Shared/_Layout.cshtml]
+[D:/\! Kalash/GitHub/Merging/Residize/MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q0a04yuu0e

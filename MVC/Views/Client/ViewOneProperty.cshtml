@@ -26,7 +26,7 @@
   @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
   @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
   @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
-  rel="stylesheet" /> *@
+        rel="stylesheet" /> *@
 
   @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
   @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
@@ -35,9 +35,9 @@
   <link rel="stylesheet" href="~/Client/css/style.css" />
 
   @* <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
-  <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
-  <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
-  <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" /> *@
   <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
   <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
   <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
@@ -218,35 +218,6 @@
       color: white;
       padding: 13px 25px;
     }
-
-    @* Kalash *@
-
-    .next-btn{
-      background-color: #005555;
-      padding: 5px 20px;
-      border: 0;
-      border-radius: 5px;
-      color: white;
-    }
-      .tns-controls{
-        @* background-color: red !important; *@
-        display: flex;
-        justify-content: space-between;
-      }
-      .tns-nav{display: none;}
-      .tns-outer [aria-controls]{
-      background-color: #005555;
-      padding: 5px 20px;
-      border: 0;
-      border-radius: 5px;
-    margin: 10px;
-      color: white;
-      }
-    [data-action="stop"] {
-      display: none !important; /* Hides the element */
-    }
-
-    @* Kalash *@
   </style>
 </head>
 
@@ -305,18 +276,18 @@
       </div>
 
 
-      <div class="property-info"
+      @* <div class="property-info"
         style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
         <h3 id="displayPropName" style="margin-bottom: 16px; font-size: 2rem; font-weight: bold; color: #333;">
           <!-- Property Name -->
-        </h3>
+        </h3> *@
 
-        <!-- Property Info Rows -->
+      @* <!-- Property Info Rows -->
         <div class="container">
           <div class="row align-items-start" style="margin-bottom: 20px;">
             <!-- Area -->
             <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
-              <span class="icon" style="font-size: 1.5rem; color: #007bff;">➕</span>
+              <span class="icon"><i class="fas fa-chart-area icon-color"></i></span>
               <div>
                 <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Area</div>
                 <div class="value" style="font-size: 1.2rem; color: #333;">
@@ -327,10 +298,10 @@
 
             <!-- Configuration -->
             <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
-              <span class="icon" style="font-size: 1.5rem; color: #007bff;">🏠</span>
+              <span class="icon"><i class="fas fa-home icon-color"></i></span>
               <div>
                 <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Configuration</div>
-                <div class="value" style="font-size: 1.2rem; color: #333;">
+                <div id="configuration" class="value" style="font-size: 1.2rem; color: #333;">
                   <strong><span id="bhk"></span> BHK</strong>
                   <span id="bathrooms"></span> Bathrooms
                 </div>
@@ -341,7 +312,7 @@
           <div class="row align-items-start" style="margin-bottom: 20px;">
             <!-- Price -->
             <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
-              <span class="icon" style="font-size: 1.5rem; color: #007bff;">💰</span>
+              <span class="icon"><i class="fas fa-tags icon-color"></i></span>
               <div>
                 <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Price</div>
                 <div class="value" style="font-size: 1.2rem; color: #333;">
@@ -352,7 +323,7 @@
 
             <!-- Address -->
             <div class="col-sm-12 col-md-6 d-flex align-items-start" style="gap: 16px;">
-              <span class="icon" style="font-size: 1.5rem; color: #007bff;">📍</span>
+              <span class="icon"><i class="fas fa-building icon-color"></i></span>
               <div>
                 <div class="title" style="font-size: 1.1rem; color: #555; font-weight: bold;">Address</div>
                 <div class="value" style="font-size: 1.2rem; color: #333;">
@@ -384,6 +355,81 @@
                 </div>
               </div>
             </div>
+          </div> *@
+
+
+      @* </div> *@
+
+
+      <div class="property-info">
+        <div class="row align-items-center">
+          <h3 id="displyPropName"></h3>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-chart-area icon-color"></i></span>
+            <div>
+              <div class="title">Area</div><small id="display"></small>
+              <div class="value">
+                <span id="displayareaType"></span> <a href="#">sq.ft.</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-home icon-color"></i></span>
+            <div>
+              <div class="title">Configuration</div>
+              <div class="value"><span id="displaybathrooms"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-tags icon-color"></i></span>
+            <div>
+              <div class="title">Price</div>
+              <div class="value">
+                <span id="displaypropertyAmount"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-address-book icon-color"></i></span>
+            <div>
+              <div class="title">Address</div>
+              <div class="value"><span id="displayAddress"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-building icon-color"></i></span>
+            <div>
+              <div class="title">Total Floors</div>
+              <div class="value"><span id="displayFloor"></span> Floors</div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-map icon-color"></i></span>
+            <div>
+              <div class="title">Locality</div>
+              <div class="value"><span id="displayLocality"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex align-items-center">
+            <span class="icon"><i class="fas fa-calendar-alt icon-color"></i></span>
+            <div>
+              <div class="title">Property Age</div>
+              <div class="value"><span id="displayPropAge"></span> Year</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row-reverse" style="margin-top: 60px;margin-right: 50px;">
+          <div>
+            <div class="">Posted date</div>
+            <div class=""><span id="displayDate"></span></div>
           </div>
         </div>
       </div>
@@ -392,21 +438,24 @@
     </div>
   </div>
 
-@* Kalash *@
+  @* Kalash *@
 
   <div class="section">
     <div class="container">
       <div class="row mb-5 align-items-center">
-        <div class="col-lg-6">
-          <h1>
-            Similar Properties
-          </h1>
+        <div class="col-lg-10">
+          <h2 class="font-weight-bold text-primary heading">
+            Recommended Properties
+          </h2>
         </div>
-        <div class="col-lg-6 text-lg-end">
-          <p>
-            <a href="http://localhost:5154/Client/ViewProperty" class="projectbtn text-white py-3 px-4">View all
-              properties</a>
-          </p>
+        <div class="col-lg-2 text-center">
+          @* <div class="dashboardbtn text-white">
+          View all properties
+          </div> *@
+          <a type="submit" asp-action="ViewProperty" class="dashboardbtn text-white">View all properties</a>
+          @* <p>
+          <a href="#" target="_blank" class="text-white py-3 px-4">View all properties</a>
+          </p> *@
         </div>
       </div>
       <div class="row">
@@ -428,8 +477,9 @@
   </div>
 
   <script>
-    async function fetchSimilarProperties(id) {
-        const url = `http://127.0.0.1:5000/similar_property?id=${id}`;
+
+      async function fetchRecommendations(userId) {
+        const url = `http://127.0.0.1:5000/get_recommendations?user_id=${userId}`;
 
         try {
           const response = await fetch(url);
@@ -476,9 +526,10 @@
                   </div>
                 </div>
               </div>`;
+
             });
             document.querySelector('.property-slider-wrap').innerHTML = card;
-            @* slider.destroy(); // Destroy the current instance *@
+            @* slider.destroy(); *@
             slider = tns({
               container: '.property-slider-wrap',
               items: 3,
@@ -490,43 +541,44 @@
             });
     
           } else {
-            console.error("No Similar found or invalid response format:", data);
+            console.error("No recommendations found or invalid response format:", data);
           }
         } catch (error) {
-          console.error("An error occurred while fetching Similar Properties:", error);
+          console.error("An error occurred while fetching recommendations:", error);
         }
       }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const url = window.location.pathname;
-
-      const segments = url.split('/');
-
-      const prop_id = segments[segments.length - 1];
-
-      fetchSimilarProperties(prop_id);
+      @* fetchRecommendations(@ViewBag.Id); *@
+      fetchRecommendations(1);
     });
-
   </script>
 
   @* Kalash *@
 
   <script>
     $(document).ready(function () {
+
+      function formatPrice(price) {
+        if (price >= 10000000) return (price / 10000000).toFixed(1) + " Cr";
+        else if (price >= 100000) return (price / 100000).toFixed(2) + " Lacs";
+      }
       $.ajax({
         url: 'http://localhost:5293/api/PropertyAPI/GetPropertyById?id=' + @ViewBag.PropId,
         type: "GET",
         dataType: "json",
         success: function (response) {
+
           const property = response.property;
           const details = response.details;
 
           // Populate property details
           $("#propertyName").text(property.propertyName || "N/A");
-          $("#propertyAmount").text(property.propertyAmount ? property.propertyAmount.toLocaleString() : "N/A");
+          $("#propertyAmount").text(property.propertyAmount ? formatPrice(property.propertyAmount).toLocaleString() : "N/A");
           $("#propertySize").text(property.propertySize || "N/A");
           $("#bathrooms").text(property.bathrooms || "N/A");
-          $("#bhk").text(property.bedrooms || "N/A");
+          if (property.propertyType === "Commercial") $("#configuration").text(property.propertyType || "N/A");
+          else $("#bhk").text(property.bedrooms || "N/A");
           $("#address").text(details.address || "N/A");
           $("#locality").text(details.locality || "N/A");
           $("#city").text(details.city || "N/A");
@@ -591,6 +643,8 @@
   <script src="~/Client/js/navbar.js"></script>
   <script src="~/Client/js/counter.js"></script>
   <script src="~/Client/js/custom.js"></script>
+
+
 
 </body>
 

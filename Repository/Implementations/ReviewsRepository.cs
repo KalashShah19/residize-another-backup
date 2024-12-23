@@ -53,11 +53,11 @@ public class ReviewsRepository : IReviewsRepository
         List<Reviews.Get> reviews = new();
         string query = GetReviewQuery("=");
         string NotMineQuery = GetReviewQuery("<>");
-        reviews.AddRange(GetListReviews(query,id));
-        reviews.AddRange(GetListReviews(NotMineQuery,id));
+        reviews.AddRange(GetListReviews(query, id));
+        reviews.AddRange(GetListReviews(NotMineQuery, id));
         return reviews;
     }
-    public List<Reviews.Get> GetListReviews(string query,int id)
+    public List<Reviews.Get> GetListReviews(string query, int id)
     {
         var reviews = new List<Reviews.Get>();
         using NpgsqlCommand fetchLatestReviewCommand = new(query, connection);
@@ -70,7 +70,7 @@ public class ReviewsRepository : IReviewsRepository
                 {
                     Rating = reader.GetInt16(0),
                     Comments = reader.GetString(1),
-                    CreatedAt = reader.GetDateTime(2).ToString(),
+                    CreatedAt = reader.GetDateTime(2) + "",
                     ImagePath = !reader.IsDBNull(3) ? reader.GetString(3) : null,
                     UserId = reader.GetInt32(4),
                     Username = reader.GetString(5)
@@ -82,12 +82,26 @@ public class ReviewsRepository : IReviewsRepository
     }
     public bool RemoveReview(int id)
     {
-        using NpgsqlCommand remCmd=new("DELETE FROM t_reviews WHERE c_user_id=@userId",connection);
-        remCmd.Parameters.AddWithValue("userId",id);
-        return remCmd.ExecuteNonQuery()>0;
+        using NpgsqlCommand remCmd = new("DELETE FROM t_reviews WHERE c_user_id=@userId", connection);
+        remCmd.Parameters.AddWithValue("userId", id);
+        return remCmd.ExecuteNonQuery() > 0;
     }
     public string GetReviewQuery(string op)
     {
         return $"SELECT t_Reviews.c_rating, t_Reviews.c_comments, t_Reviews.c_created_at, t_users.c_image_path,t_Reviews.c_user_id,concat(t_users.c_first_name,' ',t_users.c_last_name) FROM t_Reviews JOIN t_users ON t_Reviews.c_user_id = t_users.c_user_id where t_Reviews.c_user_id {op} @id ORDER BY t_Reviews.c_rating DESC,t_Reviews.c_created_at DESC ";
+    }
+
+    public void UpdateReview(Reviews.Post reviews)
+    {
+        if (!DoesUserExist(reviews.UserId))
+        {
+            throw new UserException("The specified user does not exist.");
+        }
+        if (!DoesReviewExist(reviews.UserId)) throw new UserException("No reviews found from this user.");
+        NpgsqlCommand updateReviewCommand = new("UPDATE t_Reviews SET c_rating = @rating, c_comments = @comments WHERE c_user_id  = @userid", connection);
+        updateReviewCommand.Parameters.AddWithValue("rating", reviews.Rating);
+        updateReviewCommand.Parameters.AddWithValue("comments", reviews.Comments);
+        updateReviewCommand.Parameters.AddWithValue("userid", reviews.UserId);
+        updateReviewCommand.ExecuteNonQuery();
     }
 }

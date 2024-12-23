@@ -1,356 +1,444 @@
 {
   "Files": [
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\14\\Brochure\\1e209f91-2d1e-40c7-9508-43af284c2453.pdf",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\14\\Brochure\\1e209f91-2d1e-40c7-9508-43af284c2453.pdf"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\131\\Brochure\\5570e1c2-2c8c-492d-8e60-1ef2caa5f474.pdf",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\131\\Brochure\\5570e1c2-2c8c-492d-8e60-1ef2caa5f474.pdf"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\14\\Images\\6e2e5050-f1c7-4da3-b0d0-07f9371a9551.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\14\\Images\\6e2e5050-f1c7-4da3-b0d0-07f9371a9551.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\131\\Images\\b35cc731-b278-413f-b3f2-c40fe16e3652.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\131\\Images\\b35cc731-b278-413f-b3f2-c40fe16e3652.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\14\\Images\\ef089499-0299-4308-8fc2-7f58630f9a76.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\14\\Images\\ef089499-0299-4308-8fc2-7f58630f9a76.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\131\\Images\\c0a93288-4777-4932-9274-b2c36ab94814.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\131\\Images\\c0a93288-4777-4932-9274-b2c36ab94814.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\14\\Videos\\c238b5c9-5b9d-4de3-9a42-72a902dc237f.mp4",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\14\\Videos\\c238b5c9-5b9d-4de3-9a42-72a902dc237f.mp4"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\131\\Videos\\0fd30ef8-63de-448a-968e-18b9a7b60249.mp4",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\131\\Videos\\0fd30ef8-63de-448a-968e-18b9a7b60249.mp4"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\16\\Images\\27bbd968-7f4c-46e8-8cdb-5e0d454b28fb.jpg",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\16\\Images\\27bbd968-7f4c-46e8-8cdb-5e0d454b28fb.jpg"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\135\\Brochure\\25ddbd78-ac57-4b16-92a9-916d0cd6414d.pdf",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\135\\Brochure\\25ddbd78-ac57-4b16-92a9-916d0cd6414d.pdf"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\16\\Images\\e25f91cc-5376-482d-907c-fb4a3cd8cbf0.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\16\\Images\\e25f91cc-5376-482d-907c-fb4a3cd8cbf0.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\135\\Images\\02517be8-4846-473b-a9ef-592f68d37f10.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\135\\Images\\02517be8-4846-473b-a9ef-592f68d37f10.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\17\\Brochure\\74784da8-118a-4691-b69f-418e16ddeab6.pdf",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\17\\Brochure\\74784da8-118a-4691-b69f-418e16ddeab6.pdf"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\135\\Images\\c91121eb-0a90-46f6-9406-19b6f134c1da.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\135\\Images\\c91121eb-0a90-46f6-9406-19b6f134c1da.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\17\\Images\\06d4238b-98df-4585-b414-dd6fdb20f40e.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\17\\Images\\06d4238b-98df-4585-b414-dd6fdb20f40e.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\135\\Images\\fb8b37be-260f-42aa-8206-0ddf2d7a02e5.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\135\\Images\\fb8b37be-260f-42aa-8206-0ddf2d7a02e5.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\17\\Images\\cc2488ae-928f-4749-bfc7-5b666d0578c1.jpg",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\17\\Images\\cc2488ae-928f-4749-bfc7-5b666d0578c1.jpg"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\135\\Videos\\ce4ab80a-30a8-4716-9762-0fab8bd24aa5.mp4",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\135\\Videos\\ce4ab80a-30a8-4716-9762-0fab8bd24aa5.mp4"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\17\\Videos\\60798bfd-beb9-4ce4-b021-b6aa0f8cd09e.mp4",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\17\\Videos\\60798bfd-beb9-4ce4-b021-b6aa0f8cd09e.mp4"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Brochure\\6894dd36-37be-4f7b-8d2f-ec05250ae3f5.pdf",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Brochure\\6894dd36-37be-4f7b-8d2f-ec05250ae3f5.pdf"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\7\\Brochure\\b060c619-6b37-4099-b268-3f7f18f5e7e0.pdf",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\7\\Brochure\\b060c619-6b37-4099-b268-3f7f18f5e7e0.pdf"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Images\\274d8b87-26e3-4b92-a57b-a81fad323b4a.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Images\\274d8b87-26e3-4b92-a57b-a81fad323b4a.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\7\\Images\\0d4d5ce7-5342-48e1-a854-8e3022ec50a3.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\7\\Images\\0d4d5ce7-5342-48e1-a854-8e3022ec50a3.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Images\\36ba2131-4499-4615-ae29-d5a06799a0b5.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Images\\36ba2131-4499-4615-ae29-d5a06799a0b5.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\7\\Images\\484160e4-8ed0-497d-bf31-23ab9603e5c0.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\7\\Images\\484160e4-8ed0-497d-bf31-23ab9603e5c0.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Images\\6f1e3fda-f2c4-41f1-b1b5-66bbbc65479e.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Images\\6f1e3fda-f2c4-41f1-b1b5-66bbbc65479e.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\7\\Images\\cc9163e7-a6d6-44ac-ab2e-805fda3d0d1d.png",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\7\\Images\\cc9163e7-a6d6-44ac-ab2e-805fda3d0d1d.png"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Images\\821cfdba-2fe7-49f7-819d-1d767e7572c4.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Images\\821cfdba-2fe7-49f7-819d-1d767e7572c4.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\7\\video\\8a0291c2-d8e3-4059-abf8-63af91d06fcd.mp4",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\7\\video\\8a0291c2-d8e3-4059-abf8-63af91d06fcd.mp4"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\138\\Videos\\e773c272-caa3-421d-b073-0f03eefa5171.mp4",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\138\\Videos\\e773c272-caa3-421d-b073-0f03eefa5171.mp4"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\img11.jpg",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\img11.jpg"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\45\\Brochure\\1910f35e-bacc-49e4-a27f-2dad8d1b2b5e.pdf",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\45\\Brochure\\1910f35e-bacc-49e4-a27f-2dad8d1b2b5e.pdf"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\ProjectdetailsData\\img12.jpg",
-      "PackagePath": "staticwebassets\\ProjectdetailsData\\img12.jpg"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\45\\Images\\4e003c94-2dc7-4a40-85b8-1defbf7a575a.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\45\\Images\\4e003c94-2dc7-4a40-85b8-1defbf7a575a.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\propertydata\\40\\10b084e9-3736-40c3-9a2b-46ed95e5ddc4.jpg",
-      "PackagePath": "staticwebassets\\propertydata\\40\\10b084e9-3736-40c3-9a2b-46ed95e5ddc4.jpg"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\45\\Images\\89b2b9f5-0e48-4ddf-a9dd-c53931b33faf.jpeg",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\45\\Images\\89b2b9f5-0e48-4ddf-a9dd-c53931b33faf.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\propertydata\\40\\8a0291c2-d8e3-4059-abf8-63af91d06fcd.mp4",
-      "PackagePath": "staticwebassets\\propertydata\\40\\8a0291c2-d8e3-4059-abf8-63af91d06fcd.mp4"
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\ProjectdetailsData\\45\\Videos\\157ace18-2c89-4f2f-af28-7fe4fb416da4.mp4",
+      "PackagePath": "staticwebassets\\ProjectdetailsData\\45\\Videos\\157ace18-2c89-4f2f-af28-7fe4fb416da4.mp4"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\0bd9adf7-e8ae-4e77-a936-bc794c5b697c.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\11\\79714967-1dc4-4503-a5e9-5e8cb73abb17.jpg",
+      "PackagePath": "staticwebassets\\propertydata\\11\\79714967-1dc4-4503-a5e9-5e8cb73abb17.jpg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\12\\7574d586-d22b-4b30-8e60-0995876cab42.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\12\\7574d586-d22b-4b30-8e60-0995876cab42.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\18\\10b80598-0d61-4a7e-a6f6-6702ae852259.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\18\\10b80598-0d61-4a7e-a6f6-6702ae852259.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\18\\3ffc1d25-8c6f-4a29-9755-29c30287337c.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\18\\3ffc1d25-8c6f-4a29-9755-29c30287337c.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\18\\9a718700-b006-42db-907c-a4973b836d78.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\18\\9a718700-b006-42db-907c-a4973b836d78.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\19\\51e98e66-1533-4cb0-abea-0db57b5f5494.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\19\\51e98e66-1533-4cb0-abea-0db57b5f5494.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\19\\955c1739-26f0-4c0a-a611-7d40c8c1d224.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\19\\955c1739-26f0-4c0a-a611-7d40c8c1d224.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\19\\9d066276-2d28-464d-8bc9-3bdf4fd21bb4.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\19\\9d066276-2d28-464d-8bc9-3bdf4fd21bb4.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\20\\19961ba6-acba-46b9-8e8e-53b7604f2cdd.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\20\\19961ba6-acba-46b9-8e8e-53b7604f2cdd.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\20\\73193ffe-bf6b-4792-a0bd-ddabd70f8781.mp4",
+      "PackagePath": "staticwebassets\\propertydata\\20\\73193ffe-bf6b-4792-a0bd-ddabd70f8781.mp4"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\21\\67f967fd-8ea7-486c-8cfc-2e28aa726234.mp4",
+      "PackagePath": "staticwebassets\\propertydata\\21\\67f967fd-8ea7-486c-8cfc-2e28aa726234.mp4"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\21\\ae16f54a-f00a-468d-9ebf-b2fac02f2828.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\21\\ae16f54a-f00a-468d-9ebf-b2fac02f2828.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\22\\1142dcc9-793b-4d25-8c90-5ddc36b4bfb4.mp4",
+      "PackagePath": "staticwebassets\\propertydata\\22\\1142dcc9-793b-4d25-8c90-5ddc36b4bfb4.mp4"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\22\\662f26df-482f-416a-9a71-538cbdc7d2e2.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\22\\662f26df-482f-416a-9a71-538cbdc7d2e2.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\24\\483ff8fd-060d-4a0e-80e5-bde4a6f8fecd.mp4",
+      "PackagePath": "staticwebassets\\propertydata\\24\\483ff8fd-060d-4a0e-80e5-bde4a6f8fecd.mp4"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\24\\6675cf8d-49ef-4883-80de-f627da89adff.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\24\\6675cf8d-49ef-4883-80de-f627da89adff.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\69\\3a1dbbca-a3a1-493e-a557-718ae0fcf0bc.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\69\\3a1dbbca-a3a1-493e-a557-718ae0fcf0bc.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\69\\8b11210f-120a-4238-97ec-5054b4711c18.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\69\\8b11210f-120a-4238-97ec-5054b4711c18.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\69\\af0c3109-a309-4073-ac9f-cdabbecc4ae9.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\69\\af0c3109-a309-4073-ac9f-cdabbecc4ae9.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\70\\5d4887b0-5a58-4ae1-a17b-5320a5916687.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\70\\5d4887b0-5a58-4ae1-a17b-5320a5916687.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\70\\b7e3660a-cd94-4d60-a3bd-ac9328219c62.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\70\\b7e3660a-cd94-4d60-a3bd-ac9328219c62.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\70\\bc8c78ba-ed0d-45b2-8577-f289f6b3356e.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\70\\bc8c78ba-ed0d-45b2-8577-f289f6b3356e.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\7\\317b6ebc-09eb-448c-9947-fc66273348fd.jpg",
+      "PackagePath": "staticwebassets\\propertydata\\7\\317b6ebc-09eb-448c-9947-fc66273348fd.jpg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\7\\feae02c6-06c2-4020-9371-ab694a4cb595.png",
+      "PackagePath": "staticwebassets\\propertydata\\7\\feae02c6-06c2-4020-9371-ab694a4cb595.png"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\80\\268c7608-2afc-473b-9b83-53348b5e2ba4.mp4",
+      "PackagePath": "staticwebassets\\propertydata\\80\\268c7608-2afc-473b-9b83-53348b5e2ba4.mp4"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\80\\79444caa-3fad-42ad-8498-c9df9108ab0d.jpeg",
+      "PackagePath": "staticwebassets\\propertydata\\80\\79444caa-3fad-42ad-8498-c9df9108ab0d.jpeg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\8\\2ac2bfce-e252-4e03-bcec-d1212adba088.png",
+      "PackagePath": "staticwebassets\\propertydata\\8\\2ac2bfce-e252-4e03-bcec-d1212adba088.png"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\8\\5be16bc7-5d4e-4d47-85a6-5aa0c6d21fb8.jpg",
+      "PackagePath": "staticwebassets\\propertydata\\8\\5be16bc7-5d4e-4d47-85a6-5aa0c6d21fb8.jpg"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\8\\c2a00036-2f90-470f-9f3d-b4b0ca2b400c.png",
+      "PackagePath": "staticwebassets\\propertydata\\8\\c2a00036-2f90-470f-9f3d-b4b0ca2b400c.png"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\propertydata\\8\\caef2f6b-c94f-41bc-a824-2f27ce1b6210.png",
+      "PackagePath": "staticwebassets\\propertydata\\8\\caef2f6b-c94f-41bc-a824-2f27ce1b6210.png"
+    },
+    {
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\0bd9adf7-e8ae-4e77-a936-bc794c5b697c.jpg",
       "PackagePath": "staticwebassets\\userdata\\0bd9adf7-e8ae-4e77-a936-bc794c5b697c.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\0d64e564-e899-44a9-92df-b0e0d3902781.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\0d64e564-e899-44a9-92df-b0e0d3902781.jpg",
       "PackagePath": "staticwebassets\\userdata\\0d64e564-e899-44a9-92df-b0e0d3902781.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\1.jpeg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\1.jpeg",
       "PackagePath": "staticwebassets\\userdata\\1.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\1.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\1.jpg",
       "PackagePath": "staticwebassets\\userdata\\1.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\1.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\1.png",
       "PackagePath": "staticwebassets\\userdata\\1.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\103.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\103.jpg",
       "PackagePath": "staticwebassets\\userdata\\103.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\104.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\104.jpg",
       "PackagePath": "staticwebassets\\userdata\\104.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\1c57dfd2-acd4-4623-9861-b0f9877023c3.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\1c57dfd2-acd4-4623-9861-b0f9877023c3.jpg",
       "PackagePath": "staticwebassets\\userdata\\1c57dfd2-acd4-4623-9861-b0f9877023c3.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\1eb5b5df-37df-456f-9daf-84397214341a.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\1eb5b5df-37df-456f-9daf-84397214341a.png",
       "PackagePath": "staticwebassets\\userdata\\1eb5b5df-37df-456f-9daf-84397214341a.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\2.jpeg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\2.jpeg",
       "PackagePath": "staticwebassets\\userdata\\2.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\2.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\2.jpg",
       "PackagePath": "staticwebassets\\userdata\\2.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\2.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\2.png",
       "PackagePath": "staticwebassets\\userdata\\2.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\30c16c28-e92d-41fa-baab-913f1ca91a59.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\30c16c28-e92d-41fa-baab-913f1ca91a59.jpg",
       "PackagePath": "staticwebassets\\userdata\\30c16c28-e92d-41fa-baab-913f1ca91a59.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\31b668f1-fa90-4678-9333-d460f07f5baf.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\31b668f1-fa90-4678-9333-d460f07f5baf.jpg",
       "PackagePath": "staticwebassets\\userdata\\31b668f1-fa90-4678-9333-d460f07f5baf.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\392d0a40-beb2-472e-996d-cfdae99609c3.jpeg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\392d0a40-beb2-472e-996d-cfdae99609c3.jpeg",
       "PackagePath": "staticwebassets\\userdata\\392d0a40-beb2-472e-996d-cfdae99609c3.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\4639739e-0fb5-4566-a672-03a0636dbe54.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\4639739e-0fb5-4566-a672-03a0636dbe54.jpg",
       "PackagePath": "staticwebassets\\userdata\\4639739e-0fb5-4566-a672-03a0636dbe54.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\48438edf-f9ef-4d40-8c8d-5e177bbc448a.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\48438edf-f9ef-4d40-8c8d-5e177bbc448a.jpg",
       "PackagePath": "staticwebassets\\userdata\\48438edf-f9ef-4d40-8c8d-5e177bbc448a.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\48e2b1e4-0203-4f28-8a46-872f59fb1247.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\48e2b1e4-0203-4f28-8a46-872f59fb1247.jpg",
       "PackagePath": "staticwebassets\\userdata\\48e2b1e4-0203-4f28-8a46-872f59fb1247.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\4ab78627-1327-4a43-8995-52ad8ab94deb.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\4ab78627-1327-4a43-8995-52ad8ab94deb.jpg",
       "PackagePath": "staticwebassets\\userdata\\4ab78627-1327-4a43-8995-52ad8ab94deb.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\4c0b71e5-7c0e-428e-abd0-72e9ffadf5b2.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\4c0b71e5-7c0e-428e-abd0-72e9ffadf5b2.jpg",
       "PackagePath": "staticwebassets\\userdata\\4c0b71e5-7c0e-428e-abd0-72e9ffadf5b2.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\5417cec4-9eb4-4b9c-818c-7abf12020f08.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\5417cec4-9eb4-4b9c-818c-7abf12020f08.jpg",
       "PackagePath": "staticwebassets\\userdata\\5417cec4-9eb4-4b9c-818c-7abf12020f08.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\56e8aa88-120d-4444-8027-14eae3e82e3e.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\56e8aa88-120d-4444-8027-14eae3e82e3e.png",
       "PackagePath": "staticwebassets\\userdata\\56e8aa88-120d-4444-8027-14eae3e82e3e.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\59893249-2345-439a-8034-c8158e9e254b.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\59893249-2345-439a-8034-c8158e9e254b.jpg",
       "PackagePath": "staticwebassets\\userdata\\59893249-2345-439a-8034-c8158e9e254b.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\5aaf19d0-26a4-4e42-91cb-c4be7c9d8492.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\5aaf19d0-26a4-4e42-91cb-c4be7c9d8492.jpg",
       "PackagePath": "staticwebassets\\userdata\\5aaf19d0-26a4-4e42-91cb-c4be7c9d8492.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\5b76978d-d40b-4549-8691-1f36eceea148.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\5b76978d-d40b-4549-8691-1f36eceea148.jpg",
       "PackagePath": "staticwebassets\\userdata\\5b76978d-d40b-4549-8691-1f36eceea148.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\5c6dd8e6-dc4c-4b76-8342-ea058af8e226.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\5c6dd8e6-dc4c-4b76-8342-ea058af8e226.jpg",
       "PackagePath": "staticwebassets\\userdata\\5c6dd8e6-dc4c-4b76-8342-ea058af8e226.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\5e563ec2-4ee3-49a8-8b50-f6618c683b1f.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\5e563ec2-4ee3-49a8-8b50-f6618c683b1f.jpg",
       "PackagePath": "staticwebassets\\userdata\\5e563ec2-4ee3-49a8-8b50-f6618c683b1f.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\69b994bf-b0bb-4ca2-b562-bb29d01595df.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\69b994bf-b0bb-4ca2-b562-bb29d01595df.jpg",
       "PackagePath": "staticwebassets\\userdata\\69b994bf-b0bb-4ca2-b562-bb29d01595df.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\6a15e2f4-8c6b-41b4-9442-ca8fa7304c34.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\6a15e2f4-8c6b-41b4-9442-ca8fa7304c34.jpg",
       "PackagePath": "staticwebassets\\userdata\\6a15e2f4-8c6b-41b4-9442-ca8fa7304c34.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\6c1c8066-3151-4e51-8f5b-92f327161d61.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\6c1c8066-3151-4e51-8f5b-92f327161d61.jpg",
       "PackagePath": "staticwebassets\\userdata\\6c1c8066-3151-4e51-8f5b-92f327161d61.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\6c9ec70b-74e9-4615-9fad-6c4ad04afa5d.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\6c9ec70b-74e9-4615-9fad-6c4ad04afa5d.jpg",
       "PackagePath": "staticwebassets\\userdata\\6c9ec70b-74e9-4615-9fad-6c4ad04afa5d.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\77.jpeg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\77.jpeg",
       "PackagePath": "staticwebassets\\userdata\\77.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\77.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\77.png",
       "PackagePath": "staticwebassets\\userdata\\77.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\813cf75e-b02c-4100-aff9-3bc114e25db8.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\813cf75e-b02c-4100-aff9-3bc114e25db8.jpg",
       "PackagePath": "staticwebassets\\userdata\\813cf75e-b02c-4100-aff9-3bc114e25db8.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\8524199c-c9f5-4bea-a6fb-f21e72384159.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\8524199c-c9f5-4bea-a6fb-f21e72384159.jpg",
       "PackagePath": "staticwebassets\\userdata\\8524199c-c9f5-4bea-a6fb-f21e72384159.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\890ef481-15c2-4fad-8df8-64daac91557c.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\890ef481-15c2-4fad-8df8-64daac91557c.jpg",
       "PackagePath": "staticwebassets\\userdata\\890ef481-15c2-4fad-8df8-64daac91557c.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\8cd2dc9d-2bba-4438-a57f-b1737b3c5259.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\8cd2dc9d-2bba-4438-a57f-b1737b3c5259.jpg",
       "PackagePath": "staticwebassets\\userdata\\8cd2dc9d-2bba-4438-a57f-b1737b3c5259.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\9288f6cb-05bf-4567-be34-4944b411237d.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\9288f6cb-05bf-4567-be34-4944b411237d.jpg",
       "PackagePath": "staticwebassets\\userdata\\9288f6cb-05bf-4567-be34-4944b411237d.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\92d8edf5-8fdf-4bb5-aab0-6862d445a7be.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\92d8edf5-8fdf-4bb5-aab0-6862d445a7be.jpg",
       "PackagePath": "staticwebassets\\userdata\\92d8edf5-8fdf-4bb5-aab0-6862d445a7be.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\9664bb58-b1d4-4e8b-a736-06d8bddceff3.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\9664bb58-b1d4-4e8b-a736-06d8bddceff3.jpg",
       "PackagePath": "staticwebassets\\userdata\\9664bb58-b1d4-4e8b-a736-06d8bddceff3.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\98.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\98.png",
       "PackagePath": "staticwebassets\\userdata\\98.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\9f97433c-f0f0-45ba-833c-19bb1c44bcd0.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\9f97433c-f0f0-45ba-833c-19bb1c44bcd0.jpg",
       "PackagePath": "staticwebassets\\userdata\\9f97433c-f0f0-45ba-833c-19bb1c44bcd0.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\a45ab877-52d8-47ca-8823-5413585fcbbe.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\a45ab877-52d8-47ca-8823-5413585fcbbe.jpg",
       "PackagePath": "staticwebassets\\userdata\\a45ab877-52d8-47ca-8823-5413585fcbbe.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\a523b1f6-8608-4f5e-8f52-a51cea27b064.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\a523b1f6-8608-4f5e-8f52-a51cea27b064.jpg",
       "PackagePath": "staticwebassets\\userdata\\a523b1f6-8608-4f5e-8f52-a51cea27b064.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\aad2fe61-533b-4572-9a62-2855716411eb.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\aad2fe61-533b-4572-9a62-2855716411eb.jpg",
       "PackagePath": "staticwebassets\\userdata\\aad2fe61-533b-4572-9a62-2855716411eb.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\b0a06850-6d48-4b06-814b-3de26a64c1f0.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\b0a06850-6d48-4b06-814b-3de26a64c1f0.jpg",
       "PackagePath": "staticwebassets\\userdata\\b0a06850-6d48-4b06-814b-3de26a64c1f0.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\bda744b6-ddc3-4b6e-994d-96150b49042e.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\bda744b6-ddc3-4b6e-994d-96150b49042e.jpg",
       "PackagePath": "staticwebassets\\userdata\\bda744b6-ddc3-4b6e-994d-96150b49042e.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\bdd45d6d-856d-4289-a893-447d00fba5d7.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\bdd45d6d-856d-4289-a893-447d00fba5d7.jpg",
       "PackagePath": "staticwebassets\\userdata\\bdd45d6d-856d-4289-a893-447d00fba5d7.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\be07ce00-7600-4a04-b5de-6f1eecb5f88d.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\be07ce00-7600-4a04-b5de-6f1eecb5f88d.jpg",
       "PackagePath": "staticwebassets\\userdata\\be07ce00-7600-4a04-b5de-6f1eecb5f88d.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\c887792b-fdd8-48a2-9d6b-edd5988d6324.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\c887792b-fdd8-48a2-9d6b-edd5988d6324.jpg",
       "PackagePath": "staticwebassets\\userdata\\c887792b-fdd8-48a2-9d6b-edd5988d6324.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\cfacb3b6-0e54-4b69-a6b0-d74cfd6dbd60.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\cfacb3b6-0e54-4b69-a6b0-d74cfd6dbd60.jpg",
       "PackagePath": "staticwebassets\\userdata\\cfacb3b6-0e54-4b69-a6b0-d74cfd6dbd60.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\d45fcf65-4495-43a8-952b-ed2f54bbc9a0.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\d45fcf65-4495-43a8-952b-ed2f54bbc9a0.jpg",
       "PackagePath": "staticwebassets\\userdata\\d45fcf65-4495-43a8-952b-ed2f54bbc9a0.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\d90cff16-dd3c-448e-a7db-7787c53b2e06.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\d90cff16-dd3c-448e-a7db-7787c53b2e06.jpg",
       "PackagePath": "staticwebassets\\userdata\\d90cff16-dd3c-448e-a7db-7787c53b2e06.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\d9ef536c-7f94-40e4-95a4-0196b72f90df.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\d9ef536c-7f94-40e4-95a4-0196b72f90df.jpg",
       "PackagePath": "staticwebassets\\userdata\\d9ef536c-7f94-40e4-95a4-0196b72f90df.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\dc96fcb6-80e0-4444-ba2b-0a5c20bef8ba.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\dc96fcb6-80e0-4444-ba2b-0a5c20bef8ba.jpg",
       "PackagePath": "staticwebassets\\userdata\\dc96fcb6-80e0-4444-ba2b-0a5c20bef8ba.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\default.jpeg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\default.jpeg",
       "PackagePath": "staticwebassets\\userdata\\default.jpeg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\e27847df-368e-4986-8b07-34499eb38267.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\e27847df-368e-4986-8b07-34499eb38267.jpg",
       "PackagePath": "staticwebassets\\userdata\\e27847df-368e-4986-8b07-34499eb38267.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\f4fa097b-5fd0-426a-b5fd-8240b5f6a402.png",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\f4fa097b-5fd0-426a-b5fd-8240b5f6a402.png",
       "PackagePath": "staticwebassets\\userdata\\f4fa097b-5fd0-426a-b5fd-8240b5f6a402.png"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\f68c32ad-4e44-4f9e-9eca-fb0dcca978a8.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\f68c32ad-4e44-4f9e-9eca-fb0dcca978a8.jpg",
       "PackagePath": "staticwebassets\\userdata\\f68c32ad-4e44-4f9e-9eca-fb0dcca978a8.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\f948fc11-94ac-48e6-b7ea-8ed90ad9ea68.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\f948fc11-94ac-48e6-b7ea-8ed90ad9ea68.jpg",
       "PackagePath": "staticwebassets\\userdata\\f948fc11-94ac-48e6-b7ea-8ed90ad9ea68.jpg"
     },
     {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\fbeffba3-bf3b-4177-8d70-df6e8818d2b4.jpg",
+      "Id": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\wwwroot\\userdata\\fbeffba3-bf3b-4177-8d70-df6e8818d2b4.jpg",
       "PackagePath": "staticwebassets\\userdata\\fbeffba3-bf3b-4177-8d70-df6e8818d2b4.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_1.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_1.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_2.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_2.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_3.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_3.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_4.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_4.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_5.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_5.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_6.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_6.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_7.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_7.jpg"
-    },
-    {
-      "Id": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\wwwroot\\userdata\\img_8.jpg",
-      "PackagePath": "staticwebassets\\userdata\\img_8.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",

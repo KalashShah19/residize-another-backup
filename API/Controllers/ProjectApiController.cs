@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Implementations;
 using Repository.Interfaces;
 using Repository.Models;
+using Repository.Libraries;
 
 namespace API.Controllers
 {
@@ -13,8 +10,6 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProjectApiController : ControllerBase
     {
-
-
         public readonly IProjectRepository _IProjectRepository;
         public readonly PropertyRepository propertyRepository;
 
@@ -25,8 +20,6 @@ namespace API.Controllers
             propertyRepository = PropertyRepository;
         }
 
-
-
         [HttpPost("AddProject")]
         [Consumes("multipart/form-data")]
         [Produces("application/json")]
@@ -35,11 +28,8 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult AddProject([FromForm] Combined.PropertyDetails model)
         {
-
             if (ModelState.IsValid)
             {
-
-
                 var propertyDetailsPost = new Properties.PropertyDetails.Post
                 {
                     PropertyAge = model.PropertyAge,
@@ -50,9 +40,6 @@ namespace API.Controllers
                     Pincode = model.Pincode,
                     UserId = model.UserId
                 };
-
-
-
 
                 try
                 {
@@ -96,7 +83,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost("DeleteProject")]
+        [HttpDelete("DeleteProject")]
         [Consumes("multipart/form-data")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -135,13 +122,13 @@ namespace API.Controllers
             return Ok();
         }
 
-        [HttpGet("GetProjectById")]
+        [HttpGet("GetProject")]
         [Consumes("multipart/form-data")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult GetProjectById(int id)
+        public IActionResult GetProject(int id)
         {
             var project = _IProjectRepository.GetProjects(id);
 
@@ -152,6 +139,22 @@ namespace API.Controllers
 
             return Ok(project);
         }
+
+
+        [HttpPost("ProjectName")]
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult ProjectName([FromBody] string Name)
+        {
+            Console.WriteLine(Name);
+            if (_IProjectRepository.DoesProjectExist(Name))
+                throw new UserException("This Project Name is already registered.");
+
+            return Ok();
+        }
+
         [HttpGet("GetAllProjects")]
         [Consumes("multipart/form-data")]
         [Produces("application/json")]
@@ -224,5 +227,6 @@ namespace API.Controllers
 
             return Ok(amenities);
         }
+
     }
 }

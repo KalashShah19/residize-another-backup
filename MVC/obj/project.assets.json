@@ -2349,11 +2349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\! Kalash\\GitHub\\merged\\Residize\\MVC\\MVC.csproj",
+      "projectUniqueName": "D:\\! Kalash\\GitHub\\Merging\\Residize\\MVC\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\MVC\\MVC.csproj",
+      "projectPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\MVC\\MVC.csproj",
       "packagesPath": "C:\\Users\\intern035\\.nuget\\packages\\",
-      "outputPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\MVC\\obj\\",
+      "outputPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2373,11 +2373,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\API.csproj": {
-              "projectPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\API\\API.csproj"
+            "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\API.csproj": {
+              "projectPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\API\\API.csproj"
             },
-            "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\! Kalash\\GitHub\\merged\\Residize\\Repository\\Repository.csproj"
+            "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\! Kalash\\GitHub\\Merging\\Residize\\Repository\\Repository.csproj"
             }
           }
         }

@@ -23,7 +23,7 @@ public class AccountController : Controller
 
     public IActionResult Login()
     {
-       
+
         if (IsLogin())
         {
             if (string.Equals("admin", GetRole()))
@@ -292,5 +292,14 @@ public class AccountController : Controller
         {
             return Json(new { success = false, message = "Invalid input" });
         }
+    }
+
+
+    public IActionResult GetUserDetail()
+    {
+        string? email = HttpContext.Session.GetString("email");
+        string? username = HttpContext.Session.GetString("name");
+        string? contact = HttpContext.Session.GetString("contact");
+        return Ok(new User.GetContectInfo() { Email = email, UserName = username, Phone = contact });
     }
 }

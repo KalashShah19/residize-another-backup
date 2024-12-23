@@ -349,7 +349,7 @@
                         <p class="card-text">Total User <br> </p>
                     </div>
                     <div class="count">
-                        <span class="mt-5" id="tusers" name="tusers"></span>
+                        <span class="mt-5"> 15,000</span>
                     </div>
                 </div>
             </div>
@@ -420,7 +420,7 @@
                         <p class="card-text">No of Properties : <br> </p>
                     </div>
                     <div class="count">
-                        <span class="mt-5" id="tproperties" name="tproperties"></span>
+                        <span class="mt-5"> 15,000</span>
                     </div>
                 </div>
             </div>
@@ -641,20 +641,6 @@
         }
 
         $(document).ready(function () {
-            $.ajax({
-                    url: 'http://localhost:5293/api/AdminAPI/TotalProperties',
-                    type: 'GET',
-                    success: function (response) {
-                        $('#tproperties').text(response);
-                    }      
-                });
-                $.ajax({
-                    url: 'http://localhost:5293/api/AdminAPI/TotalUsers',
-                    type: 'GET',
-                    success: function (response) {
-                        $('#tusers').text(response);
-                    }      
-                });
             $("#btnLogout").click(function () {
                 $.ajax({
                     url: '/Account/Logout',

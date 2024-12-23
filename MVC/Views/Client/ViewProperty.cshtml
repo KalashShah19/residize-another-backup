@@ -89,6 +89,9 @@
                                                 <h6 style="margin-left:5px">#= name #</h6>
                                             </div>
                                             <div class="row" style="text-align:left">
+                                                <p class="text-semibold">🏠#:propertyName#</p>
+                                            </div>
+                                            <div class="row" style="text-align:left">
                                                 <p class="text-semibold">📍#:bedrooms# BHK in #= locality # ,#:city#</p>
                                             </div>
                                             <div class="row">
@@ -119,7 +122,7 @@
                                                    <a class="btnContect" href="/Client/ViewOneProperty/#= propertyId #">View Details</a>
                                                 </div>
                                                 <div class="hover" style="text-align:end">
-                                                    <button class="btnContect" id="sendContactInfo" data-id="5">Request Contact Info</button>
+                                                    <button class="btnContect" id="sendContactInfo" data-id="#= propertyId #">Request Contact Info</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -139,8 +142,12 @@
                     }
                     $(document).on('click', '#sendContactInfo', function () {
                         const propertyId = $(this).data('id');
-                        const userEmail = "pumbhadiyasahil@gmail.com";
-                        const apiUrl = `http://localhost:5293/api/AccountAPI/SendContect?propertie_id=${propertyId}&userEmail=${userEmail}`;
+                        @* const userEmail = "pumbhadiyasahil@gmail.com"; *@
+                       $.ajax({
+                        url: "/Account/GetUserDetail",
+                        success: function (response) {
+                            console.log(response);
+                             const apiUrl = `http://localhost:5293/api/AccountAPI/SendContect?propertie_id=${propertyId}&email=${response.email}&phone=${response.phone}&userName=${response.userName}`;
                         $.ajax({
                             url: apiUrl,
                             method: 'GET',
@@ -159,6 +166,9 @@
                                 });
                             }
                         });
+                        } 
+                       });
+                       
                     });
                 </script>
 
@@ -205,8 +215,10 @@
                                         readyToMove: { type: "boolean" },
                                         address:{type:"string"}
                                     }
-                                }
-                            }
+                                },
+                            
+                            },
+                           
                         });
 
                         $("#filter").kendoFilter({

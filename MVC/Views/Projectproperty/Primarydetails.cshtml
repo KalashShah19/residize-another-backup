@@ -1,0 +1,494 @@
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    @* <link rel="preconnect" href="https://fonts.googleapis.com" /> *@
+    @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
+    @* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" /> *@
+
+    @* <link rel="stylesheet" href="fonts/icomoon/style.css" /> *@
+    @* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" /> *@
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link href="../../App_Themes/Default/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/fonts.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/styleguide.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/dashboard.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/core-pocket-responsive.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/casepoint.comfortable.css" rel="stylesheet" />
+    <link href="../../App_Themes/Default/css/kendo.Deeppurple.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+ @* <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> *@
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery Validation Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- css -->
+    <link href="../../App_Themes/Default/css/core-pocket.css" rel="stylesheet" />
+            <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<link href="~/css/Loader.css" rel="stylesheet" type="text/css" />
+<link href="~/css/project.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        
+    </style>
+
+    <title>Residize post project</title>
+    <link rel="icon" href="/Images/whitelogo.png">
+
+</head>
+
+<body>
+    <!-- Header (Existing Code) -->
+    <header class="main-header">
+        <nav class="mt-navbar">
+            <div class="nav-left m-5" id="dvLeftMenu" data-role="aratooltipv2">
+                <a href="/Client/Home">
+                    <div class="logo-wrapper ms-5 ">
+                        <img src="../../App_Themes/Default/images/residize-white.png" />
+                    </div>
+                </a>
+            </div>
+            @* <div class="nav-right">
+                <ul class="user-menu">
+                    <li class="support-mail-wrapper">
+                        <a href="../AI/index" class="icon">Residize AI </a>
+                    </li>
+                </ul>
+            </div> *@
+        </nav>
+    </header>
+
+    <!-- Multi-Step Form -->
+    <div>
+        <div class="custom-loader" id="loader" style="display: none;" >
+            <div class="logo-loader">
+                <img src="/Images/logo.png" alt="Loading..." />
+                <div class="rotating-dot"></div>
+            </div>
+        </div>
+
+<form action="" id="myForm" enctype="multipart/form-data">
+        <div class="container">
+            <div class="sidebar">
+                <div class="welcome mb-3">
+
+               <h1>Welcome, @ViewBag.username</h1>
+               @* <h1>User Name</h1> *@
+                </div>
+                @* <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Basic Details</div>
+                </div> *@
+                @* <div class="step-line"></div> *@
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Location Details</div>
+                </div>
+                @* <div class="step-line"></div> *@
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Project Profile</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Photos & Videos</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Amenities Section</div>
+                </div>
+
+            </div>
+
+
+            <div class="main-content">
+                <!-- Step 1 -->
+                @* <div class="form-section " id="step-1">
+                    <div class="">
+                        <h1>Welcome back { User Name },</h1>
+                        <p>Fill out basic details</p>
+
+                        <div>
+                            <p>I'm looking to</p>
+                            <div class="options">
+                                <div class="option selected" onclick="selectOption(this)">Sell</div>
+                                <div class="option" onclick="selectOption(this)">Rent </div>                              
+                            </div>
+                        </div>
+
+                        <div class="property-type">
+                            <p>What kind of property do you have?</p>
+                            <div class="radio-group">
+                                <input type="radio" id="residential" name="property">
+                                <label for="residential"><span class="">Residential</span></label>
+                                
+                                <input type="radio" id="commercial" name="property" >
+                                <label for="commercial">Commercial</label>
+                            </div>
+
+                            
+                        </div>
+
+
+                        <div class="navigation-buttons">
+
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                </div> *@
+
+                <!-- Step 2 -->
+                <div class="form-section active" id="step-1">
+                    <h2> Location Details</h2>
+                    <p>Provide the location details of the project.</p>                    
+                     <div class="">
+                                    
+                                    <div class="row">
+                                       
+                                         <div class="area-details">
+                                             <div class="city ">
+                                                 <div class="loction form-floating">
+                                                    <input name="Property-name" type="text" class="form-control"  id="property-Name" placeholder=" Name" required>
+                                                    <label for="property-Name">Project Name</label>
+                                                </div>  
+                                                <div class="d-flex">
+
+
+                                                  <div class="loction form-floating">
+                                                    <input name="Pincode" type="number" class="Pincode form-control" id="Pincode" placeholder="Pincode" required>
+                                                    <label for="Pincode">Pincode</label>
+                                                </div> 
+                                                 <button type="button" class="getcity" id="showMoreFields" style="display: none;">Get City</button>
+                                                </div>      
+
+                                                 <div  id="hiddenFields" class="mt-3" style="display: none;">
+
+                                                <div class="loction form-floating">
+                                                    <input name="city" type="" class="form-control" id="city" placeholder="City">
+                                                    <label for="city">City</label>
+                                                </div>  
+                                               <div class="loction form-floating">
+                                                <select name="locality" class="form-select" id="locality" required>
+                                                    <option value="" disabled selected>Select Locality</option>
+                                                    <option value="Locality1">Locality 1</option>
+                                                    <option value="Locality2">Locality 2</option>
+                                                    <option value="Locality3">Locality 3</option>
+                                                </select>
+                                                <label for="locality">Locality</label>
+                                            </div>
+
+                                             
+                                                @* <div class="loction form-floating">
+                                                    <input name="locality" type="text" class="form-control" id="locality" placeholder="locality" required>
+                                                    <label for="locality">Locality</label>
+                                                </div>                                                *@
+                                                    <label for="Address">Address</label>
+                                                <div class="loction form-floating">
+                                                   
+                                                      <textarea id="Address" name="Address" class="Address p-2" rows="3"  cols="43"></textarea>
+                                                 </div>
+                                                </div>                                      
+                                                                                            
+                                            </div>                                       
+                                    </div>
+                                </div>
+                                
+
+
+                               </div>
+                    <div class="navigation-buttons">
+                        @* <button type="button" class="back-btn">Back</button> *@
+                        <button type="button" class="next-btn">Continue</button>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="form-section"  id="step-2">
+                    <div class="">
+                        <h2>Tell us about your project</h2>
+                        
+                        <div>
+                            <div class="step-3">        
+
+@* Availability stauts *@
+                                    <div class="">
+                                                                    <h4 class="roomadd">Availability Status</h4>
+                                                                    <div class="furnishing-options">
+                                                                <button type="button" style="width: fit-content;" class="stauts-option" data-value="true"onclick="selectstauts(this)">Ready to move</button>
+                                                                <button type="button" style="width: fit-content;" class="stauts-option " data-value="false" onclick="selectstauts(this)">Under construction</button>
+                                                                    </div>
+                                    </div>
+                                    <div style="display: none;" class="age-options">
+                                                                                                        <h4 class="roomadd">Age of property <span class="text-sm">( In year )</span></h4>
+
+                                                                    <div>
+
+                                                                        @* <label for="customRange1" class="form-label">Example range</label> *@
+                                                                        <input min="0" max="20" type="range" class="form-range" id="customRange1">
+                                                                         <div class="value-box" id="rangeValue">20</div>
+                                                                    </div>
+                                                                    @* <div class="">
+                                                                <button type="button" style="width: fit-content;" data-value="0-1 year" class="age-option" onclick="selectAge(this)">
+                                                                    0-1 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="1-5 year" class="age-option" onclick="selectAge(this)">
+                                                                    1-5 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="5-10 year" class="age-option" onclick="selectAge(this)">
+                                                                    5-10 years</button>
+                                                                <button type="button" style="width: fit-content;" data-value="10 +year" class="age-option" onclick="selectAge(this)">
+                                                                    10+ years</button>
+                                                                
+                                                                    </div> *@
+                                    </div>
+@* Price Details *@
+                                    @*<div class="">
+                                        
+                                        <div class="row">
+                                                                    
+                                          <div class="area-details">
+                                              <div class="checkbox-group mt-3">                                                                              
+                                                    <input type="checkbox" id="Tax" name="Tax" >
+                                                    <label for="Tax">Tax and Govt charges included</label>                           
+                                              </div>
+                                                            
+                                          </div>
+                                        </div>
+                                    </div> *@
+
+                               </div>
+                        </div>
+
+                        
+
+                        <div class="navigation-buttons ">
+                            <button type="button"class="back-btn">Back</button>
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="form-section" id="step-3">
+                    <div class="">
+                        <h4>Add project media</span></h4>
+                        <span class="h6" style="color: #7C7C7C;">A picture is worth a thousand words. 87% of buyers look at photos before buying</span><br>
+                        @* <h5 class="h5 mt-5" style="color: #212529;font-size: 20px;">Upload from desktop</h5> *@
+                        <div class="h5" style="color: black; margin-top: 40px !important;">Images Upload :</div><br>
+
+                        <div class="gap-5  mt-4 row rowclass ms-1">
+    
+                            <div class="upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="upload-area position-relative" >
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                     <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                        
+                            <div class="upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="upload-area position-relative" >
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                            
+                            <div class="upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                        
+                            <div class="upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="upload-area position-relative">
+                                    <img src="" alt="Add Photos" class="uploaded-image">
+                                    <button type="button" class="delete-icon" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                         <div class="upload-btn col col-sm-12 col-lg-3">
+                            <div class="upload-area imageupload">
+                            <p>Add Atmost 5 photos</p>
+                            <p>size 15 MB • Formats: png, jpg, jpeg</p>
+                            <button type="button" onclick="uploadimage(this)" class="upload">Upload Photos</button>
+                             <input type="file" accept="image/jpeg, image/png, image/jpg" multiple hidden id="fileInput">
+                            </div>
+   
+                        </div>
+                       
+                        </div>
+                        @* <div class="h4" style="color: black; margin-top: 40px !important;">Video Upload :</div><br> *@
+                        <div class="h5" style="color: black; margin-top: 40px !important;">Video Upload :</div><br>
+
+
+                        @* <span style="color: #7C7C7C;"> ------------------------------------------------------- Video Upload ------------------------------------------------------- </span> *@
+
+                            @* video *@
+                        <div class="gap-5 videodiv ms-1">
+                        <div class="video-upload-container col col-sm-6 col-lg-6" style="display: none;" >
+                            <div class="video-upload-area position-relative">
+                                <video controls class="video-preview" width="100%" height="auto">
+                                    <source src="" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <button type="button" class="delete-icon-video" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                            </div>
+                        </div>
+                      
+
+
+                          
+                        </div>
+                         <div class="upload-btn-video col col-sm-12 col-lg-3">
+                            <div class="upload-area videoupload">
+                            <p>Add a Video</p>
+                            <p>size 100 MB • Formats: MP4</p>
+                            <input type="file" accept="video/*" hidden id="videoFileInput">
+                            <button type="button" onclick="uploadvideo(this)" class="upload-videos mt-3">Upload Videos</button>
+                           
+                            </div>
+   
+                        </div>
+                        @* <div class="h4" style="color: black; margin-top: 40px !important;">Brochure Upload :</div><br> *@
+                        <div class="h5" style="color: black; margin-top: 40px !important;">Brochure Upload :</div><br>
+                        
+                        @* <span style="color: #7C7C7C;"> ------------------------------------------------------- Brochure Upload ------------------------------------------------------- </span> *@
+                        
+                        @* pdf *@
+
+                         <div class="videodiv gap-5 mt-4">
+                           
+                             <div class="pdf-upload-container col col-sm-12 col-lg-3" style="display: none;">
+                                <div class="pdf-upload-area position-relative">
+                                    <embed class="pdf-preview" type="application/pdf" width="100%" height="300px" src="">
+                                 <button type="button" class="delete-icon-pdf" title="Delete">
+                                             <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                        
+                         <div class="upload-btn col col-sm-12 col-lg-3">
+                            <div class="upload-area pdfadd">
+                            <p>Add a PDF</p>
+                            <p>size 10 MB • Formats: PDF</p>                           
+                                <input type="file" accept=".pdf" hidden id="pdfFileInput">                 
+                                <button  type="button" onclick="uploadpdf(this)" class="upload-pdfs mt-3">Upload Brochure</button>
+                           
+                            </div>
+   
+                        </div>
+
+
+
+                        <div class="navigation-buttons my-5">
+                            <button type="button" class="back-btn">Back</button>
+                            <button type="button" class="next-btn">Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="form-section " id="step-4">
+                    <div class="">
+                       <h4 class="mb-3">Add amenities/unique features</h4>
+                        <span class="h6" style="color: #7C7C7C;">These fields are used to populate USP & captions</span><br>
+                        <span class="h6" style="color: #7C7C7C;">All fields on this page are optional</span><br>
+
+                                    <div class=" mt-5">
+                                         <span class="h6" style="color: #302e2e; margin-bottom: 30px;">Amenities :</span>
+                                      
+                                        <div class="Amenities mt-3 rowclass">
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="1"class="option amemitiesOption"> <i class="fas fa-swimming-pool"></i> Swimming Pool</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="2"class="option amemitiesOption"><i class="fas fa-dumbbell"></i> Gym</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="3"class="option amemitiesOption"> <i class="fas fa-parking"></i> Parking</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="4" class="option amemitiesOption"><i class="fas fa-child"></i> Playground</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="5"class="option amemitiesOption"><i class="fas fa-building"></i> Clubhouse</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="6"class="option amemitiesOption"> <i class="fas fa-tree"></i> Garden</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="7"class="option amemitiesOption"> <i class="fas fa-shield-alt"></i> Security</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="8"class="option amemitiesOption"> <i class="fas fa-video"></i> CCTV</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="9"class="option amemitiesOption"><i class="fas fa-battery-full"></i> Power Backup</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="10"class="option amemitiesOption"> <i class="fas fa-sort"></i> Lift</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="11"class="option amemitiesOption"><i class="fas fa-wifi"></i> Wi-Fi</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="12"class="option amemitiesOption"><i class="fas fa-fire-extinguisher"></i> Fire Safety</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="13"class="option amemitiesOption"><i class="fas fa-users"></i> Conference Room</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="14"class="option amemitiesOption"><i class="fas fa-book"></i> Library</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="15"class="option amemitiesOption"><i class="fas fa-futbol"></i> Sports Area</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="16"class="option amemitiesOption"> <i class="fas fa-dove"></i> Yoga Room</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="17"class="option amemitiesOption"> <i class="fas fa-child"></i>  Kids Zone</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="18"class="option amemitiesOption"><i class="fas fa-hot-tub"></i> Jacuzzi</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="19"class="option amemitiesOption"><i class="fas fa-spa"></i> Spa</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="22"class="option amemitiesOption"> <i class="fas fa-film"></i> Theater</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="23"class="option amemitiesOption"><i class="fas fa-table-tennis"></i> Tennis Court</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="24"class="option amemitiesOption"><i class="fas fa-basketball-ball"></i> Basketball Court</button>
+                                            <button type="button" onclick="selectamemitiesOption(this)" data-value="25"class="option amemitiesOption"><i class="fas fa-place-of-worship"></i> Temple</button>
+                                            
+                                        </div>
+                                    </div>
+
+                        <div class="navigation-buttons mt-5">
+                            <button type="button" class="back-btn">Back</button>
+                            <button type="submit" id="submit" class="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+         </div>
+
+             
+         </div>
+</form>
+        </div>
+    </div>
+
+
+
+<script src="~/js/project.js"></script>
+<script>
+    const loginuserid = @ViewBag.Id
+</script>
+   
+
+</body>
+
+</html>

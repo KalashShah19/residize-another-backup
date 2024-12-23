@@ -61,7 +61,9 @@ namespace Repository.Models
             [Display(Name = "User ID")]
             public int UserId { get; set; }
 
-            public List<int> AllAmenities { get; set; }
+            public List<int>? AllAmenities { get; set; } 
+
+
 
         }
 

@@ -18,6 +18,13 @@ public class User
 
     }
 
+    public class GetContectInfo
+    {
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+    }
+
     //  below Anvi code
     public class GetUpdateProfile
     {
@@ -88,12 +95,5 @@ public class User
         public string NewPassword { get; set; }
         public string EmailAddress { get; set; }
 
-    }
-
-    public class GetContectInfo
-    {
-        public string UserName { get; set;}
-        public string Email { get; set;}
-        public string Phone { get; set;}
     }
 }

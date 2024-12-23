@@ -388,9 +388,63 @@ namespace Repository.Implementations
 
         }
 
+        public List<Project.GET> GetAllProjects()
+        {
+            List<Project.GET> projects = new List<Project.GET>();
+
+            NpgsqlCommand GetProjectForUser = new NpgsqlCommand(@"SELECT P.c_project_id, P.c_project_name, P.c_picture_path, P.c_brochure_path, P.c_is_rera_verified, P.c_property_detail_id, P.c_video_path, D.c_property_age, D.c_availability_status, D.c_city, D.c_locality, D.c_address, D.c_pin_code, D.c_posted_date, D.c_user_id 
+                                                         FROM t_projects AS P 
+                                                         JOIN t_details AS D ON P.c_property_detail_id = D.c_property_detail_id ", connection);
+            // GetProjectForUser.Parameters.AddWithValue("@ID", id);
+
+            using (var reader = GetProjectForUser.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var project = new Project.GET
+                    {
+                        ProjectId = Convert.ToInt32(reader["c_project_id"]),
+                        ProjectName = reader.GetString(reader.GetOrdinal("c_project_name")),
+                        PicturePath = reader.IsDBNull(reader.GetOrdinal("c_picture_path")) ? null : reader.GetString(reader.GetOrdinal("c_picture_path")),
+                        BrochurePath = reader.IsDBNull(reader.GetOrdinal("c_brochure_path")) ? null : reader.GetString(reader.GetOrdinal("c_brochure_path")),
+                        IsReraVerified = reader.GetBoolean(reader.GetOrdinal("c_is_rera_verified")),
+                        PropertyDetailId = reader.GetInt32(reader.GetOrdinal("c_property_detail_id")),
+                        VideoPath = reader.IsDBNull(reader.GetOrdinal("c_video_path")) ? null : reader.GetString(reader.GetOrdinal("c_video_path")),
+                        PropertyAge = reader.GetInt32(reader.GetOrdinal("c_property_age")),
+                        AvailabilityStatus = reader.GetBoolean(reader.GetOrdinal("c_availability_status")),
+                        City = reader.GetString(reader.GetOrdinal("c_city")),
+                        Locality = reader.GetString(reader.GetOrdinal("c_locality")),
+                        Address = reader.GetString(reader.GetOrdinal("c_address")),
+                        PinCode = reader.GetInt32(reader.GetOrdinal("c_pin_code")),
+                        PostedDate = reader.GetDateTime(reader.GetOrdinal("c_posted_date")),
+                        UserId = reader.IsDBNull(reader.GetOrdinal("c_user_id")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("c_user_id"))
+                    };
+
+                    // List files in the directories
+                    if (!string.IsNullOrEmpty(project.PicturePath) && Directory.Exists(project.PicturePath))
+                    {
+                        project.PictureFiles.AddRange(Directory.GetFiles(project.PicturePath));
+                    }
+
+                    if (!string.IsNullOrEmpty(project.BrochurePath) && Directory.Exists(project.BrochurePath))
+                    {
+                        project.BrochureFiles.AddRange(Directory.GetFiles(project.BrochurePath));
+                    }
+
+                    if (!string.IsNullOrEmpty(project.VideoPath) && Directory.Exists(project.VideoPath))
+                    {
+                        project.VideoFiles.AddRange(Directory.GetFiles(project.VideoPath));
+                    }
+                    projects.Add(project);
+                }
+            }
+            return projects;
+        }
+
+
         public bool DeleteProject(int projectId)
         {
-
+            Console.WriteLine("projectid" + projectId);
             int ProjectDetailsId = 0;
 
             NpgsqlCommand SelectProjectIdCommand = new NpgsqlCommand(@"SELECT c_property_detail_id FROM t_projects WHERE c_project_id = @c_project_id", connection);
@@ -404,35 +458,50 @@ namespace Repository.Implementations
 
             Console.WriteLine("delete id = " + ProjectDetailsId);
 
+
+
             NpgsqlCommand DeleteProjectCommand = new NpgsqlCommand(@"DELETE FROM t_projects WHERE c_project_id = @c_project_id", connection);
             DeleteProjectCommand.Parameters.AddWithValue("@c_project_id", projectId);
             int rowForProject = DeleteProjectCommand.ExecuteNonQuery();
             if (rowForProject > 0)
             {
 
-                NpgsqlCommand DeleteProjectDetailCommand = new NpgsqlCommand(@"DELETE FROM t_details WHERE c_property_detail_id=@ProjectDetailsId", connection);
-                DeleteProjectDetailCommand.Parameters.AddWithValue("@ProjectDetailsId", ProjectDetailsId);
+                NpgsqlCommand DeleteProjectAmenitiesCommand = new NpgsqlCommand(@"DELETE FROM t_property_amenities WHERE c_property_detail_id=@ProjectDetailsId", connection);
+                DeleteProjectAmenitiesCommand.Parameters.AddWithValue("@ProjectDetailsId", ProjectDetailsId);
 
-                int row = DeleteProjectDetailCommand.ExecuteNonQuery();
+                int row2 = DeleteProjectAmenitiesCommand.ExecuteNonQuery();
 
-
-                if (row > 0)
+                if (row2 > 0)
                 {
 
-                    Console.WriteLine("Row is delete . ");
-                    Console.WriteLine("delete id = " + ProjectDetailsId);
+                    NpgsqlCommand DeleteProjectDetailCommand = new NpgsqlCommand(@"DELETE FROM t_details WHERE c_property_detail_id=@ProjectDetailsId", connection);
+                    DeleteProjectDetailCommand.Parameters.AddWithValue("@ProjectDetailsId", ProjectDetailsId);
 
-                    string propertyDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ProjectdetailsData", ProjectDetailsId.ToString());
+                    int row = DeleteProjectDetailCommand.ExecuteNonQuery();
 
-                    if (Directory.Exists(propertyDirectory))
+
+                    if (row > 0)
                     {
-                        Directory.Delete(propertyDirectory, true);
+
+                        Console.WriteLine("Row is delete . ");
+                        Console.WriteLine("delete id = " + ProjectDetailsId);
+
+                        string propertyDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ProjectdetailsData", ProjectDetailsId.ToString());
+
+                        if (Directory.Exists(propertyDirectory))
+                        {
+                            Directory.Delete(propertyDirectory, true);
+                        }
+
+
+
+                        return true;
+
                     }
-
-
-
-                    return true;
-
+                }
+                else
+                {
+                    Console.WriteLine("delete");
                 }
             }
 
@@ -497,9 +566,16 @@ namespace Repository.Implementations
 
         public void AllAmenities(Project.Amenities amenities)
         {
+
             foreach (var amenity in amenities.AllAmenities)
             {
                 Console.WriteLine(amenity);
+
+                if (amenity == 0)
+                {
+                    Console.WriteLine("no amenity : " + amenity);
+                    break;
+                }
                 NpgsqlCommand AllAmenitiesCommad = new NpgsqlCommand(@"INSERT INTO public.t_property_amenities(c_amenities_id, c_property_detail_id)VALUES (@amenity, @ProjectDetailsId);", connection);
 
                 AllAmenitiesCommad.Parameters.AddWithValue("@amenity", amenity);
@@ -508,58 +584,6 @@ namespace Repository.Implementations
             }
         }
 
-        public List<Project.GET> GetAllProjects()
-        {
-            List<Project.GET> projects = new List<Project.GET>();
-
-            NpgsqlCommand GetProjectForUser = new NpgsqlCommand(@"SELECT P.c_project_id, P.c_project_name, P.c_picture_path, P.c_brochure_path, P.c_is_rera_verified, P.c_property_detail_id, P.c_video_path, D.c_property_age, D.c_availability_status, D.c_city, D.c_locality, D.c_address, D.c_pin_code, D.c_posted_date, D.c_user_id 
-                                                         FROM t_projects AS P 
-                                                         JOIN t_details AS D ON P.c_property_detail_id = D.c_property_detail_id ", connection);
-            // GetProjectForUser.Parameters.AddWithValue("@ID", id);
-
-            using (var reader = GetProjectForUser.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    var project = new Project.GET
-                    {
-                        ProjectId = Convert.ToInt32(reader["c_project_id"]),
-                        ProjectName = reader.GetString(reader.GetOrdinal("c_project_name")),
-                        PicturePath = reader.IsDBNull(reader.GetOrdinal("c_picture_path")) ? null : reader.GetString(reader.GetOrdinal("c_picture_path")),
-                        BrochurePath = reader.IsDBNull(reader.GetOrdinal("c_brochure_path")) ? null : reader.GetString(reader.GetOrdinal("c_brochure_path")),
-                        IsReraVerified = reader.GetBoolean(reader.GetOrdinal("c_is_rera_verified")),
-                        PropertyDetailId = reader.GetInt32(reader.GetOrdinal("c_property_detail_id")),
-                        VideoPath = reader.IsDBNull(reader.GetOrdinal("c_video_path")) ? null : reader.GetString(reader.GetOrdinal("c_video_path")),
-                        PropertyAge = reader.GetInt32(reader.GetOrdinal("c_property_age")),
-                        AvailabilityStatus = reader.GetBoolean(reader.GetOrdinal("c_availability_status")),
-                        City = reader.GetString(reader.GetOrdinal("c_city")),
-                        Locality = reader.GetString(reader.GetOrdinal("c_locality")),
-                        Address = reader.GetString(reader.GetOrdinal("c_address")),
-                        PinCode = reader.GetInt32(reader.GetOrdinal("c_pin_code")),
-                        PostedDate = reader.GetDateTime(reader.GetOrdinal("c_posted_date")),
-                        UserId = reader.IsDBNull(reader.GetOrdinal("c_user_id")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("c_user_id"))
-                    };
-
-                    // List files in the directories
-                    if (!string.IsNullOrEmpty(project.PicturePath) && Directory.Exists(project.PicturePath))
-                    {
-                        project.PictureFiles.AddRange(Directory.GetFiles(project.PicturePath));
-                    }
-
-                    if (!string.IsNullOrEmpty(project.BrochurePath) && Directory.Exists(project.BrochurePath))
-                    {
-                        project.BrochureFiles.AddRange(Directory.GetFiles(project.BrochurePath));
-                    }
-
-                    if (!string.IsNullOrEmpty(project.VideoPath) && Directory.Exists(project.VideoPath))
-                    {
-                        project.VideoFiles.AddRange(Directory.GetFiles(project.VideoPath));
-                    }
-                    projects.Add(project);
-                }
-            }
-            return projects;
-        }
         public Project.GET GetProjectByProjectId(int id)
         {
             Project.GET project = new();
@@ -569,44 +593,73 @@ namespace Repository.Implementations
                                                          JOIN t_details AS D ON P.c_property_detail_id = D.c_property_detail_id where P.c_project_id = @id", connection);
             GetProjectForUser.Parameters.AddWithValue("@ID", id);
 
-            using (var reader = GetProjectForUser.ExecuteReader())
+            using var reader = GetProjectForUser.ExecuteReader();
+
+
+            if (reader.Read())
             {
-                if (reader.Read())
+                project = new Project.GET()
                 {
-                    project = new Project.GET()
-                    {
-                        ProjectId = Convert.ToInt32(reader["c_project_id"]),
-                        ProjectName = reader.GetString(reader.GetOrdinal("c_project_name")),
-                        PicturePath = reader.IsDBNull(reader.GetOrdinal("c_picture_path")) ? null : reader.GetString(reader.GetOrdinal("c_picture_path")),
-                        BrochurePath = reader.IsDBNull(reader.GetOrdinal("c_brochure_path")) ? null : reader.GetString(reader.GetOrdinal("c_brochure_path")),
-                        IsReraVerified = reader.GetBoolean(reader.GetOrdinal("c_is_rera_verified")),
-                        PropertyDetailId = reader.GetInt32(reader.GetOrdinal("c_property_detail_id")),
-                        VideoPath = reader.IsDBNull(reader.GetOrdinal("c_video_path")) ? null : reader.GetString(reader.GetOrdinal("c_video_path")),
-                        PropertyAge = reader.GetInt32(reader.GetOrdinal("c_property_age")),
-                        AvailabilityStatus = reader.GetBoolean(reader.GetOrdinal("c_availability_status")),
-                        City = reader.GetString(reader.GetOrdinal("c_city")),
-                        Locality = reader.GetString(reader.GetOrdinal("c_locality")),
-                        Address = reader.GetString(reader.GetOrdinal("c_address")),
-                        PinCode = reader.GetInt32(reader.GetOrdinal("c_pin_code")),
-                        PostedDate = reader.GetDateTime(reader.GetOrdinal("c_posted_date")),
-                        UserId = reader.IsDBNull(reader.GetOrdinal("c_user_id")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("c_user_id"))
-                    };
+                    ProjectId = Convert.ToInt32(reader["c_project_id"]),
+                    ProjectName = reader.GetString(reader.GetOrdinal("c_project_name")),
+                    PicturePath = reader.IsDBNull(reader.GetOrdinal("c_picture_path")) ? null : reader.GetString(reader.GetOrdinal("c_picture_path")),
+                    BrochurePath = reader.IsDBNull(reader.GetOrdinal("c_brochure_path")) ? null : reader.GetString(reader.GetOrdinal("c_brochure_path")),
+                    IsReraVerified = reader.GetBoolean(reader.GetOrdinal("c_is_rera_verified")),
+                    PropertyDetailId = reader.GetInt32(reader.GetOrdinal("c_property_detail_id")),
+                    VideoPath = reader.IsDBNull(reader.GetOrdinal("c_video_path")) ? null : reader.GetString(reader.GetOrdinal("c_video_path")),
+                    PropertyAge = reader.GetInt32(reader.GetOrdinal("c_property_age")),
+                    AvailabilityStatus = reader.GetBoolean(reader.GetOrdinal("c_availability_status")),
+                    City = reader.GetString(reader.GetOrdinal("c_city")),
+                    Locality = reader.GetString(reader.GetOrdinal("c_locality")),
+                    Address = reader.GetString(reader.GetOrdinal("c_address")),
+                    PinCode = reader.GetInt32(reader.GetOrdinal("c_pin_code")),
+                    PostedDate = reader.GetDateTime(reader.GetOrdinal("c_posted_date")),
+                    UserId = reader.IsDBNull(reader.GetOrdinal("c_user_id")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("c_user_id"))
+                };
 
-                    // List files in the directories
+                // List files in the directories
 
-                    project.PictureFiles = FileHandler.GetFiles(project.PicturePath).ToList<string>();
+                // project.PictureFiles = FileHandler.GetFiles(project.PicturePath).Length == 0 ? ToList<string>();
+                try
+                {
+                    project.PictureFiles = FileHandler.GetFiles(project.PicturePath).Length > 0
+        ? FileHandler.GetFiles(Convert.ToString(reader["c_picture_path"])).ToList()
+        : Array.Empty<string>().ToList();
 
-
-
-                    project.BrochureFiles = FileHandler.GetFiles(project.BrochurePath).ToList<string>();
-
-
-
-                    project.VideoFiles = FileHandler.GetFiles(project.VideoPath).ToList<string>();
-
-                    return project;
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("No found picture", ex.Message);
+                }
+
+                try
+                {
+                    project.BrochureFiles = FileHandler.GetFiles(project.BrochurePath).Length > 0
+        ? FileHandler.GetFiles(Convert.ToString(reader["c_brochure_path"])).ToList()
+        : Array.Empty<string>().ToList();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("No found picture", ex.Message);
+                }
+
+                try
+                {
+                    project.VideoFiles = FileHandler.GetFiles(project.VideoPath).Length > 0
+        ? FileHandler.GetFiles(Convert.ToString(reader["c_video_path"])).ToList()
+        : Array.Empty<string>().ToList();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("No found picture", ex.Message);
+                }
+
+                return project;
             }
+            reader.Close();
+
 
             return project;
         }
@@ -647,32 +700,32 @@ namespace Repository.Implementations
             propertyComd.Parameters.AddWithValue("@ProjectId", projectId);
 
             using var reader = propertyComd.ExecuteReader();
-            
-                while (reader.Read())
+
+            while (reader.Read())
+            {
+                Properties.ListGet property = new()
                 {
-                    Properties.ListGet property = new()
-                    {
-                        PropertyId = Convert.ToInt32(reader["c_property_id"]),
-                        ProjectId = reader["c_project_id"] == DBNull.Value ? (int?)null : Convert.ToInt32(reader["c_project_id"]),
-                        ProjectName = reader["c_project_name"] == DBNull.Value ? (string?)null : Convert.ToString(reader["c_project_name"]),
-                        PropertyName = Convert.ToString(reader["c_property_name"]),
-                        PropertyAmount = Convert.ToInt32(reader["c_property_amount"]),
-                        PropertySize = Convert.ToInt32(reader["c_property_square_ft"]),
-                        Bedrooms = Convert.ToInt32(reader["c_bhk"]),
-                        PropertyListingType = Convert.ToString(reader["c_property_listing_type"]),
-                        Furnished = Convert.ToString(reader["c_furnished"]),
-                        AreaType = Convert.ToString(reader["c_area_type"]),
-                        PropertyAge = Convert.ToInt32(reader["c_property_age"]),
-                        PropertyPicture = FileHandler.GetFirstImagePath(Convert.ToString(reader["c_picture_path"])),
-                        City = Convert.ToString(reader["c_city"]),
-                        Locality = Convert.ToString(reader["c_locality"]),
-                        ReadytoMove = Convert.ToBoolean(reader["c_availability_status"]),
-                        Address = Convert.ToString(reader["c_address"]),
-                        PropertyType = Convert.ToString(reader["c_property_type"])
-                    };
-                    properties.Add(property);
-                }
-            
+                    PropertyId = Convert.ToInt32(reader["c_property_id"]),
+                    ProjectId = reader["c_project_id"] == DBNull.Value ? (int?)null : Convert.ToInt32(reader["c_project_id"]),
+                    ProjectName = reader["c_project_name"] == DBNull.Value ? (string?)null : Convert.ToString(reader["c_project_name"]),
+                    PropertyName = Convert.ToString(reader["c_property_name"]),
+                    PropertyAmount = Convert.ToInt32(reader["c_property_amount"]),
+                    PropertySize = Convert.ToInt32(reader["c_property_square_ft"]),
+                    Bedrooms = Convert.ToInt32(reader["c_bhk"]),
+                    PropertyListingType = Convert.ToString(reader["c_property_listing_type"]),
+                    Furnished = Convert.ToString(reader["c_furnished"]),
+                    AreaType = Convert.ToString(reader["c_area_type"]),
+                    PropertyAge = Convert.ToInt32(reader["c_property_age"]),
+                    PropertyPicture = FileHandler.GetFirstImagePath(Convert.ToString(reader["c_picture_path"])),
+                    City = Convert.ToString(reader["c_city"]),
+                    Locality = Convert.ToString(reader["c_locality"]),
+                    ReadytoMove = Convert.ToBoolean(reader["c_availability_status"]),
+                    Address = Convert.ToString(reader["c_address"]),
+                    PropertyType = Convert.ToString(reader["c_property_type"])
+                };
+                properties.Add(property);
+            }
+
             return properties;
         }
 
@@ -704,6 +757,8 @@ WHERE p.c_project_id =@ProjectId", connection);
 
             return amenities;
         }
+
+
 
     }
 }

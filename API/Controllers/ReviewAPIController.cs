@@ -71,10 +71,19 @@ namespace API.Controllers
             {
                 if (_reviewRepository.RemoveReview(id)) return Ok("Review has been removed");
             }
-            catch (Exception e) { return BadRequest("Error: "+e.Message); }
+            catch (Exception e) { return BadRequest("Error: " + e.Message); }
             return BadRequest("Unexpected Error");
         }
 
-
+        [HttpPut("UpdateReview")]
+        public IActionResult UpdateReview([FromForm] Reviews.Post review)
+        {
+            try
+            {
+                _reviewRepository.UpdateReview(review);
+                return Ok();
+            }
+            catch (Exception e) { return BadRequest("Error: " + e.Message); }
+        }
     }
 }

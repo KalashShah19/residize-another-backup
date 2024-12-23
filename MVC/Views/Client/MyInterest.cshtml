@@ -1,0 +1,498 @@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.616/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" href="~/css/interest.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .Verified {
+            height: fit-content;
+            margin-top: 7px;
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        .main-content-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .side-navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .side-navbar a.active {
+            background-color: white;
+            color: #007777;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: #007777;
+            text-decoration: none;
+        }
+
+        .mycolor {
+            color: #007777;
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a class="back-button" href="/Client/Home">
+        <i class="fas fa-arrow-left"></i> Back to Home page
+    </a>
+
+    <!-- Hamburger Menu for Small Screens -->
+    <span class="hamburger" onclick="toggleNavbar()">&#9776;</span>
+
+    <!-- Side Navbar -->
+    <div id="mySidebar" class="side-navbar">
+        <a href="/Client/Home">
+            <img src="~/App_Themes/Default/images/residize-white.png" class="login-logo-img" alt="Residize" />
+        </a>
+        <a href="#Listings" onclick="showContent('listings', this)"><i class="fas fa-home"></i> My Property Listings</a>
+        <a href="#Wishlist" onclick="showContent('wishlist', this)"><i class="fas fa-heart"></i> My Wishlist</a>
+        <a href="#Projects" onclick="showContent('properties', this)"><i class="fas fa-cogs"></i> Manage Projects</a>
+        <!-- Corrected the extra quote below -->
+        <a class="back-button" href="/Client/Home">
+            <i class="fas fa-arrow-left"></i> Back to Home page
+        </a>
+    </div>
+
+    <!-- Main Content wrapped in a form -->
+    <form id="mainForm" method="post" action="/submit">
+        <div id="mainContent" class="main-content">
+            <div id="contentTitle" class="main-content-title">My Listings</div>
+            <div id="contentBody" class="row g-3">
+                <div class="col-sm-12">
+                    <div class="card mb-4">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title"><strong>Project ABC</strong></h5>
+                                    <div>
+                                        <p><strong>Posted Date:</strong> December 10, 2024</p>
+                                    </div>
+                                    <a href="#" class="btn" style="background-color: #007777; color: white;">View
+                                        Details</a>
+                                </div>
+                                @* Removed the commented out button *@
+                            </div>
+                            <div class="mt-3 text-end">
+                                <button type="button" class="btn btn-sm btn-warning" style="margin-right: 5px;">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa-solid fa-tags"></i>
+                                    Sold</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            var userSessionId = @ViewBag.Id;
+
+            const loadpropertyurl = "http://localhost:5293/api/PropertyAPI/GetPropertyByUserId";
+            const deleteUrl = "http://localhost:5293/api/PropertyAPI/DeleteProperty";
+            const loadprojecturl = "http://localhost:5293/api/ProjectApi/GetProject";
+            const deleteprojectUrl = "http://localhost:5293/api/ProjectApi/DeleteProject";
+
+            // Function to load property listings
+            function loadListings() {
+                $.ajax({
+                    url: loadpropertyurl,
+                    method: "GET",
+                    dataType: "json",
+                    data: { id: userSessionId },
+                    success: function (data) {
+                        const contentBody = $("#contentBody");
+                        //console.log(data);
+                        contentBody.empty();
+
+
+                        if (data.length > 0) {
+                            data.forEach((item) => {
+                                const property = item.property;
+                                const details = item.details;
+
+                                const postedDate = new Date(details.postedDate);
+                                const formattedDate = postedDate.toLocaleDateString("en-IN", {
+                                    day: "2-digit",
+                                    month: "long",
+                                    year: "numeric"
+                                });
+
+                                const propertyHTML = `
+                            <div class="col-sm-12">
+                                <div class="card mb-4">
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="card-title"><i class="fas fa-home mx-2 mycolor"></i> <strong> ${property.propertyName || "N/A"}</strong></h4>
+                                                <p><strong>Amount:</strong> ₹${property.propertyAmount}</p>
+                                                <p><strong>Type:</strong> ${property.propertyType}</p>
+                                                <p><strong>Size:</strong> ${property.propertySize} sq.ft</p>
+                                                <p><strong>Posted Date:</strong> ${formattedDate}</p>
+        @* <p><strong>Property ID:</strong> ${property.propertyId}</p> *@
+                                                <a href="http://localhost:5154/Client/ViewOneProperty/${property.propertyId}" class="btn" style="background-color: #007777; color: white;">View Details</a>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 text-end">
+                                            <button type="button" class="btn btn-sm btn-warning" style="margin-right: 5px;">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-danger delete-btn" data-type="property" data-id="${property.propertyId}" style="margin-right: 5px;">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                            ${!property.sold ? `<button type="button" class="btn btn-sm btn-primary mark-sold-btn" data-id="${property.propertyId}">
+                                                    <i class="fa-solid fa-tags"></i> Unlist
+                                                </button>` : `<button type="button" class="btn btn-sm btn-primary mark-unsold-btn" data-id="${property.propertyId}">
+                                                    <i class="fa-solid fa-tags"></i> Relist
+                                                </button>`}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                                contentBody.append(propertyHTML);
+                            });
+                        } else {
+                            contentBody.append(`<p>No properties found.</p>`);
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error fetching property listings:", error);
+                        $("#contentBody").html(`<p>Unable to load property listings at the moment.</p>`);
+                    }
+                });
+            }
+
+            // Handle delete for properties and projects
+            $("#contentBody").on("click", ".delete-btn", function () {
+                const id = $(this).data("id");
+                const type = $(this).data("type");
+
+                if (type === "property") {
+                    deleteProperty(id);
+                } else if (type === "project") {
+                    console.log(id);
+                    deleteProject(id);
+                }
+            });
+            $("#contentBody").on("click", ".mark-sold-btn", function () {
+                const propertyId = $(this).data("id");
+                markAsSold(propertyId);
+            });
+            function markAsSold(propertyId) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delist!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `http://localhost:5293/api/PropertyAPI/MarkasSold?propertyid=${propertyId}`,
+                            method: "POST",
+                            success: function () {
+                                Swal.fire(
+                                    'Marked!',
+                                    'The property has been delisted.',
+                                    'success'
+                                );
+                                loadListings(); // Reload listings after marking as sold
+                            },
+                            error: function (error) {
+                                console.error("Error delisted marking property:", error);
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to delist the property. Please try again.',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            }
+
+
+
+            $("#contentBody").on("click", ".mark-unsold-btn", function () {
+                const propertyId = $(this).data("id");
+                markAsunSold(propertyId);
+            });
+            function markAsunSold(propertyId) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, relist!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `http://localhost:5293/api/PropertyAPI/MarkasUnSold?propertyid=${propertyId}`,
+                            method: "POST",
+                            success: function () {
+                                Swal.fire(
+                                    'Marked!',
+                                    'The property has been reslisted.',
+                                    'success'
+                                );
+                                loadListings(); // Reload listings after marking as sold
+                            },
+                            error: function (error) {
+                                console.error("Error reslisting property:", error);
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to reslist the property',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            }
+
+
+            // Function to delete a property
+            function deleteProperty(propertyId) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `${deleteUrl}?propertyid=${propertyId}`,
+                            method: "DELETE",
+                            success: function () {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'The property has been deleted.',
+                                    'success'
+                                );
+                                loadListings(); // Reload listings after delete
+                            },
+                            error: function (error) {
+                                console.error("Error deleting property:", error);
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to delete the property. Please try again.',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            }
+
+            function deleteProject(projectId) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `http://localhost:5293/api/ProjectApi/DeleteProject?ProjectId=${projectId}`,
+                            method: "DELETE",
+                            success: function () {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'The project has been deleted.',
+                                    'success'
+                                );
+                                loadProjects();
+                            },
+                            error: function (error) {
+                                console.error("Error deleting project:", error);
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to delete the project. Please try again.',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Function to load projects
+            function loadProjects() {
+                $.ajax({
+                    url: loadprojecturl,
+                    method: "GET",
+                    dataType: "json",
+                    data: { id: userSessionId },
+                    success: function (data) {
+                        const contentBody = $("#contentBody");
+                        contentBody.empty();
+
+                        if (data.length > 0) {
+                            data.forEach((project) => {
+                                const postedDate = new Date(project.postedDate);
+                                const formattedDate = postedDate.toLocaleDateString("en-IN", {
+                                    day: "2-digit",
+                                    month: "long",
+                                    year: "numeric"
+                                });
+
+                                const fullAddress = `${project.address || "N/A"}, ${project.locality || "N/A"}, ${project.city || "N/A"}`;
+
+                                const projectHTML = `
+                        <div class="col-sm-12">
+                            <div class="card mb-4">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title"><strong>${project.projectName || "N/A"}</strong></h5>
+                                        <p><strong>Location:</strong> ${fullAddress}</p>
+                                        <p><strong>Posted Date:</strong> ${formattedDate}</p>
+                                        <a href="#" class="btn" style="background-color: #007777; color: white;">View Details</a>
+                                    </div>
+                                    <div class="mt-3 text-end">
+                                        <button type="button" class="btn btn-sm btn-warning" style="margin-right: 5px;">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-danger delete-btn" data-type="project" data-id="${project.projectId}" style="margin-right: 5px;">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>
+                                    </div>
+                                    <button type="button" class="Verified btn btn-sm btn-success">
+                                        <i class="fas fa-check-circle"></i> ${project.isReraVerified === true ? "Verified" : "Not Verified"}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>`;
+                                contentBody.append(projectHTML);
+                            });
+                        } else {
+                            contentBody.append(`<p>No projects found.</p>`);
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error fetching projects:", error);
+                        $("#contentBody").html(`<p>Unable to load projects at the moment.</p>`);
+                    }
+                });
+            }
+
+            // Handle default tab on page load
+            function handleDefaultTab() {
+                const hash = window.location.hash || "#Listings";
+
+                if (hash === "#Listings") {
+                    $("#contentTitle").text("My Listings");
+                    $(".side-navbar a").removeClass("active");
+                    $(".side-navbar a[href='#Listings']").addClass("active");
+                    loadListings();
+                } else if (hash === "#Projects") {
+                    $("#contentTitle").text("Manage Projects");
+                    $(".side-navbar a").removeClass("active");
+                    $(".side-navbar a[href='#Projects']").addClass("active");
+                    loadProjects();
+                }
+            }
+
+            handleDefaultTab();
+
+            // Handle side navbar clicks
+            $(".side-navbar a").on("click", function () {
+                const type = $(this).attr("href");
+                if (type === "#Listings") {
+                    $("#contentTitle").text("My Listings");
+                    loadListings();
+                } else if (type === "#Projects") {
+                    $("#contentTitle").text("Manage Projects");
+                    loadProjects();
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        function toggleNavbar() {
+            document.querySelector(".side-navbar").classList.toggle("open");
+            document.querySelector(".main-content").classList.toggle("open");
+        }
+
+        function showContent(type, element) {
+            const contentTitle = document.getElementById("contentTitle");
+            const contentBody = document.getElementById("contentBody");
+            const links = document.querySelectorAll(".side-navbar a");
+
+            links.forEach(link => link.classList.remove("active"));
+
+            element.classList.add("active");
+
+            if (type === "listings") {
+                contentTitle.textContent = "My Listings";
+                contentBody.innerHTML = `<div class="col-sm-12">...</div>`;
+            } else if (type === "wishlist") {
+                contentTitle.textContent = "My Wishlist";
+                contentBody.innerHTML = `<div class="col-sm-12">...</div>`;
+            } else if (type === "properties") {
+                contentTitle.textContent = "Manage Projects";
+                contentBody.innerHTML = ``;
+            }
+        }
+    </script>
+</body>
+
+</html>

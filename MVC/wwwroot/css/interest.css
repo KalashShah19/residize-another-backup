@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-logo-img {
+  width: 100%; /* Make the logo width responsive to the container */
+  max-width: 200px; /* Set a maximum width to prevent the logo from getting too large */
+  height: auto; /* Maintain the aspect ratio of the logo */
+  margin-bottom: 20px; /* Adds space below the logo */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Navbar container */
+.side-navbar {
+  height: 100%;
+  width: 250px; /* Fixed width for desktop screens */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #007777;
+  overflow-x: hidden;
+  padding-top: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Navbar links */
+.side-navbar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-navbar a:hover {
+  background-color: white;
+  color: #007777;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 250px; /* Matches the navbar width for large screens */
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none; /* Hidden by default (shown only on smaller screens) */
+  font-size: 30px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 10;
+  color: #007777;
+}
+
+/* Style for the back button */
+.back-button {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #007777;
+  text-decoration: none;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Verified button styles */
+.Verified {
+  height: fit-content;
+  margin-top: 7px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* Content title */
+.main-content-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Navbar active link */
+.side-navbar a.active {
+  background-color: white;
+  color: #007777;
+  font-weight: bold;
+}
+
+/* Responsive adjustments for small screens */
+@media screen and (max-width: 768px) {
+  .side-navbar {
+    width: 0; /* Hidden by default */
+    padding-top: 60px;
+  }
+
+  .main-content {
+    margin-left: 0; /* Adjust margin when navbar is hidden */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .hamburger {
+    display: block; /* Display hamburger menu icon */
+  }
+
+  .side-navbar.open {
+    width: 250px; /* Show the sidebar when open */
+  }
+
+  .main-content.open {
+    margin-left: 250px; /* Adjust content margin when sidebar is open */
+  }
+}
+
+/* Smooth transitions */
+.side-navbar,
+.main-content {
+  transition: all 0.3s ease-in-out;
+}
